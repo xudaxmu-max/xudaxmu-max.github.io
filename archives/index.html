@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>奶龙大王的博客</title>
+  <meta name="description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+  <meta name="keywords" content="">
+  <meta name="author" content="奶龙大王">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="奶龙大王的博客">
+  <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xudaxmu-max.github.io/archives/index.html">
+  
+  <!-- 额外的 head 内容 -->
+
+<!-- Prism.js 代码高亮 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+<!-- 页面加载器样式 -->
+<style>
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  font-size: 4rem;
+  margin-bottom: var(--space-lg);
+  animation: loader-bounce 1s ease-in-out infinite;
+}
+
+@keyframes loader-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.loader-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  letter-spacing: 2px;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.loader-progress {
+  width: 30%;
+  height: 100%;
+  background: var(--gradient-neon);
+  border-radius: var(--radius-full);
+  animation: loader-progress 1.5s ease-in-out infinite;
+}
+
+@keyframes loader-progress {
+  0% { width: 0; margin-left: 0; }
+  50% { width: 70%; margin-left: 15%; }
+  100% { width: 0; margin-left: 100%; }
+}
+
+/* 阅读进度条 */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  background: transparent;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  background: var(--gradient-neon);
+  width: 0;
+  transition: width 0.1s;
+}
+
+/* 代码复制按钮 */
+.code-copy-btn {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+pre:hover .code-copy-btn {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+}
+
+/* 目录样式 */
+.toc {
+  position: sticky;
+  top: 90px;
+}
+
+.toc-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: var(--space-xs);
+}
+
+.toc-h3 {
+  padding-left: var(--space-md);
+}
+
+.toc-h4 {
+  padding-left: var(--space-xl);
+}
+
+.toc-link {
+  display: block;
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-left: 2px solid transparent;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.toc-link:hover {
+  color: var(--text-primary);
+  border-left-color: var(--border-light);
+}
+
+.toc-link.active {
+  color: var(--neon-cyan);
+  border-left-color: var(--neon-cyan);
+  background: rgba(0, 212, 255, 0.05);
+}
+</style>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- 页面加载动画 -->
+  <div class="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">🐉</div>
+      <div class="loader-text">加载中...</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- 星空背景容器 -->
+  <div id="stars-container"></div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar">
+  <a href="/" class="navbar-brand">
+    <div class="navbar-logo">🐉</div>
+    <span class="navbar-title">奶龙大王的博客</span>
+  </a>
+  
+  <ul class="navbar-menu">
+    <li class="navbar-item">
+      <a href="/" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        首页
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/archives" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+        归档
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/categories" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+        </svg>
+        分类
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/tags" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+          <line x1="7" y1="7" x2="7.01" y2="7"/>
+        </svg>
+        标签
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/lab/" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+        实验室
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/about" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        关于
+      </a>
+    </li>
+  </ul>
+  
+  <div class="navbar-actions">
+    <button class="navbar-btn search-btn" aria-label="搜索">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
+    <button class="navbar-btn theme-toggle" aria-label="切换主题">
+      ☀️
+    </button>
+    <a href="https://github.com" target="_blank" rel="noopener" class="navbar-btn" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+    <button class="navbar-toggle" aria-label="菜单">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+
+  <!-- 主内容 -->
+  <main class="main-content">
+    <div class="archive-page">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="page-title">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+        文章归档
+      </h1>
+      <p class="page-desc">共 1 篇文章</p>
+    </header>
+    
+    <div class="archive-timeline">
+      
+      <div class="archive-year" data-animate="fade-in" data-animate-delay="0">
+        <h2 class="archive-year-title">2025</h2>
+      </div>
+      
+      
+      <article class="archive-item" data-animate="slide-up" data-animate-delay="0">
+        <span class="archive-date">12-12</span>
+        <a href="/2025/12/12/hello-world/" class="archive-title">Hello World</a>
+        
+      </article>
+      
+    </div>
+    
+    
+
+<style>
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-3xl);
+}
+
+.pagination-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.pagination-item:not(.disabled):hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon);
+}
+
+.pagination-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.pagination-number {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.pagination-number:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+.pagination-number.active {
+  background: var(--gradient-neon);
+  border-color: transparent;
+  color: var(--bg-deep);
+  font-weight: 600;
+}
+
+.pagination-ellipsis {
+  color: var(--text-muted);
+  padding: 0 var(--space-xs);
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    flex-wrap: wrap;
+  }
+  
+  .pagination-numbers {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+  }
+}
+</style>
+
+  </div>
+</div>
+
+<style>
+.archive-page {
+  padding: calc(70px + var(--space-3xl)) 0 var(--space-3xl);
+  min-height: 100vh;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+}
+
+.page-title svg {
+  stroke: var(--neon-cyan);
+}
+
+.page-desc {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.archive-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: var(--space-xl);
+}
+
+.archive-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple), transparent);
+}
+
+.archive-year {
+  margin: var(--space-2xl) 0 var(--space-lg);
+  position: relative;
+}
+
+.archive-year::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-xl) - 6px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: var(--gradient-neon);
+  border-radius: 50%;
+  box-shadow: var(--shadow-neon);
+}
+
+.archive-year-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.archive-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all 0.3s var(--ease-out-expo);
+  position: relative;
+}
+
+.archive-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-xl) - 4px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--bg-card);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 50%;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.archive-item:hover {
+  border-color: var(--neon-cyan);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-neon);
+}
+
+.archive-item:hover::before {
+  background: var(--neon-cyan);
+  box-shadow: var(--shadow-neon);
+}
+
+.archive-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-width: 60px;
+}
+
+.archive-title {
+  flex: 1;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.archive-title:hover {
+  color: var(--neon-cyan);
+}
+
+.archive-category {
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(123, 104, 238, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: var(--neon-purple);
+}
+
+@media (max-width: 768px) {
+  .archive-item {
+    flex-wrap: wrap;
+  }
+  
+  .archive-category {
+    width: 100%;
+    margin-top: var(--space-sm);
+  }
+}
+</style>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">🐉</div>
+          <span class="footer-logo-text">奶龙大王的博客</span>
+        </div>
+        <p class="footer-desc">
+          都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！
+        </p>
+        <div class="footer-social">
+          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="mailto:hello@example.com" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+          <a href="/rss.xml" aria-label="RSS">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 11a9 9 0 0 1 9 9"/>
+              <path d="M4 4a16 16 0 0 1 16 16"/>
+              <circle cx="5" cy="19" r="1"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-section-title">导航</h4>
+        <div class="footer-links">
+          <a href="/" class="footer-link">首页</a>
+          <a href="/archives" class="footer-link">归档</a>
+          <a href="/categories" class="footer-link">分类</a>
+          <a href="/tags" class="footer-link">标签</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-section-title">更多</h4>
+        <div class="footer-links">
+          <a href="/lab/" class="footer-link">实验室</a>
+          <a href="/about" class="footer-link">关于</a>
+          <a href="/friends" class="footer-link">友链</a>
+          <a href="/rss.xml" class="footer-link">RSS</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-section-title">技术栈</h4>
+        <div class="footer-links">
+          <a href="https://hexo.io" target="_blank" rel="noopener" class="footer-link">Hexo</a>
+          <a href="#" class="footer-link">Nailong Theme</a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="footer-link">GitHub Pages</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © 2025 <a href="/">奶龙大王的博客</a>. 
+        All rights reserved.
+        
+      </p>
+      <p class="footer-powered">
+        Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+        & <a href="#">Nailong</a> Theme
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.footer-social {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.footer-social a:hover {
+  color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-neon);
+}
+
+.footer-powered {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-powered a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+}
+</style>
+
+
+  <!-- 返回顶部按钮 -->
+  <button class="back-to-top" aria-label="返回顶部">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- 搜索模态框 -->
+  <div class="search-modal">
+  <div class="search-modal-content">
+    <div class="search-header">
+      <div class="search-input-wrapper">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" class="search-input" placeholder="搜索文章..." autofocus>
+        <kbd class="search-kbd">ESC</kbd>
+      </div>
+    </div>
+    
+    <div class="search-body">
+      <div class="search-results">
+        <div class="search-empty">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <p>输入关键词开始搜索</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="search-footer">
+      <div class="search-tips">
+        <span><kbd>↑</kbd><kbd>↓</kbd> 导航</span>
+        <span><kbd>Enter</kbd> 选择</span>
+        <span><kbd>ESC</kbd> 关闭</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.search-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-modal-content {
+  width: 100%;
+  max-width: 600px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transform: translateY(-20px) scale(0.95);
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.search-modal.active .search-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.search-header {
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  transition: border-color 0.3s;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+.search-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-kbd {
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.search-body {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-results {
+  padding: var(--space-md);
+}
+
+.search-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.search-empty svg {
+  margin-bottom: var(--space-lg);
+  opacity: 0.5;
+}
+
+.search-result-item {
+  display: block;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.search-result-item:hover,
+.search-result-item.active {
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.search-result-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.search-result-excerpt {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.search-result-title mark,
+.search-result-excerpt mark {
+  background: rgba(0, 212, 255, 0.3);
+  color: var(--neon-cyan);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.search-footer {
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.search-tips {
+  display: flex;
+  gap: var(--space-lg);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.search-tips kbd {
+  padding: 2px 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  margin-right: var(--space-xs);
+}
+</style>
+
+
+  <!-- Scripts -->
+  
+<script src="/js/main.js"></script>
+
+  <!-- 额外的脚本 -->
+
+<!-- Prism.js 代码高亮 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js"></script>
+
+<!-- 本地搜索 -->
+
+<script>
+(function() {
+  const searchInput = document.querySelector('.search-input');
+  const searchResults = document.querySelector('.search-results');
+  let searchData = null;
+
+  // 加载搜索数据
+  async function loadSearchData() {
+    if (searchData) return searchData;
+    try {
+      const response = await fetch('/search.json');
+      searchData = await response.json();
+      return searchData;
+    } catch (error) {
+      console.error('加载搜索数据失败:', error);
+      return [];
+    }
+  }
+
+  // 搜索
+  async function search(query) {
+    if (!query.trim()) {
+      searchResults.innerHTML = `
+        <div class="search-empty">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <p>输入关键词开始搜索</p>
+        </div>
+      `;
+      return;
+    }
+
+    const data = await loadSearchData();
+    const keywords = query.toLowerCase().split(/\s+/);
+    
+    const results = data.filter(item => {
+      const title = (item.title || '').toLowerCase();
+      const content = (item.content || '').toLowerCase();
+      return keywords.some(keyword => 
+        title.includes(keyword) || content.includes(keyword)
+      );
+    }).slice(0, 10);
+
+    if (results.length === 0) {
+      searchResults.innerHTML = `
+        <div class="search-empty">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <p>没有找到相关内容</p>
+        </div>
+      `;
+      return;
+    }
+
+    searchResults.innerHTML = results.map(item => {
+      const title = highlightKeywords(item.title, keywords);
+      const excerpt = getExcerpt(item.content, keywords);
+      return `
+        <a href="${item.url}" class="search-result-item">
+          <div class="search-result-title">${title}</div>
+          <div class="search-result-excerpt">${excerpt}</div>
+        </a>
+      `;
+    }).join('');
+  }
+
+  // 高亮关键词
+  function highlightKeywords(text, keywords) {
+    if (!text) return '';
+    let result = text;
+    keywords.forEach(keyword => {
+      const regex = new RegExp(`(${escapeRegex(keyword)})`, 'gi');
+      result = result.replace(regex, '<mark>$1</mark>');
+    });
+    return result;
+  }
+
+  // 获取摘要
+  function getExcerpt(content, keywords) {
+    if (!content) return '';
+    const plainText = content.replace(/<[^>]+>/g, '');
+    
+    // 找到第一个关键词的位置
+    let startIndex = 0;
+    for (const keyword of keywords) {
+      const index = plainText.toLowerCase().indexOf(keyword.toLowerCase());
+      if (index !== -1) {
+        startIndex = Math.max(0, index - 50);
+        break;
+      }
+    }
+    
+    let excerpt = plainText.substring(startIndex, startIndex + 150);
+    if (startIndex > 0) excerpt = '...' + excerpt;
+    if (startIndex + 150 < plainText.length) excerpt += '...';
+    
+    return highlightKeywords(excerpt, keywords);
+  }
+
+  // 转义正则特殊字符
+  function escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // 绑定事件
+  if (searchInput) {
+    let debounceTimer;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        search(e.target.value);
+      }, 300);
+    });
+  }
+})();
+</script>
+
+
+<!-- 分析脚本 -->
+
+
+</body>
+</html>
