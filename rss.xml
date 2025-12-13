@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+  <channel>
+    <title>奶龙大王的博客</title>
+    <atom:link href="https://nailong.top/rss.xml" rel="self" type="application/rss+xml"/>
+    <link>https://nailong.top/</link>
+    <description>都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！</description>
+    <lastBuildDate>Fri, 13 Dec 2025 00:00:00 GMT</lastBuildDate>
+    <language>zh-CN</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <generator>Hexo</generator>
+
+    <item>
+      <title>Hello World</title>
+      <link>https://nailong.top/2025/12/12/hello-world/</link>
+      <guid>https://nailong.top/2025/12/12/hello-world/</guid>
+      <pubDate>Thu, 12 Dec 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.]]></description>
+      <content:encoded><![CDATA[
+        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+
+        <h2>Quick Start</h2>
+
+        <h3>Create a new post</h3>
+        <pre><code>$ hexo new "My New Post"</code></pre>
+        <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+
+        <h3>Run server</h3>
+        <pre><code>$ hexo server</code></pre>
+        <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+
+        <h3>Generate static files</h3>
+        <pre><code>$ hexo generate</code></pre>
+        <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+
+        <h3>Deploy to remote sites</h3>
+        <pre><code>$ hexo deploy</code></pre>
+        <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+      ]]></content:encoded>
+    </item>
+  </channel>
+</rss>

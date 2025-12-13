@@ -1,0 +1,27 @@
+# robots.txt for https://nailong.top
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nailong.top/sitemap.xml
+
+# 禁止爬取
+Disallow: /js/
+Disallow: /css/
+
+# 常见爬虫优化
+User-agent: Googlebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Sogou spider
+Allow: /
+
+# 爬取延迟（秒）
+Crawl-delay: 1

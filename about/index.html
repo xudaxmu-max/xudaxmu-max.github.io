@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关于我 - 奶龙大王的博客</title>
+  <meta name="description" content="了解更多关于奶龙大王的信息，技术栈、联系方式和个人经历">
+  <meta name="keywords" content="关于,个人简介,技术栈">
+  <meta name="author" content="奶龙大王">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/enhancements.css">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00d4ff">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="关于我 - 奶龙大王的博客">
+  <meta property="og:description" content="了解更多关于奶龙大王的信息">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://nailong.top/about/">
+  <meta property="og:image" content="https://nailong.top/images/avatar.png">
+</head>
+<body>
+  <!-- 页面加载动画 -->
+  <div class="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">🐉</div>
+      <div class="loader-text">加载中...</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- 星空背景容器 -->
+  <div id="stars-container"></div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar">
+  <a href="/" class="navbar-brand">
+    <div class="navbar-logo">🐉</div>
+    <span class="navbar-title">奶龙大王的博客</span>
+  </a>
+
+  <ul class="navbar-menu">
+    <li class="navbar-item">
+      <a href="/" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        首页
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/archives" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+        归档
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/categories" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+        </svg>
+        分类
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/tags" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+          <line x1="7" y1="7" x2="7.01" y2="7"/>
+        </svg>
+        标签
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/lab/" class="navbar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+        实验室
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/about" class="navbar-link active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        关于
+      </a>
+    </li>
+  </ul>
+
+  <div class="navbar-actions">
+    <button class="navbar-btn search-btn" aria-label="搜索">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
+    <button class="navbar-btn theme-toggle" aria-label="切换主题">
+      ☀️
+    </button>
+    <a href="https://github.com/xudaxmu-max" target="_blank" rel="noopener" class="navbar-btn" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+    <button class="navbar-toggle" aria-label="菜单">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- 主内容 -->
+  <main class="main-content">
+    <div class="container" style="max-width: 800px; padding-top: 120px; padding-bottom: var(--space-3xl);">
+      <article class="post-content">
+        <!-- 头像和简介 -->
+        <div style="text-align: center; margin-bottom: var(--space-3xl);">
+          <div style="width: 150px; height: 150px; margin: 0 auto var(--space-xl); border-radius: var(--radius-full); background: var(--gradient-neon); display: flex; align-items: center; justify-content: center; font-size: 4rem; box-shadow: var(--shadow-neon);">
+            🐉
+          </div>
+          <h1 style="font-family: var(--font-display); font-size: 2.5rem; margin-bottom: var(--space-md); background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            奶龙大王
+          </h1>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: var(--space-lg);">
+            好好学习，天天向上
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; max-width: 600px; margin: 0 auto;">
+            都说程序员是搬砖的，奶龙大王可不这么认为，<br>
+            程序员是用代码改变世界的人！<br>
+            热爱编程，热爱技术，热爱生活。
+          </p>
+        </div>
+
+        <!-- 技术栈 -->
+        <section style="margin-bottom: var(--space-3xl);">
+          <h2 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: var(--space-xl); display: flex; align-items: center; gap: var(--space-sm);">
+            <span style="font-size: 2rem;">💻</span>
+            技术栈
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg);">
+            <div class="card" style="padding: var(--space-xl);">
+              <h3 style="color: var(--neon-cyan); margin-bottom: var(--space-md);">前端开发</h3>
+              <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(0,212,255,0.1); border: 1px solid var(--neon-cyan); border-radius: var(--radius-md); font-size: 0.85rem;">HTML/CSS</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(0,212,255,0.1); border: 1px solid var(--neon-cyan); border-radius: var(--radius-md); font-size: 0.85rem;">JavaScript</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(0,212,255,0.1); border: 1px solid var(--neon-cyan); border-radius: var(--radius-md); font-size: 0.85rem;">TypeScript</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(0,212,255,0.1); border: 1px solid var(--neon-cyan); border-radius: var(--radius-md); font-size: 0.85rem;">React</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(0,212,255,0.1); border: 1px solid var(--neon-cyan); border-radius: var(--radius-md); font-size: 0.85rem;">Vue</span>
+              </div>
+            </div>
+
+            <div class="card" style="padding: var(--space-xl);">
+              <h3 style="color: var(--neon-purple); margin-bottom: var(--space-md);">后端开发</h3>
+              <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(123,104,238,0.1); border: 1px solid var(--neon-purple); border-radius: var(--radius-md); font-size: 0.85rem;">Node.js</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(123,104,238,0.1); border: 1px solid var(--neon-purple); border-radius: var(--radius-md); font-size: 0.85rem;">Python</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(123,104,238,0.1); border: 1px solid var(--neon-purple); border-radius: var(--radius-md); font-size: 0.85rem;">Go</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(123,104,238,0.1); border: 1px solid var(--neon-purple); border-radius: var(--radius-md); font-size: 0.85rem;">MySQL</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(123,104,238,0.1); border: 1px solid var(--neon-purple); border-radius: var(--radius-md); font-size: 0.85rem;">MongoDB</span>
+              </div>
+            </div>
+
+            <div class="card" style="padding: var(--space-xl);">
+              <h3 style="color: var(--neon-pink); margin-bottom: var(--space-md);">工具链</h3>
+              <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(255,107,157,0.1); border: 1px solid var(--neon-pink); border-radius: var(--radius-md); font-size: 0.85rem;">Git</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(255,107,157,0.1); border: 1px solid var(--neon-pink); border-radius: var(--radius-md); font-size: 0.85rem;">Docker</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(255,107,157,0.1); border: 1px solid var(--neon-pink); border-radius: var(--radius-md); font-size: 0.85rem;">Linux</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(255,107,157,0.1); border: 1px solid var(--neon-pink); border-radius: var(--radius-md); font-size: 0.85rem;">Webpack</span>
+                <span style="padding: var(--space-xs) var(--space-md); background: rgba(255,107,157,0.1); border: 1px solid var(--neon-pink); border-radius: var(--radius-md); font-size: 0.85rem;">Vite</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 兴趣爱好 -->
+        <section style="margin-bottom: var(--space-3xl);">
+          <h2 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: var(--space-xl); display: flex; align-items: center; gap: var(--space-sm);">
+            <span style="font-size: 2rem;">🎨</span>
+            兴趣爱好
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg);">
+            <div style="text-align: center; padding: var(--space-xl); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <div style="font-size: 3rem; margin-bottom: var(--space-md);">💻</div>
+              <h4 style="color: var(--text-primary); margin-bottom: var(--space-xs);">编程</h4>
+              <p style="color: var(--text-secondary); font-size: 0.85rem;">探索技术的无限可能</p>
+            </div>
+            <div style="text-align: center; padding: var(--space-xl); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <div style="font-size: 3rem; margin-bottom: var(--space-md);">📚</div>
+              <h4 style="color: var(--text-primary); margin-bottom: var(--space-xs);">阅读</h4>
+              <p style="color: var(--text-secondary); font-size: 0.85rem;">书籍是智慧的源泉</p>
+            </div>
+            <div style="text-align: center; padding: var(--space-xl); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <div style="font-size: 3rem; margin-bottom: var(--space-md);">🎵</div>
+              <h4 style="color: var(--text-primary); margin-bottom: var(--space-xs);">音乐</h4>
+              <p style="color: var(--text-secondary); font-size: 0.85rem;">旋律激发创造力</p>
+            </div>
+            <div style="text-align: center; padding: var(--space-xl); background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <div style="font-size: 3rem; margin-bottom: var(--space-md);">✈️</div>
+              <h4 style="color: var(--text-primary); margin-bottom: var(--space-xs);">旅行</h4>
+              <p style="color: var(--text-secondary); font-size: 0.85rem;">在路上发现世界</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section>
+          <h2 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: var(--space-xl); display: flex; align-items: center; gap: var(--space-sm);">
+            <span style="font-size: 2rem;">📬</span>
+            联系我
+          </h2>
+          <div class="card" style="padding: var(--space-2xl); text-align: center;">
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-xl); line-height: 1.8;">
+              欢迎与我交流技术、分享想法！<br>
+              你可以通过以下方式联系我：
+            </p>
+            <div style="display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap;">
+              <a href="https://github.com/xudaxmu-max" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-md) var(--space-lg); background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius-md); color: var(--text-secondary); text-decoration: none; transition: all 0.3s;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="mailto:hello@nailong.top" style="display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-md) var(--space-lg); background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius-md); color: var(--text-secondary); text-decoration: none; transition: all 0.3s;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Email
+              </a>
+              <a href="/rss.xml" style="display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-md) var(--space-lg); background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius-md); color: var(--text-secondary); text-decoration: none; transition: all 0.3s;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 11a9 9 0 0 1 9 9"/>
+                  <path d="M4 4a16 16 0 0 1 16 16"/>
+                  <circle cx="5" cy="19" r="1"/>
+                </svg>
+                RSS
+              </a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">🐉</div>
+          <span class="footer-logo-text">奶龙大王的博客</span>
+        </div>
+        <p class="footer-desc">
+          都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！
+        </p>
+        <div class="footer-social">
+          <a href="https://github.com/xudaxmu-max" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="mailto:hello@nailong.top" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+          <a href="/rss.xml" aria-label="RSS">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 11a9 9 0 0 1 9 9"/>
+              <path d="M4 4a16 16 0 0 1 16 16"/>
+              <circle cx="5" cy="19" r="1"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-section-title">导航</h4>
+        <div class="footer-links">
+          <a href="/" class="footer-link">首页</a>
+          <a href="/archives" class="footer-link">归档</a>
+          <a href="/categories" class="footer-link">分类</a>
+          <a href="/tags" class="footer-link">标签</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-section-title">更多</h4>
+        <div class="footer-links">
+          <a href="/lab/" class="footer-link">实验室</a>
+          <a href="/about" class="footer-link">关于</a>
+          <a href="/gallery" class="footer-link">相册</a>
+          <a href="/rss.xml" class="footer-link">RSS</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-section-title">技术栈</h4>
+        <div class="footer-links">
+          <a href="https://hexo.io" target="_blank" rel="noopener" class="footer-link">Hexo</a>
+          <a href="#" class="footer-link">Nailong Theme</a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="footer-link">GitHub Pages</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © 2025 <a href="/">奶龙大王的博客</a>. All rights reserved.
+      </p>
+      <p class="footer-powered">
+        Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+        & <a href="#">Nailong</a> Theme
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <!-- 返回顶部按钮 -->
+  <button class="back-to-top" aria-label="返回顶部">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- 搜索模态框 -->
+  <div class="search-modal">
+  <div class="search-modal-content">
+    <div class="search-header">
+      <div class="search-input-wrapper">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" class="search-input" placeholder="搜索文章..." autofocus>
+        <kbd class="search-kbd">ESC</kbd>
+      </div>
+    </div>
+
+    <div class="search-body">
+      <div class="search-results">
+        <div class="search-empty">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <p>输入关键词开始搜索</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-footer">
+      <div class="search-tips">
+        <span><kbd>↑</kbd><kbd>↓</kbd> 导航</span>
+        <span><kbd>Enter</kbd> 选择</span>
+        <span><kbd>ESC</kbd> 关闭</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Scripts -->
+  <script src="/js/main.js"></script>
+  <script src="/js/enhancements.js"></script>
+
+  <!-- Prism.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+  <!-- 搜索 -->
+  <script src="/js/search.js"></script>
+</body>
+</html>

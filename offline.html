@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>离线模式 - 奶龙大王的博客</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #050508 0%, #1a1a25 100%);
+      color: #f0f0f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .offline-container {
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .offline-icon {
+      font-size: 5rem;
+      margin-bottom: 2rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #7b68ee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      color: #a0a0b0;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #7b68ee 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 212, 255, 0.3);
+    }
+
+    .cached-pages {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+    }
+
+    .cached-pages h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #00d4ff;
+    }
+
+    .cached-pages ul {
+      list-style: none;
+      text-align: left;
+    }
+
+    .cached-pages li {
+      padding: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cached-pages li:last-child {
+      border-bottom: none;
+    }
+
+    .cached-pages a {
+      color: #a0a0b0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .cached-pages a:hover {
+      color: #00d4ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-container">
+    <div class="offline-icon">📡</div>
+    <h1>您当前处于离线状态</h1>
+    <p>看起来您的网络连接已断开。不过别担心，您仍然可以浏览已缓存的内容。</p>
+    <a href="/" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      返回首页
+    </a>
+
+    <div class="cached-pages">
+      <h2>📚 可离线访问的页面</h2>
+      <ul>
+        <li><a href="/">🏠 首页</a></li>
+        <li><a href="/archives/">📚 文章归档</a></li>
+        <li><a href="/lab/">🧪 代码实验室</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

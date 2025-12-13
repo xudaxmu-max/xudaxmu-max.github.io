@@ -1,0 +1,606 @@
+/**
+ * ═══════════════════════════════════════════════════════════════
+ * 奶龙大王的博客 - 增强功能样式
+ * Enhanced Features Styles
+ * ═══════════════════════════════════════════════════════════════
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   PWA 安装提示
+   ═══════════════════════════════════════════════════════════════ */
+.pwa-install-banner {
+  position: fixed;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-lg);
+  max-width: 500px;
+  width: calc(100% - 2rem);
+  z-index: 9998;
+  transition: bottom 0.5s var(--ease-out-expo);
+}
+
+.pwa-install-banner.show {
+  bottom: var(--space-xl);
+}
+
+.pwa-install-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.pwa-install-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.pwa-install-text {
+  flex: 1;
+}
+
+.pwa-install-text strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-display);
+}
+
+.pwa-install-text p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.pwa-install-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.pwa-install-btn {
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--gradient-neon);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+  white-space: nowrap;
+}
+
+.pwa-install-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon);
+}
+
+.pwa-dismiss-btn {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.pwa-dismiss-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-neon);
+}
+
+/* 更新通知 */
+.update-notification {
+  position: fixed;
+  top: -100px;
+  right: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--neon-cyan);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-neon);
+  z-index: 9999;
+  transition: top 0.3s var(--ease-out-expo);
+}
+
+.update-notification.show {
+  top: var(--space-xl);
+}
+
+.update-notification-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.update-btn {
+  padding: var(--space-xs) var(--space-md);
+  background: var(--neon-cyan);
+  color: var(--bg-deep);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.update-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   社交分享按钮
+   ═══════════════════════════════════════════════════════════════ */
+.social-share {
+  margin: var(--space-2xl) 0;
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.social-share-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.social-share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.share-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--neon-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+}
+
+.share-btn svg {
+  flex-shrink: 0;
+}
+
+.share-btn-twitter:hover { border-color: #1DA1F2; color: #1DA1F2; }
+.share-btn-weibo:hover { border-color: #E6162D; color: #E6162D; }
+.share-btn-facebook:hover { border-color: #4267B2; color: #4267B2; }
+.share-btn-telegram:hover { border-color: #0088cc; color: #0088cc; }
+
+/* Toast 通知 */
+.toast-notification {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--neon-cyan);
+  box-shadow: var(--shadow-neon);
+  z-index: 99999;
+  transition: bottom 0.3s var(--ease-out-expo);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.toast-notification.show {
+  bottom: var(--space-xl);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   音乐播放器
+   ═══════════════════════════════════════════════════════════════ */
+.music-player {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  z-index: 9997;
+}
+
+.music-player-toggle {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow: var(--shadow-lg);
+}
+
+.music-player-toggle:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: var(--shadow-neon);
+  transform: translateY(-2px);
+}
+
+.music-player-toggle.playing {
+  border-color: var(--neon-cyan);
+  animation: music-pulse 2s ease-in-out infinite;
+}
+
+@keyframes music-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
+  50% { box-shadow: 0 0 0 10px rgba(0, 212, 255, 0); }
+}
+
+.music-player-toggle .music-icon {
+  color: var(--text-primary);
+}
+
+.music-player-panel {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 320px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.music-player-panel.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.music-info {
+  margin-bottom: var(--space-lg);
+}
+
+.music-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-artist {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.music-btn {
+  width: 36px;
+  height: 36px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.music-btn:hover {
+  color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  transform: scale(1.1);
+}
+
+.music-btn-play {
+  width: 44px;
+  height: 44px;
+  background: var(--gradient-neon);
+  border-color: transparent;
+}
+
+.music-btn-play svg {
+  color: white;
+}
+
+.music-progress {
+  margin-bottom: var(--space-md);
+}
+
+.music-progress-bar {
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.music-progress-fill {
+  height: 100%;
+  background: var(--gradient-neon);
+  border-radius: var(--radius-full);
+  width: 0;
+  transition: width 0.1s linear;
+}
+
+.music-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.music-volume {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.music-volume svg {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.music-volume-slider {
+  flex: 1;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+}
+
+.music-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--neon-cyan);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.music-volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.music-volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: var(--neon-cyan);
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   评论系统
+   ═══════════════════════════════════════════════════════════════ */
+.comments-section {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.comments-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+#comments-container {
+  min-height: 200px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   图片灯箱
+   ═══════════════════════════════════════════════════════════════ */
+.image-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.image-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-lg);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   浏览统计
+   ═══════════════════════════════════════════════════════════════ */
+.post-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.post-meta-item svg {
+  width: 16px;
+  height: 16px;
+}
+
+.post-views {
+  color: var(--neon-cyan);
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+/* 不蒜子统计 */
+#busuanzi_container_site_pv,
+#busuanzi_container_site_uv {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-right: var(--space-lg);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   响应式适配
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .pwa-install-banner {
+    max-width: calc(100% - 1rem);
+    padding: var(--space-md);
+  }
+
+  .pwa-install-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pwa-install-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .music-player {
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+  }
+
+  .music-player-panel {
+    width: calc(100vw - 2rem);
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+  }
+
+  .music-player-panel.show {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .social-share-buttons {
+    gap: var(--space-sm);
+  }
+
+  .share-btn {
+    flex: 1;
+    justify-content: center;
+    min-width: calc(50% - var(--space-xs));
+  }
+}
+
+@media (max-width: 480px) {
+  .music-player-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .share-btn {
+    font-size: 0.85rem;
+    padding: var(--space-xs) var(--space-md);
+  }
+}
