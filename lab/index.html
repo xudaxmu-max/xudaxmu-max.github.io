@@ -1,4 +1,203 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- 标题 -->
+    <title>奶龙大王的博客</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    <meta name="keywords" content="奶龙大王,博客,编程,学习,技术分享">
+    <meta name="author" content="奶龙大王">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="奶龙大王的博客">
+    <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    <meta property="og:url" content="https://xudaxmu-max.github.io/lab/index.html">
+    <meta property="og:site_name" content="奶龙大王的博客">
+    
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="奶龙大王的博客">
+    <meta name="twitter:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&amp;family=DM+Sans:wght@400;500;700&amp;family=Fraunces:ital,wght@0,400;0,600;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fancybox -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    
+    
+    <!-- 主样式 -->
+    
+<link rel="stylesheet" href="/css/variables.css">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+
+    
+<link rel="stylesheet" href="/css/components.css">
+
+    
+<link rel="stylesheet" href="/css/layout.css">
+
+    
+<link rel="stylesheet" href="/css/post.css">
+
+    
+<link rel="stylesheet" href="/css/responsive.css">
+
+    
+<link rel="stylesheet" href="/css/themes.css">
+
+    
+<link rel="stylesheet" href="/css/animations.css">
+
+    
+    <!-- RSS -->
+    
+    <link rel="alternate" type="application/rss+xml" title="奶龙大王的博客" href="/atom.xml">
+    
+    
+    <!-- 自定义 head 代码 -->
+    
+    
+    <!-- 阅读进度条 -->
+    
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="progress-bar"></div>
+    </div>
+    
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body data-theme="minimal">
+    
+<!-- 页面加载动画 -->
+<div class="page-loading" id="page-loading">
+    <div class="loading-content">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+        </div>
+        <p class="loading-text">Loading...</p>
+    </div>
+</div>
+
+
+    <!-- 主题切换器 -->
+<div class="theme-switcher" id="theme-switcher">
+    <button class="theme-btn" data-theme="minimal" title="简约现代" aria-label="切换到简约现代主题">
+        <span class="theme-btn-inner minimal-icon"></span>
+    </button>
+    <button class="theme-btn" data-theme="serene" title="清新文艺" aria-label="切换到清新文艺主题">
+        <span class="theme-btn-inner serene-icon"></span>
+    </button>
+    <button class="theme-btn" data-theme="abyss" title="深渊地狱" aria-label="切换到深渊地狱主题">
+        <span class="theme-btn-inner abyss-icon"></span>
+    </button>
+</div>
+
+    <!-- 导航栏 -->
+<header class="nav" id="navbar">
+    <div class="nav-container">
+        <!-- Logo -->
+        <a href="/" class="nav-logo">
+            
+            HUAZAI
+            
+        </a>
+        
+        <!-- 导航菜单 -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+                
+                <li>
+                    <a href="/" class="">
+                        首页
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/archives" class="">
+                        文章
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/categories" class="">
+                        分类
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/tags" class="">
+                        标签
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/about" class="">
+                        关于
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+        <!-- 右侧操作 -->
+        <div class="nav-actions">
+            <!-- 搜索按钮 -->
+            
+            <button class="nav-btn search-toggle" id="search-toggle" aria-label="搜索">
+                <i data-lucide="search"></i>
+            </button>
+            
+            
+            <!-- 移动端菜单按钮 -->
+            <button class="nav-btn menu-toggle" id="menu-toggle" aria-label="菜单">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- 移动端菜单遮罩 -->
+<div class="nav-overlay" id="nav-overlay"></div>
+
+    
+    <main class="main-content">
+        <!-- 独立页面 (关于页等) -->
+<div class="page">
+    <div class="container">
+        <article class="page-content">
+            <!-- 页面头部 -->
+            <header class="page-header fade-in">
+                
+            </header>
+            
+            <!-- 如果是关于页面，显示特殊布局 -->
+            
+            <!-- 普通页面内容 -->
+            <div class="page-body fade-in">
+                <!DOCTYPE html>
 <html lang="zh-CN" data-theme="dark">
 <head>
   <meta charset="UTF-8">
@@ -1214,5 +1413,246 @@ console.log('📝 待办清单已就绪!');`
     // 启动
     init();
   </script>
+</body>
+</html>
+
+            </div>
+            
+            
+            <!-- 评论 -->
+            
+            
+<section class="comments-section" id="comments">
+    <h3 class="comments-title">
+        <i data-lucide="message-circle"></i>
+        评论
+    </h3>
+    
+    
+    <!-- 未配置评论系统 -->
+    <div class="comments-placeholder">
+        <i data-lucide="message-square-off"></i>
+        <p>评论系统未启用</p>
+    </div>
+    
+</section>
+
+
+            
+        </article>
+    </div>
+</div>
+
+    </main>
+    
+    <!-- 页脚 -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- 上部内容 -->
+        <div class="footer-content">
+            <!-- 品牌区 -->
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">
+                    
+                    HUAZAI
+                    
+                </a>
+                <p class="footer-desc">
+                    
+                    都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！
+                    
+                </p>
+                
+                <!-- 社交链接 -->
+                
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    
+                    
+                    <a href="mailto:your@email.com" class="social-link" aria-label="Email">
+                        <i data-lucide="mail"></i>
+                    </a>
+                    
+                    
+                    <a href="https://twitter.com/yourusername" class="social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                        <i data-lucide="twitter"></i>
+                    </a>
+                    
+                    
+                    <a href="/atom.xml" class="social-link" aria-label="RSS">
+                        <i data-lucide="rss"></i>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            <!-- 快速链接 -->
+            <div class="footer-links-group">
+                <h4 class="footer-title">导航</h4>
+                <ul class="footer-links">
+                    
+                    <li><a href="/">首页</a></li>
+                    
+                    <li><a href="/archives">文章</a></li>
+                    
+                    <li><a href="/categories">分类</a></li>
+                    
+                    <li><a href="/tags">标签</a></li>
+                    
+                    <li><a href="/about">关于</a></li>
+                    
+                </ul>
+            </div>
+            
+            <!-- 分类 -->
+            <div class="footer-links-group">
+                <h4 class="footer-title">分类</h4>
+                <ul class="footer-links">
+                    
+                </ul>
+            </div>
+            
+            <!-- 标签 -->
+            <div class="footer-links-group">
+                <h4 class="footer-title">热门标签</h4>
+                <ul class="footer-links">
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 底部版权 -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <span>© 2024 - 2025 奶龙大王.</span>
+                <span>All rights reserved.</span>
+            </div>
+            <div class="footer-info">
+                <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+                <span class="footer-divider">|</span>
+                <span>Theme <a href="#" target="_blank" rel="noopener">Flavor</a></span>
+                
+                <span class="footer-divider">|</span>
+                <span>运行 <span id="running-days">0</span> 天</span>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+    
+<!-- 搜索模态框 -->
+<div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-modal-overlay"></div>
+    <div class="search-container">
+        <div class="search-header">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" 
+                   class="search-input" 
+                   id="search-input" 
+                   placeholder="搜索文章标题、内容..."
+                   autocomplete="off"
+                   autofocus>
+            <div class="search-shortcut">
+                <kbd>ESC</kbd>
+            </div>
+            <button class="search-close" id="search-close" aria-label="关闭搜索">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="search-results" id="search-results">
+            <div class="search-placeholder">
+                <i data-lucide="file-search" class="search-placeholder-icon"></i>
+                <p>输入关键词开始搜索</p>
+                <p class="search-tips">支持搜索文章标题和内容</p>
+            </div>
+        </div>
+        <div class="search-footer">
+            <div class="search-footer-item">
+                <kbd>↑</kbd><kbd>↓</kbd>
+                <span>切换</span>
+            </div>
+            <div class="search-footer-item">
+                <kbd>Enter</kbd>
+                <span>打开</span>
+            </div>
+            <div class="search-footer-item">
+                <kbd>ESC</kbd>
+                <span>关闭</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+<!-- 返回顶部 -->
+<button class="back-to-top" id="back-to-top" aria-label="返回顶部">
+    <i data-lucide="chevron-up"></i>
+    <svg class="back-to-top-progress" viewBox="0 0 46 46">
+        <circle cx="23" cy="23" r="20" fill="none" stroke-width="2" />
+    </svg>
+</button>
+
+
+    <!-- 主题特效容器 -->
+<div id="theme-effects" class="theme-effects"></div>
+
+<!-- Abyss 主题扫描线 -->
+<div class="abyss-scanline" id="abyss-scanline"></div>
+
+<!-- Abyss 主题噪点层 -->
+<div class="abyss-noise" id="abyss-noise"></div>
+
+    <!-- Fancybox -->
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+
+<!-- 主脚本 -->
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/theme-switcher.js"></script>
+
+
+<script src="/js/navigation.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+<!-- 初始化 Lucide 图标 -->
+<script>
+    lucide.createIcons();
+</script>
+
+<!-- 运行天数计算 -->
+
+<script>
+    (function() {
+        const since = new Date('Mon Jan 01 2024 08:00:00 GMT+0800 (中国标准时间)');
+        const now = new Date();
+        const days = Math.floor((now - since) / (1000 * 60 * 60 * 24));
+        const el = document.getElementById('running-days');
+        if (el) el.textContent = days;
+    })();
+</script>
+
+
+<!-- 自定义 body 代码 -->
+
+
 </body>
 </html>

@@ -1,1052 +1,560 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>奶龙大王的博客</title>
-  <meta name="description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-  <meta name="keywords" content="">
-  <meta name="author" content="奶龙大王">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  
-<link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- 标题 -->
+    <title>奶龙大王的博客</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    <meta name="keywords" content="奶龙大王,博客,编程,学习,技术分享">
+    <meta name="author" content="奶龙大王">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="奶龙大王的博客">
+    <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    <meta property="og:url" content="https://xudaxmu-max.github.io/index.html">
+    <meta property="og:site_name" content="奶龙大王的博客">
+    
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="奶龙大王的博客">
+    <meta name="twitter:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&amp;family=DM+Sans:wght@400;500;700&amp;family=Fraunces:ital,wght@0,400;0,600;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fancybox -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    
+    
+    <!-- 主样式 -->
+    
+<link rel="stylesheet" href="/css/variables.css">
 
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="奶龙大王的博客">
-  <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://xudaxmu-max.github.io/index.html">
-  
-  <!-- 额外的 head 内容 -->
+    
+<link rel="stylesheet" href="/css/base.css">
 
-<!-- Prism.js 代码高亮 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+<link rel="stylesheet" href="/css/components.css">
 
-<!-- 页面加载器样式 -->
-<style>
-.page-loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--bg-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.5s, visibility 0.5s;
-}
+    
+<link rel="stylesheet" href="/css/layout.css">
 
-.page-loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
+    
+<link rel="stylesheet" href="/css/post.css">
 
-.loader-content {
-  text-align: center;
-}
+    
+<link rel="stylesheet" href="/css/responsive.css">
 
-.loader-logo {
-  font-size: 4rem;
-  margin-bottom: var(--space-lg);
-  animation: loader-bounce 1s ease-in-out infinite;
-}
+    
+<link rel="stylesheet" href="/css/themes.css">
 
-@keyframes loader-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
+    
+<link rel="stylesheet" href="/css/animations.css">
 
-.loader-text {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: var(--space-lg);
-  letter-spacing: 2px;
-}
-
-.loader-bar {
-  width: 200px;
-  height: 4px;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-}
-
-.loader-progress {
-  width: 30%;
-  height: 100%;
-  background: var(--gradient-neon);
-  border-radius: var(--radius-full);
-  animation: loader-progress 1.5s ease-in-out infinite;
-}
-
-@keyframes loader-progress {
-  0% { width: 0; margin-left: 0; }
-  50% { width: 70%; margin-left: 15%; }
-  100% { width: 0; margin-left: 100%; }
-}
-
-/* 阅读进度条 */
-.reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  z-index: 9999;
-  background: transparent;
-}
-
-.reading-progress-bar {
-  height: 100%;
-  background: var(--gradient-neon);
-  width: 0;
-  transition: width 0.1s;
-}
-
-/* 代码复制按钮 */
-.code-copy-btn {
-  position: absolute;
-  top: var(--space-sm);
-  right: var(--space-sm);
-  padding: var(--space-sm);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  color: var(--text-muted);
-  cursor: pointer;
-  opacity: 0;
-  transition: all 0.3s var(--ease-out-expo);
-}
-
-pre:hover .code-copy-btn {
-  opacity: 1;
-}
-
-.code-copy-btn:hover {
-  color: var(--neon-cyan);
-  border-color: var(--neon-cyan);
-}
-
-/* 目录样式 */
-.toc {
-  position: sticky;
-  top: 90px;
-}
-
-.toc-title {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.toc-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.toc-item {
-  margin-bottom: var(--space-xs);
-}
-
-.toc-h3 {
-  padding-left: var(--space-md);
-}
-
-.toc-h4 {
-  padding-left: var(--space-xl);
-}
-
-.toc-link {
-  display: block;
-  padding: var(--space-xs) var(--space-sm);
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.85rem;
-  border-left: 2px solid transparent;
-  transition: all 0.3s var(--ease-out-expo);
-}
-
-.toc-link:hover {
-  color: var(--text-primary);
-  border-left-color: var(--border-light);
-}
-
-.toc-link.active {
-  color: var(--neon-cyan);
-  border-left-color: var(--neon-cyan);
-  background: rgba(0, 212, 255, 0.05);
-}
-</style>
-
+    
+    <!-- RSS -->
+    
+    <link rel="alternate" type="application/rss+xml" title="奶龙大王的博客" href="/atom.xml">
+    
+    
+    <!-- 自定义 head 代码 -->
+    
+    
+    <!-- 阅读进度条 -->
+    
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="progress-bar"></div>
+    </div>
+    
 <meta name="generator" content="Hexo 8.1.1"></head>
-<body>
-  <!-- 页面加载动画 -->
-  <div class="page-loader">
-    <div class="loader-content">
-      <div class="loader-logo">🐉</div>
-      <div class="loader-text">加载中...</div>
-      <div class="loader-bar"><div class="loader-progress"></div></div>
-    </div>
-  </div>
 
-  <!-- 星空背景容器 -->
-  <div id="stars-container"></div>
-
-  <!-- 导航栏 -->
-  <nav class="navbar">
-  <a href="/" class="navbar-brand">
-    <div class="navbar-logo">🐉</div>
-    <span class="navbar-title">奶龙大王的博客</span>
-  </a>
-  
-  <ul class="navbar-menu">
-    <li class="navbar-item">
-      <a href="/" class="navbar-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-        首页
-      </a>
-    </li>
-    <li class="navbar-item">
-      <a href="/archives" class="navbar-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-        </svg>
-        归档
-      </a>
-    </li>
-    <li class="navbar-item">
-      <a href="/categories" class="navbar-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-        </svg>
-        分类
-      </a>
-    </li>
-    <li class="navbar-item">
-      <a href="/tags" class="navbar-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
-          <line x1="7" y1="7" x2="7.01" y2="7"/>
-        </svg>
-        标签
-      </a>
-    </li>
-    <li class="navbar-item">
-      <a href="/lab/" class="navbar-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-        </svg>
-        实验室
-      </a>
-    </li>
-    <li class="navbar-item">
-      <a href="/about" class="navbar-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-        关于
-      </a>
-    </li>
-  </ul>
-  
-  <div class="navbar-actions">
-    <button class="navbar-btn search-btn" aria-label="搜索">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"/>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-    </button>
-    <button class="navbar-btn theme-toggle" aria-label="切换主题">
-      ☀️
-    </button>
-    <a href="https://github.com" target="_blank" rel="noopener" class="navbar-btn" aria-label="GitHub">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-      </svg>
-    </a>
-    <button class="navbar-toggle" aria-label="菜单">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</nav>
-
-
-  <!-- 主内容 -->
-  <main class="main-content">
-    <!-- Hero 区域 -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge fade-in">
-      <span class="hero-badge-dot"></span>
-      <span>在线 · 探索数字宇宙</span>
-    </div>
+<body data-theme="minimal">
     
-    <h1 class="hero-title slide-up stagger-1">
-      <span class="typewriter" data-text="奶龙大王的博客">奶龙大王的博客</span>
-    </h1>
-    
-    <p class="hero-subtitle slide-up stagger-2">
-      好好学习，天天向上
-    </p>
-    
-    <div class="hero-buttons slide-up stagger-3">
-      <a href="/archives" class="btn btn-primary">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-        </svg>
-        浏览文章
-      </a>
-      <a href="/lab/" class="btn btn-secondary">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-        </svg>
-        进入实验室
-      </a>
-    </div>
-  </div>
-  
-  <div class="scroll-indicator">
-    <div class="scroll-indicator-icon"></div>
-    <span>向下滚动</span>
-  </div>
-</section>
-
-<!-- 最新文章 -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-badge">Latest Posts</span>
-      <h2 class="section-title">最新文章</h2>
-      <p class="section-desc">探索技术世界，记录学习旅程</p>
-    </div>
-    
-    <div class="posts-grid">
-      
-      <article class="card post-card" data-animate="slide-up" data-animate-delay="0">
-        
-        <div class="post-card-image post-card-image-placeholder"></div>
-        
-        
-        <div class="post-card-content">
-          <div class="post-card-meta">
-            <span class="post-card-date">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-              2025-12-12
-            </span>
-            
-          </div>
-          
-          <h3 class="post-card-title">
-            <a href="/2025/12/12/hello-world/">Hello World</a>
-          </h3>
-          
-          <p class="post-card-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex...
-          </p>
-          
-          <div class="post-card-footer">
-            <div class="post-card-tags">
-              
-            </div>
-            
-            <a href="/2025/12/12/hello-world/" class="post-card-link">
-              阅读更多
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
+<!-- 页面加载动画 -->
+<div class="page-loading" id="page-loading">
+    <div class="loading-content">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
         </div>
-      </article>
-      
+        <p class="loading-text">Loading...</p>
     </div>
-    
-    <div style="text-align: center; margin-top: var(--space-2xl);">
-      <a href="/archives" class="btn btn-secondary">
-        查看全部文章
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 实验室入口 -->
-<section class="section" style="background: var(--bg-secondary);">
-  <div class="container">
-    <div class="lab-entry" data-animate="scale-in">
-      <div class="lab-entry-content">
-        <div class="lab-entry-icon">🚀</div>
-        <h2 class="lab-entry-title">代码实验室</h2>
-        <p class="lab-entry-desc">
-          在线运行 HTML、CSS、JavaScript 代码，实时预览效果。
-          支持多文件项目，分享你的创意作品！
-        </p>
-        <a href="/lab/" class="btn btn-primary">
-          进入实验室
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 项目展示预览 -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-badge">Projects</span>
-      <h2 class="section-title">项目作品</h2>
-      <p class="section-desc">一些有趣的开源项目和实验性作品</p>
-    </div>
-    
-    <div class="projects-grid">
-      <div class="project-card" data-animate="slide-up" data-animate-delay="0.1">
-        <div class="project-card-icon">🎨</div>
-        <h3 class="project-card-title">粒子系统</h3>
-        <p class="project-card-desc">基于 Canvas 的交互式粒子动画系统</p>
-        <a href="/lab/?project=particles" class="project-card-link">查看演示</a>
-      </div>
-      
-      <div class="project-card" data-animate="slide-up" data-animate-delay="0.2">
-        <div class="project-card-icon">🌍</div>
-        <h3 class="project-card-title">3D 地球</h3>
-        <p class="project-card-desc">Three.js 实现的可交互 3D 地球</p>
-        <a href="/lab/?project=earth" class="project-card-link">查看演示</a>
-      </div>
-      
-      <div class="project-card" data-animate="slide-up" data-animate-delay="0.3">
-        <div class="project-card-icon">🎵</div>
-        <h3 class="project-card-title">音频可视化</h3>
-        <p class="project-card-desc">Web Audio API 音频频谱分析</p>
-        <a href="/lab/?project=audio" class="project-card-link">查看演示</a>
-      </div>
-      
-      <div class="project-card" data-animate="slide-up" data-animate-delay="0.4">
-        <div class="project-card-icon">✋</div>
-        <h3 class="project-card-title">手势控制</h3>
-        <p class="project-card-desc">MediaPipe 实现的手势识别交互</p>
-        <a href="/lab/?project=gesture" class="project-card-link">查看演示</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-/* 文章卡片封面占位 */
-.post-card-image-placeholder {
-  background: var(--gradient-primary);
-  position: relative;
-  overflow: hidden;
-}
-
-.post-card-image-placeholder::after {
-  content: '📝';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  opacity: 0.5;
-}
-
-/* 项目卡片样式 */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-xl);
-}
-
-.project-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  text-align: center;
-  transition: all 0.4s var(--ease-out-expo);
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-neon);
-  transform: scaleX(0);
-  transition: transform 0.4s var(--ease-out-expo);
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--border-neon);
-  box-shadow: var(--shadow-lg), var(--shadow-neon);
-}
-
-.project-card:hover::before {
-  transform: scaleX(1);
-}
-
-.project-card-icon {
-  font-size: 3rem;
-  margin-bottom: var(--space-lg);
-  display: block;
-}
-
-.project-card-title {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: var(--space-sm);
-}
-
-.project-card-desc {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: var(--space-lg);
-  line-height: 1.6;
-}
-
-.project-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  color: var(--neon-cyan);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: gap 0.3s var(--ease-out-expo);
-}
-
-.project-card-link::after {
-  content: '→';
-  transition: transform 0.3s var(--ease-out-expo);
-}
-
-.project-card-link:hover::after {
-  transform: translateX(5px);
-}
-</style>
-
-  </main>
-
-  <!-- 页脚 -->
-  <footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="footer-logo-icon">🐉</div>
-          <span class="footer-logo-text">奶龙大王的博客</span>
-        </div>
-        <p class="footer-desc">
-          都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！
-        </p>
-        <div class="footer-social">
-          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
-          <a href="mailto:hello@example.com" aria-label="Email">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </a>
-          <a href="/rss.xml" aria-label="RSS">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 11a9 9 0 0 1 9 9"/>
-              <path d="M4 4a16 16 0 0 1 16 16"/>
-              <circle cx="5" cy="19" r="1"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      
-      <div class="footer-section">
-        <h4 class="footer-section-title">导航</h4>
-        <div class="footer-links">
-          <a href="/" class="footer-link">首页</a>
-          <a href="/archives" class="footer-link">归档</a>
-          <a href="/categories" class="footer-link">分类</a>
-          <a href="/tags" class="footer-link">标签</a>
-        </div>
-      </div>
-      
-      <div class="footer-section">
-        <h4 class="footer-section-title">更多</h4>
-        <div class="footer-links">
-          <a href="/lab/" class="footer-link">实验室</a>
-          <a href="/about" class="footer-link">关于</a>
-          <a href="/friends" class="footer-link">友链</a>
-          <a href="/rss.xml" class="footer-link">RSS</a>
-        </div>
-      </div>
-      
-      <div class="footer-section">
-        <h4 class="footer-section-title">技术栈</h4>
-        <div class="footer-links">
-          <a href="https://hexo.io" target="_blank" rel="noopener" class="footer-link">Hexo</a>
-          <a href="#" class="footer-link">Nailong Theme</a>
-          <a href="https://github.com" target="_blank" rel="noopener" class="footer-link">GitHub Pages</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p class="footer-copyright">
-        © 2025 <a href="/">奶龙大王的博客</a>. 
-        All rights reserved.
-        
-      </p>
-      <p class="footer-powered">
-        Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
-        & <a href="#">Nailong</a> Theme
-      </p>
-    </div>
-  </div>
-</footer>
-
-<style>
-.footer-social {
-  display: flex;
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-}
-
-.footer-social a {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  color: var(--text-secondary);
-  transition: all 0.3s var(--ease-out-expo);
-}
-
-.footer-social a:hover {
-  color: var(--neon-cyan);
-  border-color: var(--neon-cyan);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-neon);
-}
-
-.footer-powered {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-
-.footer-powered a {
-  color: var(--neon-cyan);
-  text-decoration: none;
-}
-</style>
-
-
-  <!-- 返回顶部按钮 -->
-  <button class="back-to-top" aria-label="返回顶部">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M18 15l-6-6-6 6"/>
-    </svg>
-  </button>
-
-  <!-- 搜索模态框 -->
-  <div class="search-modal">
-  <div class="search-modal-content">
-    <div class="search-header">
-      <div class="search-input-wrapper">
-        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="text" class="search-input" placeholder="搜索文章..." autofocus>
-        <kbd class="search-kbd">ESC</kbd>
-      </div>
-    </div>
-    
-    <div class="search-body">
-      <div class="search-results">
-        <div class="search-empty">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <p>输入关键词开始搜索</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="search-footer">
-      <div class="search-tips">
-        <span><kbd>↑</kbd><kbd>↓</kbd> 导航</span>
-        <span><kbd>Enter</kbd> 选择</span>
-        <span><kbd>ESC</kbd> 关闭</span>
-      </div>
-    </div>
-  </div>
 </div>
 
-<style>
-.search-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: var(--z-modal);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 15vh;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s var(--ease-out-expo);
-}
 
-.search-modal.active {
-  opacity: 1;
-  visibility: visible;
-}
+    <!-- 主题切换器 -->
+<div class="theme-switcher" id="theme-switcher">
+    <button class="theme-btn" data-theme="minimal" title="简约现代" aria-label="切换到简约现代主题">
+        <span class="theme-btn-inner minimal-icon"></span>
+    </button>
+    <button class="theme-btn" data-theme="serene" title="清新文艺" aria-label="切换到清新文艺主题">
+        <span class="theme-btn-inner serene-icon"></span>
+    </button>
+    <button class="theme-btn" data-theme="abyss" title="深渊地狱" aria-label="切换到深渊地狱主题">
+        <span class="theme-btn-inner abyss-icon"></span>
+    </button>
+</div>
 
-.search-modal-content {
-  width: 100%;
-  max-width: 600px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  transform: translateY(-20px) scale(0.95);
-  transition: transform 0.3s var(--ease-out-expo);
-}
+    <!-- 导航栏 -->
+<header class="nav" id="navbar">
+    <div class="nav-container">
+        <!-- Logo -->
+        <a href="/" class="nav-logo">
+            
+            HUAZAI
+            
+        </a>
+        
+        <!-- 导航菜单 -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+                
+                <li>
+                    <a href="/" class="active">
+                        首页
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/archives" class="">
+                        文章
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/categories" class="">
+                        分类
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/tags" class="">
+                        标签
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/about" class="">
+                        关于
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+        <!-- 右侧操作 -->
+        <div class="nav-actions">
+            <!-- 搜索按钮 -->
+            
+            <button class="nav-btn search-toggle" id="search-toggle" aria-label="搜索">
+                <i data-lucide="search"></i>
+            </button>
+            
+            
+            <!-- 移动端菜单按钮 -->
+            <button class="nav-btn menu-toggle" id="menu-toggle" aria-label="菜单">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </div>
+</header>
 
-.search-modal.active .search-modal-content {
-  transform: translateY(0) scale(1);
-}
+<!-- 移动端菜单遮罩 -->
+<div class="nav-overlay" id="nav-overlay"></div>
 
-.search-header {
-  padding: var(--space-lg);
-  border-bottom: 1px solid var(--border-subtle);
-}
+    
+    <main class="main-content">
+        <!-- 首页 Hero 区域 -->
 
-.search-input-wrapper {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: var(--space-md) var(--space-lg);
-  transition: border-color 0.3s;
-}
-
-.search-input-wrapper:focus-within {
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
-}
-
-.search-icon {
-  color: var(--text-muted);
-  flex-shrink: 0;
-}
-
-.search-input {
-  flex: 1;
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  color: var(--text-primary);
-  font-family: inherit;
-}
-
-.search-input::placeholder {
-  color: var(--text-muted);
-}
-
-.search-kbd {
-  padding: var(--space-xs) var(--space-sm);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.search-body {
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-.search-results {
-  padding: var(--space-md);
-}
-
-.search-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-3xl);
-  color: var(--text-muted);
-  text-align: center;
-}
-
-.search-empty svg {
-  margin-bottom: var(--space-lg);
-  opacity: 0.5;
-}
-
-.search-result-item {
-  display: block;
-  padding: var(--space-md) var(--space-lg);
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.search-result-item:hover,
-.search-result-item.active {
-  background: rgba(0, 212, 255, 0.1);
-}
-
-.search-result-title {
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: var(--space-xs);
-}
-
-.search-result-excerpt {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.search-result-title mark,
-.search-result-excerpt mark {
-  background: rgba(0, 212, 255, 0.3);
-  color: var(--neon-cyan);
-  padding: 0 2px;
-  border-radius: 2px;
-}
-
-.search-footer {
-  padding: var(--space-md) var(--space-lg);
-  border-top: 1px solid var(--border-subtle);
-  background: var(--bg-secondary);
-}
-
-.search-tips {
-  display: flex;
-  gap: var(--space-lg);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.search-tips kbd {
-  padding: 2px 6px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  margin-right: var(--space-xs);
-}
-</style>
+<section class="hero">
+    <!-- 背景效果 -->
+    <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-shapes">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+    </div>
+    
+    <!-- 内容 -->
+    <div class="hero-content">
+        
+        <span class="hero-tag fade-in">Ocean &amp; Code</span>
+        
+        
+        <h1 class="hero-title fade-in" data-text="探索深海 编织代码">
+            探索深海<br>编织代码
+        </h1>
+        
+        
+        <p class="hero-subtitle fade-in">在数据的海洋中航行，用代码描绘科学与艺术的交汇</p>
+        
+        
+        <div class="hero-actions fade-in">
+            
+            <a href="/archives" class="btn btn-primary">
+                开始阅读
+            </a>
+            
+            
+            <a href="/about" class="btn btn-secondary">
+                了解更多
+            </a>
+            
+        </div>
+        
+        <!-- 滚动提示 -->
+        <div class="hero-scroll fade-in">
+            <div class="scroll-indicator">
+                <div class="scroll-dot"></div>
+            </div>
+            <span>向下滚动</span>
+        </div>
+    </div>
+</section>
 
 
-  <!-- Scripts -->
-  
+<!-- 文章列表区域 -->
+<section class="posts-section">
+    <div class="container">
+        <!-- 区域标题 -->
+        <div class="section-header fade-in">
+            <h2 class="section-title">
+                
+                最新文章
+                
+            </h2>
+            <a href="/archives" class="section-link">
+                查看全部
+                <i data-lucide="arrow-right"></i>
+            </a>
+        </div>
+        
+        <!-- 文章网格 -->
+        <div class="articles-grid">
+            
+            
+<article class="article-card featured fade-in" style="animation-delay: 0s">
+    <!-- 封面图 -->
+    <a href="/2025/12/12/hello-world/" class="article-image">
+        
+        <div class="article-image-placeholder">
+            
+            <span class="placeholder-icon">💻</span>
+        </div>
+        
+        
+        <!-- 分类标签 -->
+        
+    </a>
+    
+    <!-- 内容 -->
+    <div class="article-content">
+        <!-- 元信息 -->
+        <div class="article-meta">
+            <span class="article-date">
+                <i data-lucide="calendar" class="meta-icon"></i>
+                2025-12-12
+            </span>
+            
+            <span class="article-readtime">
+                <i data-lucide="clock" class="meta-icon"></i>
+                2 分钟
+            </span>
+            
+        </div>
+        
+        <!-- 标题 -->
+        <h2 class="article-title">
+            <a href="/2025/12/12/hello-world/">Hello World</a>
+        </h2>
+        
+        <!-- 摘要 -->
+        <p class="article-excerpt">
+            
+            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ...
+            
+        </p>
+        
+        <!-- 标签 -->
+        
+    </div>
+</article>
+
+            
+        </div>
+        
+        <!-- 分页 -->
+        
+
+    </div>
+</section>
+
+<!-- 首页其他区域 (仅第一页显示) -->
+
+
+<!-- 统计数据 -->
+
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-count="1">0</div>
+                <div class="stat-label">文章</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-count="0">0</div>
+                <div class="stat-label">分类</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-count="0">0</div>
+                <div class="stat-label">标签</div>
+            </div>
+            <div class="stat-item fade-in">
+                
+                <div class="stat-number" data-count="0" data-suffix="K">0</div>
+                <div class="stat-label">字数</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 标签云 -->
+
+
+
+
+    </main>
+    
+    <!-- 页脚 -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- 上部内容 -->
+        <div class="footer-content">
+            <!-- 品牌区 -->
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">
+                    
+                    HUAZAI
+                    
+                </a>
+                <p class="footer-desc">
+                    
+                    都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！
+                    
+                </p>
+                
+                <!-- 社交链接 -->
+                
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    
+                    
+                    <a href="mailto:your@email.com" class="social-link" aria-label="Email">
+                        <i data-lucide="mail"></i>
+                    </a>
+                    
+                    
+                    <a href="https://twitter.com/yourusername" class="social-link" target="_blank" rel="noopener" aria-label="Twitter">
+                        <i data-lucide="twitter"></i>
+                    </a>
+                    
+                    
+                    <a href="/atom.xml" class="social-link" aria-label="RSS">
+                        <i data-lucide="rss"></i>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            <!-- 快速链接 -->
+            <div class="footer-links-group">
+                <h4 class="footer-title">导航</h4>
+                <ul class="footer-links">
+                    
+                    <li><a href="/">首页</a></li>
+                    
+                    <li><a href="/archives">文章</a></li>
+                    
+                    <li><a href="/categories">分类</a></li>
+                    
+                    <li><a href="/tags">标签</a></li>
+                    
+                    <li><a href="/about">关于</a></li>
+                    
+                </ul>
+            </div>
+            
+            <!-- 分类 -->
+            <div class="footer-links-group">
+                <h4 class="footer-title">分类</h4>
+                <ul class="footer-links">
+                    
+                </ul>
+            </div>
+            
+            <!-- 标签 -->
+            <div class="footer-links-group">
+                <h4 class="footer-title">热门标签</h4>
+                <ul class="footer-links">
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 底部版权 -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <span>© 2024 - 2025 奶龙大王.</span>
+                <span>All rights reserved.</span>
+            </div>
+            <div class="footer-info">
+                <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+                <span class="footer-divider">|</span>
+                <span>Theme <a href="#" target="_blank" rel="noopener">Flavor</a></span>
+                
+                <span class="footer-divider">|</span>
+                <span>运行 <span id="running-days">0</span> 天</span>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+    
+<!-- 搜索模态框 -->
+<div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-modal-overlay"></div>
+    <div class="search-container">
+        <div class="search-header">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" 
+                   class="search-input" 
+                   id="search-input" 
+                   placeholder="搜索文章标题、内容..."
+                   autocomplete="off"
+                   autofocus>
+            <div class="search-shortcut">
+                <kbd>ESC</kbd>
+            </div>
+            <button class="search-close" id="search-close" aria-label="关闭搜索">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="search-results" id="search-results">
+            <div class="search-placeholder">
+                <i data-lucide="file-search" class="search-placeholder-icon"></i>
+                <p>输入关键词开始搜索</p>
+                <p class="search-tips">支持搜索文章标题和内容</p>
+            </div>
+        </div>
+        <div class="search-footer">
+            <div class="search-footer-item">
+                <kbd>↑</kbd><kbd>↓</kbd>
+                <span>切换</span>
+            </div>
+            <div class="search-footer-item">
+                <kbd>Enter</kbd>
+                <span>打开</span>
+            </div>
+            <div class="search-footer-item">
+                <kbd>ESC</kbd>
+                <span>关闭</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+<!-- 返回顶部 -->
+<button class="back-to-top" id="back-to-top" aria-label="返回顶部">
+    <i data-lucide="chevron-up"></i>
+    <svg class="back-to-top-progress" viewBox="0 0 46 46">
+        <circle cx="23" cy="23" r="20" fill="none" stroke-width="2" />
+    </svg>
+</button>
+
+
+    <!-- 主题特效容器 -->
+<div id="theme-effects" class="theme-effects"></div>
+
+<!-- Abyss 主题扫描线 -->
+<div class="abyss-scanline" id="abyss-scanline"></div>
+
+<!-- Abyss 主题噪点层 -->
+<div class="abyss-noise" id="abyss-noise"></div>
+
+    <!-- Fancybox -->
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+
+<!-- 主脚本 -->
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/theme-switcher.js"></script>
+
+
+<script src="/js/navigation.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+
 <script src="/js/main.js"></script>
 
-  <!-- 额外的脚本 -->
 
-<!-- Prism.js 代码高亮 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js"></script>
+<!-- 初始化 Lucide 图标 -->
+<script>
+    lucide.createIcons();
+</script>
 
-<!-- 本地搜索 -->
+<!-- 运行天数计算 -->
 
 <script>
-(function() {
-  const searchInput = document.querySelector('.search-input');
-  const searchResults = document.querySelector('.search-results');
-  let searchData = null;
-
-  // 加载搜索数据
-  async function loadSearchData() {
-    if (searchData) return searchData;
-    try {
-      const response = await fetch('/search.json');
-      searchData = await response.json();
-      return searchData;
-    } catch (error) {
-      console.error('加载搜索数据失败:', error);
-      return [];
-    }
-  }
-
-  // 搜索
-  async function search(query) {
-    if (!query.trim()) {
-      searchResults.innerHTML = `
-        <div class="search-empty">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <p>输入关键词开始搜索</p>
-        </div>
-      `;
-      return;
-    }
-
-    const data = await loadSearchData();
-    const keywords = query.toLowerCase().split(/\s+/);
-    
-    const results = data.filter(item => {
-      const title = (item.title || '').toLowerCase();
-      const content = (item.content || '').toLowerCase();
-      return keywords.some(keyword => 
-        title.includes(keyword) || content.includes(keyword)
-      );
-    }).slice(0, 10);
-
-    if (results.length === 0) {
-      searchResults.innerHTML = `
-        <div class="search-empty">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <p>没有找到相关内容</p>
-        </div>
-      `;
-      return;
-    }
-
-    searchResults.innerHTML = results.map(item => {
-      const title = highlightKeywords(item.title, keywords);
-      const excerpt = getExcerpt(item.content, keywords);
-      return `
-        <a href="${item.url}" class="search-result-item">
-          <div class="search-result-title">${title}</div>
-          <div class="search-result-excerpt">${excerpt}</div>
-        </a>
-      `;
-    }).join('');
-  }
-
-  // 高亮关键词
-  function highlightKeywords(text, keywords) {
-    if (!text) return '';
-    let result = text;
-    keywords.forEach(keyword => {
-      const regex = new RegExp(`(${escapeRegex(keyword)})`, 'gi');
-      result = result.replace(regex, '<mark>$1</mark>');
-    });
-    return result;
-  }
-
-  // 获取摘要
-  function getExcerpt(content, keywords) {
-    if (!content) return '';
-    const plainText = content.replace(/<[^>]+>/g, '');
-    
-    // 找到第一个关键词的位置
-    let startIndex = 0;
-    for (const keyword of keywords) {
-      const index = plainText.toLowerCase().indexOf(keyword.toLowerCase());
-      if (index !== -1) {
-        startIndex = Math.max(0, index - 50);
-        break;
-      }
-    }
-    
-    let excerpt = plainText.substring(startIndex, startIndex + 150);
-    if (startIndex > 0) excerpt = '...' + excerpt;
-    if (startIndex + 150 < plainText.length) excerpt += '...';
-    
-    return highlightKeywords(excerpt, keywords);
-  }
-
-  // 转义正则特殊字符
-  function escapeRegex(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  }
-
-  // 绑定事件
-  if (searchInput) {
-    let debounceTimer;
-    searchInput.addEventListener('input', (e) => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => {
-        search(e.target.value);
-      }, 300);
-    });
-  }
-})();
+    (function() {
+        const since = new Date('Mon Jan 01 2024 08:00:00 GMT+0800 (中国标准时间)');
+        const now = new Date();
+        const days = Math.floor((now - since) / (1000 * 60 * 60 * 24));
+        const el = document.getElementById('running-days');
+        if (el) el.textContent = days;
+    })();
 </script>
 
 
-<!-- 分析脚本 -->
+<!-- 自定义 body 代码 -->
 
 
 </body>

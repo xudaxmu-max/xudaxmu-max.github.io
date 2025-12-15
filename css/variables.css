@@ -1,0 +1,137 @@
+/* ============================================
+   CSS Variables - 主题变量系统
+   ============================================ */
+
+:root {
+    /* ========== Minimal Theme (Default) ========== */
+    --bg-primary: #fafafa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f5f5f5;
+    --bg-code: #f8f8f8;
+    
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+    --text-light: #aaaaaa;
+    
+    --accent: #000000;
+    --accent-light: #333333;
+    --accent-rgb: 0, 0, 0;
+    
+    --border: #e8e8e8;
+    --border-light: #f0f0f0;
+    
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+    --shadow-xl: 0 20px 60px rgba(0,0,0,0.1);
+    
+    --radius-sm: 2px;
+    --radius: 4px;
+    --radius-lg: 8px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+    
+    /* 字体 */
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    --font-display: 'DM Sans', var(--font-sans);
+    --font-chinese: 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    
+    /* 间距 */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    
+    /* 布局 */
+    --container-width: 1200px;
+    --container-narrow: 800px;
+    --nav-height: 72px;
+    --sidebar-width: 280px;
+    
+    /* 过渡 */
+    --transition-fast: 0.15s ease;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Z-index 层级 */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+}
+
+/* ========== Serene Theme (清新文艺) ========== */
+[data-theme="serene"] {
+    --bg-primary: #fdf8f4;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f9f3ed;
+    --bg-code: #faf6f2;
+    
+    --text-primary: #3d3a36;
+    --text-secondary: #5c5650;
+    --text-muted: #8a837a;
+    --text-light: #b5aca0;
+    
+    --accent: #c4a77d;
+    --accent-light: #d4bc9a;
+    --accent-rgb: 196, 167, 125;
+    
+    --border: #e8e0d8;
+    --border-light: #f0e8e0;
+    
+    --shadow-sm: 0 1px 3px rgba(139,115,85,0.04);
+    --shadow: 0 4px 12px rgba(139,115,85,0.06);
+    --shadow-lg: 0 12px 40px rgba(139,115,85,0.1);
+    --shadow-xl: 0 25px 80px rgba(139,115,85,0.12);
+    
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    
+    --font-display: 'Fraunces', var(--font-serif);
+    --font-sans: 'Source Serif 4', var(--font-serif);
+    --font-chinese: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+}
+
+/* ========== Abyss Theme (深渊地狱) ========== */
+[data-theme="abyss"] {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #0f0f0f;
+    --bg-tertiary: #151515;
+    --bg-code: #1a1a1a;
+    
+    --text-primary: #e8e8e8;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666666;
+    --text-light: #444444;
+    
+    --accent: #ff0000;
+    --accent-light: #ff3333;
+    --accent-rgb: 255, 0, 0;
+    
+    --border: #222222;
+    --border-light: #1a1a1a;
+    
+    --shadow-sm: 0 0 10px rgba(255,0,0,0.05);
+    --shadow: 0 0 20px rgba(255,0,0,0.08);
+    --shadow-lg: 0 0 40px rgba(255,0,0,0.12);
+    --shadow-xl: 0 0 80px rgba(255,0,0,0.15);
+    
+    --radius-sm: 0;
+    --radius: 0;
+    --radius-lg: 2px;
+    --radius-xl: 4px;
+    
+    --font-display: 'Creepster', cursive;
+    --font-chinese: 'Noto Serif SC', serif;
+}
