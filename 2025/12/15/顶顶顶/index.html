@@ -397,7 +397,13 @@
             <!-- 上一篇/下一篇 -->
             <nav class="post-nav fade-in">
                 
-                <div class="post-nav-item prev empty"></div>
+                <a href="/2025/12/16/readme/" class="post-nav-item prev">
+                    <span class="nav-label">
+                        <i data-lucide="chevron-left"></i>
+                        上一篇
+                    </span>
+                    <span class="nav-title">README</span>
+                </a>
                 
                 
                 
@@ -617,7 +623,7 @@
     <script>
         // 1. 【核心修改】设置你的建站时间
         // 请修改这里的日期，格式：YYYY-MM-DD
-        const startDate = new Date("2025-12-01"); 
+        const startDate = new Date("2025-12-15"); 
 
         function updateRunTime() {
             const now = new Date();
@@ -741,7 +747,7 @@
 
 <script>
     (function() {
-        const since = new Date('Mon Jan 01 2024 08:00:00 GMT+0800 (中国标准时间)');
+        const since = new Date('Mon Dec 15 2025 08:00:00 GMT+0800 (中国标准时间)');
         const now = new Date();
         const days = Math.floor((now - since) / (1000 * 60 * 60 * 24));
         const el = document.getElementById('running-days');

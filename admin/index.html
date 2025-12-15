@@ -3,205 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- 标题 -->
-    <title>奶龙大王的博客</title>
-    
-    <!-- SEO Meta -->
-    <meta name="description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-    <meta name="keywords" content="奶龙大王,博客,编程,学习,技术分享">
-    <meta name="author" content="奶龙大王">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="奶龙大王的博客">
-    <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-    <meta property="og:url" content="https://xudaxmu-max.github.io/admin/index.html">
-    <meta property="og:site_name" content="奶龙大王的博客">
-    
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="奶龙大王的博客">
-    <meta name="twitter:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/images/favicon.ico">
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    
-    <!-- Google Fonts -->
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&amp;family=DM+Sans:wght@400;500;700&amp;family=Fraunces:ital,wght@0,400;0,600;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
-    
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Fancybox -->
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
-    
-    
-    <!-- 主样式 -->
-    
-<link rel="stylesheet" href="/css/variables.css">
-
-    
-<link rel="stylesheet" href="/css/base.css">
-
-    
-<link rel="stylesheet" href="/css/components.css">
-
-    
-<link rel="stylesheet" href="/css/layout.css">
-
-    
-<link rel="stylesheet" href="/css/post.css">
-
-    
-<link rel="stylesheet" href="/css/responsive.css">
-
-    
-<link rel="stylesheet" href="/css/themes.css">
-
-    
-<link rel="stylesheet" href="/css/animations.css">
-
-    
-    <!-- RSS -->
-    
-    <link rel="alternate" type="application/rss+xml" title="奶龙大王的博客" href="/atom.xml">
-    
-    
-    <!-- 自定义 head 代码 -->
-    
-    
-    <!-- 阅读进度条 -->
-    
-    <div class="reading-progress">
-        <div class="reading-progress-bar" id="progress-bar"></div>
-    </div>
-    
-<meta name="generator" content="Hexo 8.1.1"></head>
-
-<body data-theme="minimal">
-    
-<!-- 页面加载动画 -->
-<div class="page-loading" id="page-loading">
-    <div class="loading-content">
-        <div class="loading-spinner">
-            <div class="spinner-ring"></div>
-            <div class="spinner-ring"></div>
-            <div class="spinner-ring"></div>
-        </div>
-        <p class="loading-text">Loading...</p>
-    </div>
-</div>
-
-
-    <!-- 主题切换器 -->
-<div class="theme-switcher" id="theme-switcher">
-    <button class="theme-btn" data-theme="minimal" title="简约现代" aria-label="切换到简约现代主题">
-        <span class="theme-btn-inner minimal-icon"></span>
-    </button>
-    <button class="theme-btn" data-theme="serene" title="清新文艺" aria-label="切换到清新文艺主题">
-        <span class="theme-btn-inner serene-icon"></span>
-    </button>
-    <button class="theme-btn" data-theme="abyss" title="深渊地狱" aria-label="切换到深渊地狱主题">
-        <span class="theme-btn-inner abyss-icon"></span>
-    </button>
-</div>
-
-    <!-- 导航栏 -->
-<header class="nav" id="navbar">
-    <div class="nav-container">
-        <!-- Logo -->
-        <a href="/" class="nav-logo">
-            
-            HUAZAI
-            
-        </a>
-        
-        <!-- 导航菜单 -->
-        <nav class="nav-menu" id="nav-menu">
-            <ul class="nav-links">
-                
-                <li>
-                    <a href="/" class="">
-                        首页
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="/archives" class="">
-                        文章
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="/categories" class="">
-                        分类
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="/tags" class="">
-                        标签
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="/guestbook" class="">
-                        留言板
-                    </a>
-                </li>
-                
-            </ul>
-        </nav>
-        
-        <!-- 右侧操作 -->
-        <div class="nav-actions">
-            <!-- 搜索按钮 -->
-            
-            <button class="nav-btn search-toggle" id="search-toggle" aria-label="搜索">
-                <i data-lucide="search"></i>
-            </button>
-            
-            
-            <!-- 移动端菜单按钮 -->
-            <button class="nav-btn menu-toggle" id="menu-toggle" aria-label="菜单">
-                <i data-lucide="menu" id="menu-icon"></i>
-            </button>
-        </div>
-    </div>
-</header>
-
-<!-- 移动端菜单遮罩 -->
-<div class="nav-overlay" id="nav-overlay"></div>
-
-    
-    <main class="main-content">
-        <!-- 独立页面 (关于页等) -->
-<div class="page">
-    <div class="container">
-        <article class="page-content">
-            <!-- 页面头部 -->
-            <header class="page-header fade-in">
-                
-            </header>
-            
-            <!-- 如果是关于页面，显示特殊布局 -->
-            
-            <!-- 普通页面内容 -->
-            <div class="page-body fade-in">
-                <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MuseWriter - 博客后台管理</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -281,7 +82,6 @@
             transition: all 0.4s ease;
         }
 
-        /* Canvas Background */
         #bgCanvas {
             position: fixed;
             top: 0;
@@ -292,7 +92,6 @@
             pointer-events: none;
         }
 
-        /* App Layout */
         .app-wrapper {
             position: relative;
             z-index: 10;
@@ -402,7 +201,6 @@
             font-weight: 600;
         }
 
-        /* Sidebar Footer - Theme Switcher */
         .sidebar-footer {
             padding: 1rem;
             border-top: 1px solid var(--border);
@@ -436,7 +234,6 @@
             box-shadow: 0 0 0 3px var(--bg-secondary);
         }
 
-        /* User Card */
         .user-card {
             display: flex;
             align-items: center;
@@ -485,7 +282,6 @@
             overflow: hidden;
         }
 
-        /* Top Toolbar */
         .top-toolbar {
             background: var(--card-bg);
             backdrop-filter: blur(20px);
@@ -599,13 +395,6 @@
             background: var(--card-bg);
             color: var(--primary);
             transform: translateY(-1px);
-        }
-
-        .tool-btn-text {
-            width: auto;
-            padding: 0 0.75rem;
-            font-size: 0.8rem;
-            font-weight: 600;
         }
 
         /* Editor Content */
@@ -820,6 +609,7 @@
             justify-content: center;
             font-size: 1.1rem;
             color: white;
+            flex-shrink: 0;
         }
 
         .toast.success .toast-icon { background: linear-gradient(135deg, #10b981, #34d399); }
@@ -925,6 +715,7 @@
         .modal-body {
             padding: 1.5rem;
             overflow-y: auto;
+            max-height: 60vh;
         }
 
         .modal-footer {
@@ -1000,6 +791,7 @@
             justify-content: center;
             margin-right: 1rem;
             color: var(--primary);
+            flex-shrink: 0;
         }
 
         .post-info {
@@ -1026,6 +818,7 @@
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
+            flex-shrink: 0;
         }
 
         .post-status.published {
@@ -1067,7 +860,6 @@
             background: #ef4444;
         }
 
-        /* Search Box */
         .search-box {
             position: relative;
             margin-bottom: 1rem;
@@ -1096,7 +888,7 @@
             color: var(--text-secondary);
         }
 
-        /* Login Mask */
+        /* Login Mask - 默认隐藏 */
         .login-mask {
             position: fixed;
             inset: 0;
@@ -1145,7 +937,6 @@
             box-shadow: 0 15px 50px rgba(0,0,0,0.2);
         }
 
-        /* Loading Spinner */
         .spinner {
             width: 18px;
             height: 18px;
@@ -1159,12 +950,38 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Hidden File Input */
         .hidden-input {
             display: none;
         }
 
-        /* Scrollbar */
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -1183,12 +1000,11 @@
             background: var(--primary);
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
             .sidebar {
                 width: 70px;
             }
-            .logo-text, .nav-section-title, .user-info, .theme-grid span {
+            .logo-text, .nav-section-title, .user-info {
                 display: none;
             }
             .nav-item span {
@@ -1205,6 +1021,9 @@
             .nav-badge {
                 display: none;
             }
+            .theme-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1215,11 +1034,20 @@
                 border-right: none;
                 border-bottom: 1px solid var(--border);
             }
+            .action-btns span {
+                display: none;
+            }
         }
     </style>
 </head>
 <body class="theme-sunflower">
     <canvas id="bgCanvas"></canvas>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p style="color: var(--text-secondary);">正在加载...</p>
+    </div>
 
     <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
@@ -1234,7 +1062,7 @@
         </button>
     </div>
 
-    <div class="app-wrapper">
+    <div class="app-wrapper" id="appWrapper" style="display: none;">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -1245,7 +1073,6 @@
             </div>
 
             <nav class="sidebar-nav">
-                <!-- User Card -->
                 <div class="user-card">
                     <div class="user-avatar" id="userAvatar">U</div>
                     <div class="user-info">
@@ -1256,11 +1083,11 @@
 
                 <div class="nav-section">
                     <div class="nav-section-title">写作</div>
-                    <button class="nav-item active" onclick="createNew()">
+                    <button class="nav-item active" onclick="createNew(); setActiveNav(this);">
                         <i class="fa-solid fa-plus"></i>
                         <span>新建文章</span>
                     </button>
-                    <button class="nav-item" onclick="openHistoryModal()">
+                    <button class="nav-item" onclick="openHistoryModal(); setActiveNav(this);">
                         <i class="fa-solid fa-folder-open"></i>
                         <span>文章管理</span>
                         <span class="nav-badge" id="postCount">0</span>
@@ -1291,13 +1118,13 @@
             <div class="sidebar-footer">
                 <div class="nav-section-title">主题切换</div>
                 <div class="theme-grid">
-                    <div class="theme-dot active" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);" 
+                    <div class="theme-dot active" data-theme="sunflower" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);" 
                          onclick="switchTheme('sunflower')" title="向日葵">🌻</div>
-                    <div class="theme-dot" style="background: linear-gradient(135deg, #6366f1, #818cf8);" 
+                    <div class="theme-dot" data-theme="starry" style="background: linear-gradient(135deg, #6366f1, #818cf8);" 
                          onclick="switchTheme('starry')" title="星空">✨</div>
-                    <div class="theme-dot" style="background: linear-gradient(135deg, #6b7280, #9ca3af);" 
+                    <div class="theme-dot" data-theme="minimal" style="background: linear-gradient(135deg, #6b7280, #9ca3af);" 
                          onclick="switchTheme('minimal')" title="简约">◆</div>
-                    <div class="theme-dot" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);" 
+                    <div class="theme-dot" data-theme="night" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);" 
                          onclick="switchTheme('night')" title="夜间">🌙</div>
                 </div>
             </div>
@@ -1305,7 +1132,6 @@
 
         <!-- Main Content -->
         <main class="main-area">
-            <!-- Top Toolbar -->
             <header class="top-toolbar">
                 <div class="title-input-wrapper">
                     <input type="text" class="title-input" id="postTitle" placeholder="输入文章标题...">
@@ -1322,7 +1148,6 @@
                 </div>
             </header>
 
-            <!-- Markdown Toolbar -->
             <div class="md-toolbar">
                 <button class="tool-btn" onclick="insertMD('**', '**')" title="粗体 (Ctrl+B)">
                     <i class="fa-solid fa-bold"></i>
@@ -1374,7 +1199,6 @@
                 </button>
             </div>
 
-            <!-- Editor Content -->
             <div class="editor-content">
                 <div class="editor-pane">
                     <div class="pane-header">
@@ -1408,7 +1232,6 @@
                 </div>
             </div>
 
-            <!-- Status Bar -->
             <footer class="status-bar">
                 <div class="status-item">
                     <div class="status-dot" id="statusDot"></div>
@@ -1490,39 +1313,99 @@
     </div>
 
     <script>
-        // ========== 配置 ==========
+        // ==================== 配置 ====================
+        // ⚠️ 使用您自己的 Supabase 配置
         const SB_URL = 'https://jggjfgephkhgsqgdzmtj.supabase.co';
-        const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnZ2pmZ2VwaGtoZ3NxZ2R6bXRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk4ODI0MzIsImV4cCI6MjA2NTQ1ODQzMn0.RE0KxEP88ufHOl9RdMCXHzWlRlGV7YRj0xViqw8Q3LE';
-        const supabase = window.supabase.createClient(SB_URL, SB_KEY);
+        const SB_KEY = 'sb_publishable_56Gw-14c14uliBmGkh4byA_hmhDOBXi';
+        
+        // 创建 Supabase 客户端，确保正确处理 session
+        const supabase = window.supabase.createClient(SB_URL, SB_KEY, {
+            auth: {
+                autoRefreshToken: true,
+                persistSession: true,
+                detectSessionInUrl: true
+            }
+        });
 
-        // ========== 状态变量 ==========
+        // ==================== 状态变量 ====================
         let currentPostId = null;
         let currentTheme = 'sunflower';
         let isPublishing = true;
         let allPosts = [];
         let autoSaveTimer = null;
+        let currentUser = null;
 
         const editor = document.getElementById('markdownEditor');
         const preview = document.getElementById('previewContent');
 
-        // ========== 初始化 ==========
-        window.onload = async () => {
+        // ==================== 初始化 ====================
+        async function initApp() {
+            console.log('初始化应用...');
             initCanvas();
+
+            // 监听认证状态变化 - 这是关键！
+            supabase.auth.onAuthStateChange((event, session) => {
+                console.log('Auth 状态变化:', event, session ? '有会话' : '无会话');
+                
+                if (event === 'SIGNED_IN' && session) {
+                    console.log('用户已登录');
+                    currentUser = session.user;
+                    showApp(session.user);
+                } else if (event === 'SIGNED_OUT') {
+                    console.log('用户已退出');
+                    currentUser = null;
+                    showLogin();
+                } else if (event === 'TOKEN_REFRESHED') {
+                    console.log('Token 已刷新');
+                } else if (event === 'INITIAL_SESSION') {
+                    // 初始会话检查
+                    if (session) {
+                        console.log('发现已有会话');
+                        currentUser = session.user;
+                        showApp(session.user);
+                    } else {
+                        console.log('无会话，显示登录');
+                        showLogin();
+                    }
+                }
+            });
+
+            // 先获取当前会话状态
+            const { data: { session }, error } = await supabase.auth.getSession();
+            console.log('获取会话:', session ? '成功' : '无会话', error || '');
             
-            // 检查登录状态
-            const { data: { session } } = await supabase.auth.getSession();
-            if (!session) {
-                document.getElementById('loginMask').classList.add('show');
+            if (session) {
+                currentUser = session.user;
+                showApp(session.user);
             } else {
-                updateUserInfo(session.user);
-                loadPostCount();
+                showLogin();
             }
+
+            // 隐藏加载
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 500);
 
             // 加载本地草稿
             loadLocalDraft();
-        };
+        }
 
-        // ========== Canvas 背景动画 ==========
+        function showApp(user) {
+            document.getElementById('loginMask').classList.remove('show');
+            document.getElementById('appWrapper').style.display = 'flex';
+            updateUserInfo(user);
+            loadPostCount();
+        }
+
+        function showLogin() {
+            document.getElementById('loginMask').classList.add('show');
+            document.getElementById('appWrapper').style.display = 'none';
+        }
+
+        // 页面加载时初始化
+        window.onload = initApp;
+
+        // ==================== Canvas 背景动画 ====================
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -1567,7 +1450,6 @@
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // Draw background gradient
             const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
             if (currentTheme === 'sunflower') {
                 gradient.addColorStop(0, '#fef3c7');
@@ -1601,25 +1483,21 @@
                 ctx.globalAlpha = p.opacity;
 
                 if (currentTheme === 'sunflower') {
-                    // 向日葵花瓣
                     ctx.fillStyle = ['#fbbf24', '#f59e0b', '#d97706'][index % 3];
                     ctx.beginPath();
                     ctx.ellipse(0, 0, p.size * 2, p.size * 4, 0, 0, Math.PI * 2);
                     ctx.fill();
                 } else if (currentTheme === 'starry') {
-                    // 星星
                     ctx.fillStyle = '#ffffff';
                     ctx.beginPath();
                     ctx.arc(0, 0, p.size, 0, Math.PI * 2);
                     ctx.fill();
                 } else if (currentTheme === 'night') {
-                    // 紫色光点
                     ctx.fillStyle = '#8b5cf6';
                     ctx.beginPath();
                     ctx.arc(0, 0, p.size, 0, Math.PI * 2);
                     ctx.fill();
                 } else {
-                    // 几何图形
                     ctx.strokeStyle = '#9ca3af';
                     ctx.lineWidth = 1;
                     ctx.beginPath();
@@ -1633,16 +1511,14 @@
             requestAnimationFrame(animate);
         }
 
-        // ========== 主题切换 ==========
+        // ==================== 主题切换 ====================
         function switchTheme(theme) {
             currentTheme = theme;
             document.body.className = `theme-${theme}`;
             
-            // 更新主题按钮状态
             document.querySelectorAll('.theme-dot').forEach(dot => {
-                dot.classList.remove('active');
+                dot.classList.toggle('active', dot.dataset.theme === theme);
             });
-            event.target.classList.add('active');
             
             createParticles();
             showToast('success', '主题已切换', `已切换到${getThemeName(theme)}主题`);
@@ -1653,7 +1529,7 @@
             return names[theme] || theme;
         }
 
-        // ========== Toast 通知系统 ==========
+        // ==================== Toast 通知系统 ====================
         function showToast(type, title, message, duration = 4000) {
             const container = document.getElementById('toastContainer');
             const toast = document.createElement('div');
@@ -1681,39 +1557,69 @@
             
             container.appendChild(toast);
             
-            // 触发动画
             setTimeout(() => toast.classList.add('show'), 10);
             
-            // 自动移除
             setTimeout(() => {
                 toast.classList.remove('show');
                 setTimeout(() => toast.remove(), 300);
             }, duration);
         }
 
-        // ========== 认证相关 ==========
+        // ==================== 认证相关 ====================
         async function doLogin() {
-            await supabase.auth.signInWithOAuth({
+            console.log('开始登录...');
+            const { data, error } = await supabase.auth.signInWithOAuth({
                 provider: 'github',
-                options: { redirectTo: window.location.href }
+                options: { 
+                    redirectTo: window.location.origin + window.location.pathname
+                }
             });
+            
+            if (error) {
+                console.error('登录错误:', error);
+                showToast('error', '登录失败', error.message);
+            }
         }
 
         async function handleLogout() {
             if (!confirm('确定要退出登录吗？')) return;
-            await supabase.auth.signOut();
-            location.reload();
+            
+            const { error } = await supabase.auth.signOut();
+            if (error) {
+                showToast('error', '退出失败', error.message);
+            } else {
+                showToast('info', '已退出', '您已成功退出登录');
+                showLogin();
+            }
         }
 
         function updateUserInfo(user) {
-            const name = user.user_metadata?.user_name || user.email?.split('@')[0] || 'User';
+            if (!user) return;
+            const name = user.user_metadata?.user_name || 
+                        user.user_metadata?.name || 
+                        user.email?.split('@')[0] || 
+                        'User';
             document.getElementById('userName').textContent = name;
             document.getElementById('userAvatar').textContent = name.charAt(0).toUpperCase();
         }
 
-        // ========== 文章管理 ==========
+        // ==================== 导航栏 ====================
+        function setActiveNav(element) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+
+        // ==================== 文章管理 ====================
         function createNew() {
-            if (editor.value.trim() && !confirm('当前内容未保存，确定要新建吗？')) return;
+            if (editor.value.trim() && currentPostId === null) {
+                // 新文章有内容时询问
+            } else if (editor.value.trim() && !confirm('当前内容未保存，确定要新建吗？')) {
+                return;
+            }
             
             currentPostId = null;
             document.getElementById('postTitle').value = '';
@@ -1724,16 +1630,21 @@
             updatePreview();
             updateStats();
             
-            // 更新侧边栏状态
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            document.querySelector('.nav-item').classList.add('active');
-            
             showToast('info', '新文章', '已创建新的空白文章');
         }
 
         async function loadPostCount() {
-            const { count } = await supabase.from('posts').select('*', { count: 'exact', head: true });
-            document.getElementById('postCount').textContent = count || 0;
+            try {
+                const { count, error } = await supabase
+                    .from('posts')
+                    .select('*', { count: 'exact', head: true });
+                
+                if (!error) {
+                    document.getElementById('postCount').textContent = count || 0;
+                }
+            } catch (e) {
+                console.error('获取文章数量失败:', e);
+            }
         }
 
         async function openHistoryModal() {
@@ -1745,18 +1656,20 @@
             const list = document.getElementById('postList');
             list.innerHTML = '<div style="text-align: center; padding: 3rem;"><i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem;"></i></div>';
             
-            const { data, error } = await supabase
-                .from('posts')
-                .select('id, title, published, updated_at, categories')
-                .order('updated_at', { ascending: false });
-            
-            if (error) {
-                list.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--error);">加载失败</div>';
-                return;
+            try {
+                const { data, error } = await supabase
+                    .from('posts')
+                    .select('id, title, published, updated_at, categories')
+                    .order('updated_at', { ascending: false });
+                
+                if (error) throw error;
+                
+                allPosts = data || [];
+                renderPosts(allPosts);
+            } catch (e) {
+                console.error('加载文章失败:', e);
+                list.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--error);">加载失败: ' + e.message + '</div>';
             }
-            
-            allPosts = data || [];
-            renderPosts(allPosts);
         }
 
         function renderPosts(posts) {
@@ -1778,7 +1691,7 @@
                         <i class="fa-regular fa-file-lines"></i>
                     </div>
                     <div class="post-info">
-                        <div class="post-title">${post.title || '无标题'}</div>
+                        <div class="post-title">${escapeHtml(post.title || '无标题')}</div>
                         <div class="post-meta">
                             ${post.categories?.[0] || '未分类'} · ${formatDate(post.updated_at)}
                         </div>
@@ -1804,39 +1717,40 @@
         }
 
         async function loadPost(id) {
-            const { data, error } = await supabase
-                .from('posts')
-                .select('*')
-                .eq('id', id)
-                .single();
-            
-            if (error) {
-                showToast('error', '加载失败', error.message);
-                return;
+            try {
+                const { data, error } = await supabase
+                    .from('posts')
+                    .select('*')
+                    .eq('id', id)
+                    .single();
+                
+                if (error) throw error;
+                
+                currentPostId = data.id;
+                document.getElementById('postTitle').value = data.title || '';
+                editor.value = data.content || '';
+                document.getElementById('postSlug').value = data.slug || '';
+                document.getElementById('postCategory').value = data.categories?.[0] || '文章';
+                document.getElementById('postTags').value = data.tags?.join(', ') || '';
+                
+                updatePreview();
+                updateStats();
+                closeModal('historyModal');
+                
+                showToast('success', '文章已加载', `正在编辑: ${data.title}`);
+            } catch (e) {
+                showToast('error', '加载失败', e.message);
             }
-            
-            currentPostId = data.id;
-            document.getElementById('postTitle').value = data.title || '';
-            editor.value = data.content || '';
-            document.getElementById('postSlug').value = data.slug || '';
-            document.getElementById('postCategory').value = data.categories?.[0] || '文章';
-            document.getElementById('postTags').value = data.tags?.join(', ') || '';
-            
-            updatePreview();
-            updateStats();
-            closeModal('historyModal');
-            
-            showToast('success', '文章已加载', `正在编辑: ${data.title}`);
         }
 
         async function deletePost(id) {
             if (!confirm('确定要删除这篇文章吗？此操作不可恢复。')) return;
             
-            const { error } = await supabase.from('posts').delete().eq('id', id);
-            
-            if (error) {
-                showToast('error', '删除失败', error.message);
-            } else {
+            try {
+                const { error } = await supabase.from('posts').delete().eq('id', id);
+                
+                if (error) throw error;
+                
                 showToast('success', '删除成功', '文章已永久删除');
                 loadPosts();
                 loadPostCount();
@@ -1844,10 +1758,12 @@
                 if (currentPostId === id) {
                     createNew();
                 }
+            } catch (e) {
+                showToast('error', '删除失败', e.message);
             }
         }
 
-        // ========== 发布/保存 ==========
+        // ==================== 发布/保存 ====================
         function openPublishModal(publish = true) {
             isPublishing = publish;
             document.getElementById('publishModalTitle').textContent = publish ? '发布文章' : '保存草稿';
@@ -1870,34 +1786,34 @@
             btn.disabled = true;
             btnText.innerHTML = '<div class="spinner"></div>';
 
-            const postData = {
-                title,
-                slug: document.getElementById('postSlug').value.trim() || title.toLowerCase().replace(/\s+/g, '-'),
-                content: editor.value,
-                categories: [document.getElementById('postCategory').value],
-                tags: document.getElementById('postTags').value.split(/[,，]/).map(t => t.trim()).filter(t => t),
-                published: isPublishing,
-                updated_at: new Date().toISOString()
-            };
+            try {
+                const postData = {
+                    title,
+                    slug: document.getElementById('postSlug').value.trim() || title.toLowerCase().replace(/\s+/g, '-'),
+                    content: editor.value,
+                    categories: [document.getElementById('postCategory').value],
+                    tags: document.getElementById('postTags').value.split(/[,，]/).map(t => t.trim()).filter(t => t),
+                    published: isPublishing,
+                    updated_at: new Date().toISOString()
+                };
 
-            let result;
-            if (currentPostId) {
-                result = await supabase.from('posts').update(postData).eq('id', currentPostId);
-            } else {
-                result = await supabase.from('posts').insert([postData]).select();
-                if (!result.error && result.data) {
-                    currentPostId = result.data[0].id;
+                let result;
+                if (currentPostId) {
+                    result = await supabase.from('posts').update(postData).eq('id', currentPostId);
+                } else {
+                    result = await supabase.from('posts').insert([postData]).select();
+                    if (!result.error && result.data && result.data[0]) {
+                        currentPostId = result.data[0].id;
+                    }
                 }
-            }
 
-            btn.disabled = false;
-            btnText.textContent = originalText;
+                if (result.error) throw result.error;
 
-            if (result.error) {
-                showToast('error', '保存失败', result.error.message);
-            } else {
                 closeModal('publishModal');
                 loadPostCount();
+                
+                // 清除本地草稿
+                localStorage.removeItem('muse_draft');
                 
                 if (isPublishing) {
                     showToast('success', '🎉 发布成功！', `文章「${title}」已成功发布到博客`);
@@ -1906,31 +1822,40 @@
                 }
                 
                 updateStatus(isPublishing ? '已发布' : '已保存');
+                
+            } catch (e) {
+                console.error('保存失败:', e);
+                showToast('error', '保存失败', e.message);
+            } finally {
+                btn.disabled = false;
+                btnText.textContent = originalText;
             }
         }
 
-        // ========== 图片上传 ==========
+        // ==================== 图片上传 ====================
         async function uploadImage(input) {
             const file = input.files[0];
             if (!file) return;
 
             showToast('info', '上传中...', file.name);
 
-            const fileName = `uploads/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.]/g, '_')}`;
-            const { error } = await supabase.storage.from('images').upload(fileName, file);
+            try {
+                const fileName = `uploads/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.]/g, '_')}`;
+                const { error } = await supabase.storage.from('images').upload(fileName, file);
 
-            if (error) {
-                showToast('error', '上传失败', error.message);
-            } else {
+                if (error) throw error;
+
                 const { data } = supabase.storage.from('images').getPublicUrl(fileName);
                 insertMD(`![${file.name}](${data.publicUrl})`);
                 showToast('success', '上传成功', '图片已插入到编辑器');
+            } catch (e) {
+                showToast('error', '上传失败', e.message);
             }
 
             input.value = '';
         }
 
-        // ========== Markdown 编辑器 ==========
+        // ==================== Markdown 编辑器 ====================
         function insertMD(prefix, suffix = '') {
             const start = editor.selectionStart;
             const end = editor.selectionEnd;
@@ -1941,7 +1866,6 @@
             editor.value = before + prefix + selected + suffix + after;
             editor.focus();
             
-            // 设置光标位置
             const newPos = start + prefix.length + selected.length + suffix.length;
             editor.setSelectionRange(newPos, newPos);
             
@@ -1984,15 +1908,18 @@
             document.getElementById('saveStatus').textContent = status;
         }
 
-        // 实时预览
         editor.addEventListener('input', updatePreview);
 
-        // ========== 自动保存 ==========
+        // ==================== 自动保存 ====================
         function scheduleAutoSave() {
             if (autoSaveTimer) clearTimeout(autoSaveTimer);
             
+            document.getElementById('statusDot').classList.add('saving');
+            updateStatus('编辑中...');
+            
             autoSaveTimer = setTimeout(() => {
                 saveLocalDraft();
+                document.getElementById('statusDot').classList.remove('saving');
             }, 2000);
         }
 
@@ -2000,6 +1927,7 @@
             const draft = {
                 title: document.getElementById('postTitle').value,
                 content: editor.value,
+                postId: currentPostId,
                 timestamp: Date.now()
             };
             localStorage.setItem('muse_draft', JSON.stringify(draft));
@@ -2009,20 +1937,24 @@
         function loadLocalDraft() {
             const saved = localStorage.getItem('muse_draft');
             if (saved) {
-                const draft = JSON.parse(saved);
-                // 如果草稿不到24小时，询问是否恢复
-                if (Date.now() - draft.timestamp < 24 * 60 * 60 * 1000) {
-                    if (confirm('发现未保存的草稿，是否恢复？')) {
-                        document.getElementById('postTitle').value = draft.title || '';
-                        editor.value = draft.content || '';
-                        updatePreview();
-                        showToast('info', '草稿已恢复', '本地草稿已加载');
+                try {
+                    const draft = JSON.parse(saved);
+                    if (Date.now() - draft.timestamp < 24 * 60 * 60 * 1000 && draft.content) {
+                        if (confirm('发现未保存的草稿，是否恢复？')) {
+                            document.getElementById('postTitle').value = draft.title || '';
+                            editor.value = draft.content || '';
+                            currentPostId = draft.postId || null;
+                            updatePreview();
+                            showToast('info', '草稿已恢复', '本地草稿已加载');
+                        }
                     }
+                } catch (e) {
+                    console.error('加载草稿失败:', e);
                 }
             }
         }
 
-        // ========== 导入导出 ==========
+        // ==================== 导入导出 ====================
         function importMD(input) {
             const file = input.files[0];
             if (!file) return;
@@ -2057,13 +1989,14 @@
             showToast('success', '导出成功', `已导出: ${title}.md`);
         }
 
-        // ========== 模态框控制 ==========
+        // ==================== 模态框控制 ====================
         function closeModal(id) {
             document.getElementById(id).classList.remove('show');
         }
 
-        // ========== 工具函数 ==========
+        // ==================== 工具函数 ====================
         function formatDate(dateStr) {
+            if (!dateStr) return '未知';
             const date = new Date(dateStr);
             const now = new Date();
             const diff = now - date;
@@ -2076,7 +2009,13 @@
             return date.toLocaleDateString('zh-CN');
         }
 
-        // ========== 键盘快捷键 ==========
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // ==================== 键盘快捷键 ====================
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey || e.metaKey) {
                 switch(e.key.toLowerCase()) {
@@ -2092,10 +2031,6 @@
                         e.preventDefault();
                         openPublishModal(false);
                         break;
-                    case 'enter':
-                        e.preventDefault();
-                        openPublishModal(true);
-                        break;
                 }
             }
         });
@@ -2103,354 +2038,5 @@
         // 初始化预览
         updatePreview();
     </script>
-</body>
-</html>
-            </div>
-            
-            
-            <!-- 评论 -->
-            
-            
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<style>
-    /* 两种风格的 CSS 变量 */
-    :root { 
-        --c-primary: #2563eb; 
-        --vg-yellow: #ffde38; 
-        --vg-blue: #1a1a2e;
-    }
-    
-    /* 通用容器 */
-    .comments-wrapper { margin-top: 50px; padding-top: 30px; border-top: 1px dashed #e2e8f0; }
-    
-    /* 风格A: 梵高便当盒 (仅用于留言板) */
-    .style-bento .input-box { border: 3px solid var(--vg-blue); box-shadow: 6px 6px 0 var(--vg-yellow); background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 30px; }
-    .style-bento .bento-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; grid-auto-flow: dense; }
-    .style-bento .bento-card { background: #fff; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9; transition: transform 0.2s; }
-    .style-bento .bento-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .style-bento .bento-card.highlight { background: var(--vg-blue); color: #fff; grid-row: span 2; }
-    
-    /* 风格B: 文章评论列表 (仅用于普通文章) */
-    .style-list .input-box { background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
-    .style-list .input-box textarea { width: 100%; border: 1px solid #cbd5e1; padding: 10px; border-radius: 6px; min-height: 80px; margin-bottom: 10px; }
-    .style-list .comment-item { display: flex; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px; }
-    .style-list .avatar { width: 40px; height: 40px; border-radius: 50%; background: #e2e8f0; flex-shrink: 0; }
-    .style-list .meta { font-size: 0.85em; color: #64748b; margin-bottom: 5px; }
-    .style-list .content { color: #334155; line-height: 1.6; font-size: 0.95em; }
-    
-    /* 通用按钮 */
-    .btn-send { background: var(--c-primary); color: white; border: none; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 0.9em; }
-    .btn-send:hover { opacity: 0.9; }
-</style>
-
-<div class="comments-wrapper style-list">
-    
-    <h3 style="margin-bottom: 20px; font-weight: bold; color: #334155;">
-        💬 评论区
-    </h3>
-
-    <div class="input-box">
-        
-        <div style="display:flex; gap:10px; margin-bottom:10px;">
-            <input id="c-nick" type="text" placeholder="昵称" style="border:1px solid #cbd5e1; padding:8px; border-radius:6px; flex:1;">
-        </div>
-        <textarea id="c-content" placeholder="对这篇文章有何高见？"></textarea>
-        <div style="text-align: right;">
-            <button class="btn-send" onclick="sendComment()">发送</button>
-        </div>
-    </div>
-
-    <div id="comment-container" class="">
-        <div style="text-align:center; color:#94a3b8; padding: 20px;">加载中...</div>
-    </div>
-</div>
-
-<script>
-    const SB_URL = 'https://jggjfgephkhgsqgdzmtj.supabase.co';
-    const SB_KEY = 'sb_publishable_56Gw-14c14uliBmGkh4byA_hmhDOBXi';
-    const supabase = window.supabase.createClient(SB_URL, SB_KEY);
-    
-    // 关键：判断当前是哪篇文章。如果是留言板，slug 定死为 'guestbook'
-    // 如果是普通文章，slug 使用 Hexo 生成的 page.slug，如果为空则用 location.pathname
-    const CURRENT_SLUG = "admin/index.html";
-    const IS_BENTO = "false" === "true";
-
-    async function loadComments() {
-        // 根据 slug 过滤评论
-        const { data, error } = await supabase
-            .from('comments')
-            .select('*')
-            .eq('post_slug', CURRENT_SLUG) // 核心过滤逻辑
-            .order('created_at', { ascending: false });
-
-        const container = document.getElementById('comment-container');
-        container.innerHTML = '';
-
-        if(!data || data.length === 0) {
-            container.innerHTML = '<div style="text-align:center; color:#cbd5e1; grid-column:1/-1;">还没有评论，抢沙发！</div>';
-            return;
-        }
-
-        data.forEach((item, index) => {
-            const date = new Date(item.created_at).toLocaleDateString();
-            const avatar = `https://api.dicebear.com/7.x/notionists/svg?seed=${item.nickname || 'user'}`;
-            
-            let html = '';
-            if(IS_BENTO) {
-                // 梵高 Bento 风格
-                const isHighlight = index % 7 === 0 ? 'highlight' : '';
-                html = `
-                    <div class="bento-card ${isHighlight}">
-                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
-                            <img src="${avatar}" style="width:24px; height:24px; border-radius:50%;">
-                            <span style="font-weight:bold; font-size:0.9em;">${escape(item.nickname)}</span>
-                        </div>
-                        <div style="font-size:0.95em; line-height:1.5;">${escape(item.content)}</div>
-                        <div style="font-size:0.7em; opacity:0.6; margin-top:10px; text-align:right;">${date}</div>
-                    </div>
-                `;
-            } else {
-                // 普通文章列表风格
-                html = `
-                    <div class="comment-item">
-                        <img class="avatar" src="${avatar}">
-                        <div style="flex:1;">
-                            <div class="meta">
-                                <span style="font-weight:bold; color:#334155; margin-right:10px;">${escape(item.nickname)}</span>
-                                <span>${date}</span>
-                            </div>
-                            <div class="content">${escape(item.content)}</div>
-                        </div>
-                    </div>
-                `;
-            }
-            container.insertAdjacentHTML('beforeend', html);
-        });
-    }
-
-    async function sendComment() {
-        const nick = document.getElementById('c-nick').value || '匿名';
-        const content = document.getElementById('c-content').value;
-        if(!content.trim()) return alert('内容不能为空');
-
-        const { error } = await supabase.from('comments').insert([{
-            nickname: nick,
-            content: content,
-            post_slug: CURRENT_SLUG, // 存入当前文章的标识
-            avatar_seed: Math.random().toString()
-        }]);
-
-        if(error) alert('发送失败');
-        else {
-            document.getElementById('c-content').value = '';
-            loadComments();
-        }
-    }
-
-    function escape(str) {
-        if(!str) return '';
-        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    }
-
-    loadComments();
-</script>
-
-            
-        </article>
-    </div>
-</div>
-
-    </main>
-    
-    <footer class="footer" style="position: relative;">
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="/" class="footer-logo">
-                    奶龙大王的博客
-                </a>
-                <p class="footer-desc">都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！</p>
-                
-                <div class="live-info" style="margin-top: 15px; font-size: 0.85em; color: #888; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
-                    <div id="live-clock"><i class="fa fa-clock-o"></i> 加载时间...</div>
-                    <div id="live-weather" style="margin-top: 5px;"><i class="fa fa-cloud"></i> 加载天气...</div>
-                </div>
-            </div>
-            
-            <div class="footer-links-group">
-                <h4 class="footer-title">导航</h4>
-                <ul class="footer-links">
-                    <li><a href="/">首页</a></li>
-                    <li><a href="/archives/">归档</a></li>
-                    <li><a href="/tags/">标签</a></li>
-                    <li><a href="/categories/">分类</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links-group">
-                <h4 class="footer-title">管理</h4>
-                <ul class="footer-links">
-                    <li>
-                        <a href="/admin/" target="_blank" style="color: #d63031; font-weight: bold;">
-                            <i class="fa fa-lock"></i> 博主登录
-                        </a>
-                    </li>
-                    <li><a href="/admin/" target="_blank">发布文章</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom" style="flex-direction: column; align-items: center; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px;">
-            <div class="footer-copyright">
-                <span>&copy; 2025 奶龙大王. All rights reserved.</span>
-            </div>
-            
-            <div class="footer-info" style="margin-top: 5px; font-size: 0.85em;">
-                <span>Powered by Hexo</span>
-                <span class="footer-divider">|</span>
-                <span>本站已安全运行 <span id="running-days" style="font-weight:bold; color: #0984e3;">0</span> 天</span>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // 1. 【核心修改】设置你的建站时间
-        // 请修改这里的日期，格式：YYYY-MM-DD
-        const startDate = new Date("2025-12-01"); 
-
-        function updateRunTime() {
-            const now = new Date();
-            const diff = now - startDate;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            // 防止显示负数（如果是未来日期）
-            document.getElementById('running-days').innerText = days > 0 ? days : 1;
-            
-            // 实时时钟
-            const timeStr = now.toLocaleString('zh-CN', { hour12: false });
-            const clockEl = document.getElementById('live-clock');
-            if(clockEl) clockEl.innerText = "当前时间: " + timeStr;
-        }
-        setInterval(updateRunTime, 1000);
-        updateRunTime();
-
-        // 2. 天气接口 (使用 wttr.in)
-        fetch('https://wttr.in/?format=%C+%t')
-            .then(res => res.text())
-            .then(text => {
-                const weatherEl = document.getElementById('live-weather');
-                if(weatherEl) weatherEl.innerText = '当前天气: ' + text;
-            })
-            .catch(err => console.log('Weather load failed'));
-    </script>
-</footer>
-    
-<!-- 搜索模态框 -->
-<div class="search-modal" id="search-modal">
-    <div class="search-modal-overlay" id="search-modal-overlay"></div>
-    <div class="search-container">
-        <div class="search-header">
-            <i data-lucide="search" class="search-icon"></i>
-            <input type="text" 
-                   class="search-input" 
-                   id="search-input" 
-                   placeholder="搜索文章标题、内容..."
-                   autocomplete="off"
-                   autofocus>
-            <div class="search-shortcut">
-                <kbd>ESC</kbd>
-            </div>
-            <button class="search-close" id="search-close" aria-label="关闭搜索">
-                <i data-lucide="x"></i>
-            </button>
-        </div>
-        <div class="search-results" id="search-results">
-            <div class="search-placeholder">
-                <i data-lucide="file-search" class="search-placeholder-icon"></i>
-                <p>输入关键词开始搜索</p>
-                <p class="search-tips">支持搜索文章标题和内容</p>
-            </div>
-        </div>
-        <div class="search-footer">
-            <div class="search-footer-item">
-                <kbd>↑</kbd><kbd>↓</kbd>
-                <span>切换</span>
-            </div>
-            <div class="search-footer-item">
-                <kbd>Enter</kbd>
-                <span>打开</span>
-            </div>
-            <div class="search-footer-item">
-                <kbd>ESC</kbd>
-                <span>关闭</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    
-<!-- 返回顶部 -->
-<button class="back-to-top" id="back-to-top" aria-label="返回顶部">
-    <i data-lucide="chevron-up"></i>
-    <svg class="back-to-top-progress" viewBox="0 0 46 46">
-        <circle cx="23" cy="23" r="20" fill="none" stroke-width="2" />
-    </svg>
-</button>
-
-
-    <!-- 主题特效容器 -->
-<div id="theme-effects" class="theme-effects"></div>
-
-<!-- Abyss 主题扫描线 -->
-<div class="abyss-scanline" id="abyss-scanline"></div>
-
-<!-- Abyss 主题噪点层 -->
-<div class="abyss-noise" id="abyss-noise"></div>
-
-    <!-- Fancybox -->
-
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-
-
-<!-- 主脚本 -->
-
-<script src="/js/utils.js"></script>
-
-
-<script src="/js/theme-switcher.js"></script>
-
-
-<script src="/js/navigation.js"></script>
-
-
-
-<script src="/js/search.js"></script>
-
-
-
-<script src="/js/main.js"></script>
-
-
-<!-- 初始化 Lucide 图标 -->
-<script>
-    lucide.createIcons();
-</script>
-
-<!-- 运行天数计算 -->
-
-<script>
-    (function() {
-        const since = new Date('Mon Jan 01 2024 08:00:00 GMT+0800 (中国标准时间)');
-        const now = new Date();
-        const days = Math.floor((now - since) / (1000 * 60 * 60 * 24));
-        const el = document.getElementById('running-days');
-        if (el) el.textContent = days;
-    })();
-</script>
-
-
-<!-- 自定义 body 代码 -->
-
-
 </body>
 </html>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- 标题 -->
-    <title>guestbook | 奶龙大王的博客</title>
+    <title>奶龙大王的博客</title>
     
     <!-- SEO Meta -->
     <meta name="description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
@@ -15,15 +15,15 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="guestbook">
+    <meta property="og:title" content="奶龙大王的博客">
     <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-    <meta property="og:url" content="https://xudaxmu-max.github.io/guestbook/index.html">
+    <meta property="og:url" content="https://xudaxmu-max.github.io/tags/%E6%B5%8B%E8%AF%95/index.html">
     <meta property="og:site_name" content="奶龙大王的博客">
     
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="guestbook">
+    <meta name="twitter:title" content="奶龙大王的博客">
     <meta name="twitter:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
     
     <!-- Favicon -->
@@ -148,13 +148,13 @@
                 </li>
                 
                 <li>
-                    <a href="/tags" class="">
+                    <a href="/tags" class="active">
                         标签
                     </a>
                 </li>
                 
                 <li>
-                    <a href="/guestbook" class="active">
+                    <a href="/guestbook" class="">
                         留言板
                     </a>
                 </li>
@@ -184,174 +184,90 @@
 
     
     <main class="main-content">
-        <!-- 独立页面 (关于页等) -->
-<div class="page">
+        <!-- 标签页 -->
+<div class="tag-page">
     <div class="container">
-        <article class="page-content">
-            <!-- 页面头部 -->
-            <header class="page-header fade-in">
-                
-                <h1 class="page-title">guestbook</h1>
-                
-            </header>
-            
-            <!-- 如果是关于页面，显示特殊布局 -->
-            
-            <!-- 普通页面内容 -->
-            <div class="page-body fade-in">
-                
-            </div>
-            
-            
-            <!-- 评论 -->
-            
-            
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<style>
-    /* 两种风格的 CSS 变量 */
-    :root { 
-        --c-primary: #2563eb; 
-        --vg-yellow: #ffde38; 
-        --vg-blue: #1a1a2e;
-    }
-    
-    /* 通用容器 */
-    .comments-wrapper { margin-top: 50px; padding-top: 30px; border-top: 1px dashed #e2e8f0; }
-    
-    /* 风格A: 梵高便当盒 (仅用于留言板) */
-    .style-bento .input-box { border: 3px solid var(--vg-blue); box-shadow: 6px 6px 0 var(--vg-yellow); background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 30px; }
-    .style-bento .bento-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; grid-auto-flow: dense; }
-    .style-bento .bento-card { background: #fff; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9; transition: transform 0.2s; }
-    .style-bento .bento-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .style-bento .bento-card.highlight { background: var(--vg-blue); color: #fff; grid-row: span 2; }
-    
-    /* 风格B: 文章评论列表 (仅用于普通文章) */
-    .style-list .input-box { background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
-    .style-list .input-box textarea { width: 100%; border: 1px solid #cbd5e1; padding: 10px; border-radius: 6px; min-height: 80px; margin-bottom: 10px; }
-    .style-list .comment-item { display: flex; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px; }
-    .style-list .avatar { width: 40px; height: 40px; border-radius: 50%; background: #e2e8f0; flex-shrink: 0; }
-    .style-list .meta { font-size: 0.85em; color: #64748b; margin-bottom: 5px; }
-    .style-list .content { color: #334155; line-height: 1.6; font-size: 0.95em; }
-    
-    /* 通用按钮 */
-    .btn-send { background: var(--c-primary); color: white; border: none; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 0.9em; }
-    .btn-send:hover { opacity: 0.9; }
-</style>
-
-<div class="comments-wrapper style-list">
-    
-    <h3 style="margin-bottom: 20px; font-weight: bold; color: #334155;">
-        💬 评论区
-    </h3>
-
-    <div class="input-box">
         
-        <div style="display:flex; gap:10px; margin-bottom:10px;">
-            <input id="c-nick" type="text" placeholder="昵称" style="border:1px solid #cbd5e1; padding:8px; border-radius:6px; flex:1;">
+        <!-- 单个标签页 -->
+        <header class="page-header fade-in">
+            <h1 class="page-title">
+                <i data-lucide="tag"></i>
+                #测试
+            </h1>
+            <p class="page-desc">共 1 篇文章</p>
+        </header>
+        
+        <div class="articles-grid">
+            
+            
+<article class="article-card  fade-in" style="animation-delay: 0s">
+    <!-- 封面图 -->
+    <a href="/2025/12/16/readme/" class="article-image">
+        
+        <div class="article-image-placeholder">
+            
+            <span class="placeholder-icon">🎨</span>
         </div>
-        <textarea id="c-content" placeholder="对这篇文章有何高见？"></textarea>
-        <div style="text-align: right;">
-            <button class="btn-send" onclick="sendComment()">发送</button>
-        </div>
-    </div>
-
-    <div id="comment-container" class="">
-        <div style="text-align:center; color:#94a3b8; padding: 20px;">加载中...</div>
-    </div>
-</div>
-
-<script>
-    const SB_URL = 'https://jggjfgephkhgsqgdzmtj.supabase.co';
-    const SB_KEY = 'sb_publishable_56Gw-14c14uliBmGkh4byA_hmhDOBXi';
-    const supabase = window.supabase.createClient(SB_URL, SB_KEY);
+        
+        
+        <!-- 分类标签 -->
+        
+        <span class="article-category">
+            文章
+        </span>
+        
+    </a>
     
-    // 关键：判断当前是哪篇文章。如果是留言板，slug 定死为 'guestbook'
-    // 如果是普通文章，slug 使用 Hexo 生成的 page.slug，如果为空则用 location.pathname
-    const CURRENT_SLUG = "guestbook/index.html";
-    const IS_BENTO = "false" === "true";
-
-    async function loadComments() {
-        // 根据 slug 过滤评论
-        const { data, error } = await supabase
-            .from('comments')
-            .select('*')
-            .eq('post_slug', CURRENT_SLUG) // 核心过滤逻辑
-            .order('created_at', { ascending: false });
-
-        const container = document.getElementById('comment-container');
-        container.innerHTML = '';
-
-        if(!data || data.length === 0) {
-            container.innerHTML = '<div style="text-align:center; color:#cbd5e1; grid-column:1/-1;">还没有评论，抢沙发！</div>';
-            return;
-        }
-
-        data.forEach((item, index) => {
-            const date = new Date(item.created_at).toLocaleDateString();
-            const avatar = `https://api.dicebear.com/7.x/notionists/svg?seed=${item.nickname || 'user'}`;
+    <!-- 内容 -->
+    <div class="article-content">
+        <!-- 元信息 -->
+        <div class="article-meta">
+            <span class="article-date">
+                <i data-lucide="calendar" class="meta-icon"></i>
+                2025-12-16
+            </span>
             
-            let html = '';
-            if(IS_BENTO) {
-                // 梵高 Bento 风格
-                const isHighlight = index % 7 === 0 ? 'highlight' : '';
-                html = `
-                    <div class="bento-card ${isHighlight}">
-                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
-                            <img src="${avatar}" style="width:24px; height:24px; border-radius:50%;">
-                            <span style="font-weight:bold; font-size:0.9em;">${escape(item.nickname)}</span>
-                        </div>
-                        <div style="font-size:0.95em; line-height:1.5;">${escape(item.content)}</div>
-                        <div style="font-size:0.7em; opacity:0.6; margin-top:10px; text-align:right;">${date}</div>
-                    </div>
-                `;
-            } else {
-                // 普通文章列表风格
-                html = `
-                    <div class="comment-item">
-                        <img class="avatar" src="${avatar}">
-                        <div style="flex:1;">
-                            <div class="meta">
-                                <span style="font-weight:bold; color:#334155; margin-right:10px;">${escape(item.nickname)}</span>
-                                <span>${date}</span>
-                            </div>
-                            <div class="content">${escape(item.content)}</div>
-                        </div>
-                    </div>
-                `;
-            }
-            container.insertAdjacentHTML('beforeend', html);
-        });
-    }
-
-    async function sendComment() {
-        const nick = document.getElementById('c-nick').value || '匿名';
-        const content = document.getElementById('c-content').value;
-        if(!content.trim()) return alert('内容不能为空');
-
-        const { error } = await supabase.from('comments').insert([{
-            nickname: nick,
-            content: content,
-            post_slug: CURRENT_SLUG, // 存入当前文章的标识
-            avatar_seed: Math.random().toString()
-        }]);
-
-        if(error) alert('发送失败');
-        else {
-            document.getElementById('c-content').value = '';
-            loadComments();
-        }
-    }
-
-    function escape(str) {
-        if(!str) return '';
-        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    }
-
-    loadComments();
-</script>
+            <span class="article-readtime">
+                <i data-lucide="clock" class="meta-icon"></i>
+                7 分钟
+            </span>
+            
+        </div>
+        
+        <!-- 标题 -->
+        <h2 class="article-title">
+            <a href="/2025/12/16/readme/">README</a>
+        </h2>
+        
+        <!-- 摘要 -->
+        <p class="article-excerpt">
+            
+            Flavor 主题一个支持三种风格切换的现代 Hexo 博客主题。
+✨ 特性
+🎨 三种主题风格 - Minimal(简约现代) &#x2F; Serene(清新文艺) &#x2F; Abyss(深渊地狱)
+🔍 全站搜索 - 支持 Ctrl&#x2F;Cmd + K 快捷键
+📊 阅读进度 - 顶...
+            
+        </p>
+        
+        <!-- 标签 -->
+        
+        <div class="article-tags">
+            
+            <a href="/tags/%E6%B5%8B%E8%AF%95/" class="article-tag">#测试</a>
+            
+        </div>
+        
+    </div>
+</article>
 
             
-        </article>
+        </div>
+        
+        
+
+        
+        
     </div>
 </div>
 
@@ -411,7 +327,7 @@
     <script>
         // 1. 【核心修改】设置你的建站时间
         // 请修改这里的日期，格式：YYYY-MM-DD
-        const startDate = new Date("2025-12-01"); 
+        const startDate = new Date("2025-12-15"); 
 
         function updateRunTime() {
             const now = new Date();
@@ -535,7 +451,7 @@
 
 <script>
     (function() {
-        const since = new Date('Mon Jan 01 2024 08:00:00 GMT+0800 (中国标准时间)');
+        const since = new Date('Mon Dec 15 2025 08:00:00 GMT+0800 (中国标准时间)');
         const now = new Date();
         const days = Math.floor((now - since) / (1000 * 60 * 60 * 24));
         const el = document.getElementById('running-days');
