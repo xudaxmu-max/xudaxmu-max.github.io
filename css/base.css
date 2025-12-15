@@ -298,3 +298,275 @@ details[open] summary {
         scroll-behavior: auto;
     }
 }
+/* =========================================
+   梵高风格配色 (Starry Night & Sunflowers)
+   ========================================= */
+:root {
+    --vangogh-yellow: #ffde38;  /* 向日葵黄 */
+    --vangogh-blue-dark: #1a1a2e; /* 星空深蓝 */
+    --vangogh-blue-light: #405cff; /* 星空亮蓝 */
+    --vangogh-green: #688356;   /* 丝柏绿 */
+    --vangogh-cream: #f4f4f0;   /* 画布底色 */
+    --bento-gap: 15px;
+    --bento-radius: 16px;
+}
+
+/* 留言板头部欢迎区 */
+.guestbook-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--vangogh-blue-dark), var(--vangogh-blue-light));
+    color: var(--vangogh-yellow);
+    border-radius: var(--bento-radius);
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    overflow: hidden;
+}
+
+.guestbook-header h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif; /* 艺术字体 */
+}
+
+.vangogh-sunflower {
+    font-size: 3em;
+    animation: spin 10s linear infinite;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* =========================================
+   Waline 评论区魔改 - Bento Box 布局
+   ========================================= */
+
+/* 1. 输入框区域 - 也就是"主菜" */
+#waline .wl-editor-wrapper {
+    background: #fff;
+    border: 2px solid var(--vangogh-blue-light);
+    border-radius: var(--bento-radius);
+    padding: 15px;
+    box-shadow: 5px 5px 0px var(--vangogh-yellow); /* 波普艺术阴影 */
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+#waline .wl-editor-wrapper:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 8px 8px 0px var(--vangogh-yellow);
+}
+
+/* 2. 评论列表 - 也就是"配菜格子" */
+#waline .wl-list .wl-card-item {
+    background: var(--vangogh-cream);
+    border-radius: var(--bento-radius);
+    padding: 20px;
+    margin-bottom: var(--bento-gap);
+    border-left: 5px solid var(--vangogh-blue-light); /* 左侧装饰线 */
+    position: relative;
+    transition: transform 0.2s;
+}
+
+#waline .wl-list .wl-card-item:hover {
+    transform: scale(1.01);
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* 3. 梵高时间线 (将原本的列表连成时间线) */
+#waline .wl-list {
+    position: relative;
+    padding-left: 20px;
+}
+#waline .wl-list::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--vangogh-yellow), var(--vangogh-blue-light));
+}
+
+/* 4. 匿名头像美化 */
+#waline .wl-user img {
+    border-radius: 50%;
+    border: 2px solid var(--vangogh-yellow);
+    padding: 2px;
+}
+
+/* 5. 提交按钮 - 艺术风格 */
+#waline .wl-btn.primary {
+    background: var(--vangogh-blue-dark);
+    color: var(--vangogh-yellow);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#waline .wl-btn.primary:hover {
+    background: var(--vangogh-blue-light);
+}
+/* 修复鼠标特效遮挡文字的问题 */
+#cursor, canvas[id^="fireworks"], .cursor-effect {
+    pointer-events: none !important; /* 关键：让鼠标穿透特效，直接点到下面的字 */
+    z-index: 9999; /* 保持在视觉最上层 */
+    mix-blend-mode: difference; /* 可选：让光标在深色背景上也能看清 */
+}
+/* 隐藏不必要的元素使界面更简洁 */
+#waline .wl-power { display: none !important; } /* 隐藏版权 */
+/* =========================================
+   🌻 直连 Supabase 版 - 梵高便当盒样式 🌻
+   ========================================= */
+
+:root {
+    --vg-bg: #f4f4f0;       /* 画布底色 */
+    --vg-yellow: #ffde38;   /* 向日葵黄 */
+    --vg-blue: #1a1a2e;     /* 星空蓝 */
+    --vg-blue-light: #2b4c7e;
+    --vg-green: #688356;    /* 丝柏绿 */
+    --gap: 15px;
+    --radius: 12px;
+}
+
+/* 容器 */
+.bento-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 1. 输入框区域 (主控台) */
+.comment-input-box {
+    background: white;
+    border: 3px solid var(--vg-blue);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 8px 8px 0px var(--vg-yellow); /* 波普阴影 */
+    transition: transform 0.2s;
+}
+.comment-input-box:hover { transform: translateY(-2px); }
+
+.input-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--vg-blue);
+}
+.sunflower-icon { display: inline-block; animation: rotate 10s linear infinite; }
+@keyframes rotate { 100% { transform: rotate(360deg); } }
+
+.input-body input, .input-body textarea {
+    width: 100%;
+    border: 2px solid #eee;
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    outline: none;
+    transition: border 0.3s;
+}
+.input-body input:focus, .input-body textarea:focus {
+    border-color: var(--vg-blue-light);
+    background: white;
+}
+
+#submit-btn {
+    background: var(--vg-blue);
+    color: var(--vg-yellow);
+    border: none;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+#submit-btn:hover { background: var(--vg-blue-light); transform: scale(1.05); }
+
+/* 2. 便当盒列表 (Bento Grid) */
+.bento-grid {
+    display: grid;
+    /* 自动列宽，最小240px，填满整行 */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-auto-rows: 180px; /* 基础高度 */
+    gap: var(--gap);
+    grid-auto-flow: dense; /* 关键：自动填补空隙 */
+}
+
+/* 单个卡片 */
+.bento-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+/* 头部信息 */
+.card-header { display: flex; align-items: center; margin-bottom: 10px; }
+.user-avatar { width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; background: #eee;}
+.user-nick { font-weight: bold; font-size: 0.9em; color: #333; }
+.card-content { flex: 1; font-size: 0.95em; line-height: 1.5; color: #555; overflow-y: auto; }
+.card-footer { font-size: 0.75em; color: #999; margin-top: 10px; text-align: right; }
+
+/* 3. 随机样式算法 (模拟随机大小和颜色) */
+
+/* 样式 0: 普通白底卡片 */
+
+/* 样式 1: 深蓝星空 (跨两行) */
+.bento-card.item-1 {
+    grid-row: span 2;
+    background: var(--vg-blue);
+    color: white;
+}
+.bento-card.item-1 .user-nick, .bento-card.item-1 .card-content { color: rgba(255,255,255,0.9); }
+.bento-card.item-1 .card-footer { color: rgba(255,255,255,0.5); }
+
+/* 样式 3: 麦田黄 (跨两列) */
+.bento-card.item-3 {
+    grid-column: span 2;
+    background: var(--vg-yellow);
+    border: none;
+}
+.bento-card.item-3 .user-nick { color: var(--vg-blue); }
+
+/* 样式 5: 丝柏绿 (强调色) */
+.bento-card.item-5 {
+    background: var(--vg-green);
+    color: white;
+}
+.bento-card.item-5 .user-nick, .bento-card.item-5 .card-content { color: white; }
+
+/* 样式 7: 大方块 (跨两行两列) */
+.bento-card.item-7 {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 4px solid var(--vg-yellow);
+}
+.bento-card.item-7 .card-content {
+    font-size: 1.2em;
+    font-family: 'Georgia', serif;
+    color: var(--vg-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

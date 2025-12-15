@@ -1,0 +1,110 @@
+/* =========================================
+   🌻 梵高 · 星月夜 · 便当盒留言板 🌻
+   ========================================= */
+
+:root {
+    /* 梵高调色盘 */
+    --vg-blue-deep: #1a1a2e;    /* 星夜深蓝 */
+    --vg-blue-sky: #2b4c7e;     /* 漩涡蓝 */
+    --vg-yellow: #f4d03f;       /* 月亮黄 */
+    --vg-orange: #e67e22;       /* 麦田橙 */
+    --vg-green: #27ae60;        /* 丝柏绿 */
+    --vg-white: #fdfbf7;        /* 画布白 */
+}
+
+/* 1. 评论区容器：启用 Bento Grid 布局 */
+#waline .wl-list {
+    display: grid !important;
+    /* 自动填充列，最小宽度250px，手机上会自动变单列 */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: minmax(150px, auto); /* 最小高度 */
+    gap: 20px; /* 格子间距 */
+    grid-auto-flow: dense; /* 关键：自动填补空缺，形成紧凑的便当盒效果 */
+    padding: 20px 0;
+}
+
+/* 移除原有的线条和背景 */
+#waline .wl-list::before { display: none; }
+#waline .wl-list .wl-card-item {
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 16px;
+    padding: 20px;
+    background: var(--vg-white);
+    box-shadow: 4px 4px 0px var(--vg-blue-deep); /* 粗犷的硬阴影 */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 2. 随机大小算法 (模拟随机性) */
+/* 每隔 7 个元素，第 1 个跨两行 (竖长条) */
+#waline .wl-list .wl-card-item:nth-child(7n+1) {
+    grid-row: span 2;
+    background: var(--vg-blue-deep);
+    color: var(--vg-yellow); /* 深色背景配黄色文字 */
+}
+/* 每隔 8 个元素，第 3 个跨两列 (横长条) */
+#waline .wl-list .wl-card-item:nth-child(8n+3) {
+    grid-column: span 2;
+    background: var(--vg-yellow);
+    color: var(--vg-blue-deep);
+}
+/* 每隔 9 个元素，第 5 个变成大方块 (跨两行两列) */
+#waline .wl-list .wl-card-item:nth-child(9n+5) {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: url('https://img.tukuppt.com/bg_grid/00/03/48/2r4K4C3w3d.jpg!/fh/350') center/cover; /* 甚至可以加个油画纹理背景 */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+/* 必须修复大方块上的文字颜色，防止看不清 */
+#waline .wl-list .wl-card-item:nth-child(9n+5) .wl-content {
+    color: inherit;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* 3. 悬停交互：像油画浮起来 */
+#waline .wl-list .wl-card-item:hover {
+    transform: translateY(-5px) scale(1.02) rotate(1deg);
+    box-shadow: 8px 8px 0px var(--vg-orange);
+    z-index: 10;
+}
+
+/* 4. 内部元素美化 */
+/* 头像 */
+#waline .wl-user img {
+    width: 45px;
+    height: 45px;
+    border: 2px solid currentColor; /* 跟随文字颜色 */
+}
+/* 昵称 */
+#waline .wl-nick {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+/* 内容文字 */
+#waline .wl-content {
+    flex-grow: 1; /* 让文字撑开 */
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+/* 隐藏无用的回复按钮，让卡片更纯粹 (可选) */
+#waline .wl-card-item .wl-btn {
+    opacity: 0.6;
+    font-size: 0.8em;
+}
+
+/* 5. 针对深色背景卡的特殊处理 */
+#waline .wl-list .wl-card-item:nth-child(7n+1) .wl-nick,
+#waline .wl-list .wl-card-item:nth-child(7n+1) .wl-content {
+    color: var(--vg-yellow);
+}
+#waline .wl-list .wl-card-item:nth-child(7n+1) .wl-time {
+    color: rgba(255,255,255,0.6);
+}

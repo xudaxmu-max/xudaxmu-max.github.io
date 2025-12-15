@@ -154,8 +154,8 @@
                 </li>
                 
                 <li>
-                    <a href="/about" class="">
-                        关于
+                    <a href="/guestbook" class="">
+                        留言板
                     </a>
                 </li>
                 
@@ -219,7 +219,7 @@
             
             <div class="timeline-year fade-in" style="animation-delay: 0s">
                 <h2 class="year-title">
-                    <span class="year-number">2025</span>
+                    <span class="year-number">2023</span>
                     <span class="year-count">1 篇</span>
                 </h2>
                 
@@ -229,10 +229,10 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <time class="timeline-date">
-                                12-12
+                                12-15
                             </time>
                             <h3 class="timeline-title">
-                                <a href="/2025/12/12/hello-world/">Hello World</a>
+                                <a href="/2023/12/15/hello-world/">访客留言</a>
                             </h3>
                             
                         </div>
@@ -251,106 +251,87 @@
 
     </main>
     
-    <!-- 页脚 -->
-<footer class="footer">
+    <footer class="footer" style="position: relative;">
     <div class="footer-container">
-        <!-- 上部内容 -->
         <div class="footer-content">
-            <!-- 品牌区 -->
             <div class="footer-brand">
                 <a href="/" class="footer-logo">
-                    
-                    HUAZAI
-                    
+                    奶龙大王的博客
                 </a>
-                <p class="footer-desc">
-                    
-                    都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！
-                    
-                </p>
+                <p class="footer-desc">都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！</p>
                 
-                <!-- 社交链接 -->
-                
-                <div class="footer-social">
-                    
-                    <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
-                        <i data-lucide="github"></i>
-                    </a>
-                    
-                    
-                    <a href="mailto:your@email.com" class="social-link" aria-label="Email">
-                        <i data-lucide="mail"></i>
-                    </a>
-                    
-                    
-                    <a href="https://twitter.com/yourusername" class="social-link" target="_blank" rel="noopener" aria-label="Twitter">
-                        <i data-lucide="twitter"></i>
-                    </a>
-                    
-                    
-                    <a href="/atom.xml" class="social-link" aria-label="RSS">
-                        <i data-lucide="rss"></i>
-                    </a>
-                    
+                <div class="live-info" style="margin-top: 15px; font-size: 0.85em; color: #888; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
+                    <div id="live-clock"><i class="fa fa-clock-o"></i> 加载时间...</div>
+                    <div id="live-weather" style="margin-top: 5px;"><i class="fa fa-cloud"></i> 加载天气...</div>
                 </div>
-                
             </div>
             
-            <!-- 快速链接 -->
             <div class="footer-links-group">
                 <h4 class="footer-title">导航</h4>
                 <ul class="footer-links">
-                    
                     <li><a href="/">首页</a></li>
-                    
-                    <li><a href="/archives">文章</a></li>
-                    
-                    <li><a href="/categories">分类</a></li>
-                    
-                    <li><a href="/tags">标签</a></li>
-                    
-                    <li><a href="/about">关于</a></li>
-                    
+                    <li><a href="/archives/">归档</a></li>
+                    <li><a href="/tags/">标签</a></li>
+                    <li><a href="/categories/">分类</a></li>
                 </ul>
             </div>
             
-            <!-- 分类 -->
             <div class="footer-links-group">
-                <h4 class="footer-title">分类</h4>
+                <h4 class="footer-title">管理</h4>
                 <ul class="footer-links">
-                    
-                </ul>
-            </div>
-            
-            <!-- 标签 -->
-            <div class="footer-links-group">
-                <h4 class="footer-title">热门标签</h4>
-                <ul class="footer-links">
-                    
+                    <li>
+                        <a href="/admin/" target="_blank" style="color: #d63031; font-weight: bold;">
+                            <i class="fa fa-lock"></i> 博主登录
+                        </a>
+                    </li>
+                    <li><a href="/admin/" target="_blank">发布文章</a></li>
                 </ul>
             </div>
         </div>
         
-        <!-- 底部版权 -->
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="flex-direction: column; align-items: center; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px;">
             <div class="footer-copyright">
-                <span>© 2024 - 2025 奶龙大王.</span>
-                <span>All rights reserved.</span>
-            </div>
-            <div class="footer-info">
-                <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
-                <span class="footer-divider">|</span>
-                <span>Theme <a href="#" target="_blank" rel="noopener">Flavor</a></span>
-                
-                <span class="footer-divider">|</span>
-                <span>运行 <span id="running-days">0</span> 天</span>
-                
+                <span>&copy; 2025 奶龙大王. All rights reserved.</span>
             </div>
             
+            <div class="footer-info" style="margin-top: 5px; font-size: 0.85em;">
+                <span>Powered by Hexo</span>
+                <span class="footer-divider">|</span>
+                <span>本站已安全运行 <span id="running-days" style="font-weight:bold; color: #0984e3;">0</span> 天</span>
+            </div>
         </div>
     </div>
-</footer>
 
+    <script>
+        // 1. 【核心修改】设置你的建站时间
+        // 请修改这里的日期，格式：YYYY-MM-DD
+        const startDate = new Date("2025-12-01"); 
+
+        function updateRunTime() {
+            const now = new Date();
+            const diff = now - startDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            // 防止显示负数（如果是未来日期）
+            document.getElementById('running-days').innerText = days > 0 ? days : 1;
+            
+            // 实时时钟
+            const timeStr = now.toLocaleString('zh-CN', { hour12: false });
+            const clockEl = document.getElementById('live-clock');
+            if(clockEl) clockEl.innerText = "当前时间: " + timeStr;
+        }
+        setInterval(updateRunTime, 1000);
+        updateRunTime();
+
+        // 2. 天气接口 (使用 wttr.in)
+        fetch('https://wttr.in/?format=%C+%t')
+            .then(res => res.text())
+            .then(text => {
+                const weatherEl = document.getElementById('live-weather');
+                if(weatherEl) weatherEl.innerText = '当前天气: ' + text;
+            })
+            .catch(err => console.log('Weather load failed'));
+    </script>
+</footer>
     
 <!-- 搜索模态框 -->
 <div class="search-modal" id="search-modal">

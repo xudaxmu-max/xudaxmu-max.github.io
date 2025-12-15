@@ -154,8 +154,8 @@
                 </li>
                 
                 <li>
-                    <a href="/about" class="">
-                        关于
+                    <a href="/guestbook" class="">
+                        留言板
                     </a>
                 </li>
                 
@@ -1422,20 +1422,155 @@ console.log('📝 待办清单已就绪!');`
             <!-- 评论 -->
             
             
-<section class="comments-section" id="comments">
-    <h3 class="comments-title">
-        <i data-lucide="message-circle"></i>
-        评论
-    </h3>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<div id="toast-box" class="toast-container"></div>
+
+<div id="bento-board" class="bento-container">
     
-    
-    <!-- 未配置评论系统 -->
-    <div class="comments-placeholder">
-        <i data-lucide="message-square-off"></i>
-        <p>评论系统未启用</p>
+    <div class="comment-input-box">
+        <div class="input-header">
+            <span class="sunflower-icon">🌻</span> 留下你的笔触
+        </div>
+        <div class="input-body">
+            <input type="text" id="comment-nick" placeholder="你的名字 (可选)" maxlength="20">
+            <textarea id="comment-content" placeholder="写点什么吧... (无需登录)" rows="3"></textarea>
+        </div>
+        <div class="input-footer">
+            <button onclick="submitComment()" id="submit-btn">✨ 发送留言</button>
+        </div>
     </div>
+
+    <div id="comment-list" class="bento-grid">
+        <div class="loading-text" style="grid-column:1/-1; text-align:center; color:#999;">🎨 正在调色中...</div>
+    </div>
+
+</div>
+
+<script>
+    // --- 配置区 ---
+    const SB_URL = 'https://jggjfgephkhgsqgdzmtj.supabase.co';
+    const SB_KEY = 'sb_publishable_56Gw-14c14uliBmGkh4byA_hmhDOBXi';
     
-</section>
+    const supabase = window.supabase.createClient(SB_URL, SB_KEY);
+
+    // --- ✨ 新增：优雅的提示框函数 ---
+    function showToast(msg, type = 'info') {
+        const container = document.getElementById('toast-box');
+        const toast = document.createElement('div');
+        
+        // 根据类型选择图标
+        let icon = '🌻';
+        if (type === 'success') icon = '✅';
+        if (type === 'error') icon = '❌';
+        
+        toast.className = `toast-message toast-${type}`;
+        toast.innerHTML = `<span>${icon}</span> <span>${msg}</span>`;
+        
+        container.appendChild(toast);
+
+        // 下一帧添加 show 类，触发 CSS 动画
+        requestAnimationFrame(() => {
+            toast.classList.add('show');
+        });
+
+        // 3秒后自动消失
+        setTimeout(() => {
+            toast.classList.remove('show');
+            // 等动画播完再从 DOM 移除
+            setTimeout(() => toast.remove(), 400);
+        }, 3000);
+    }
+
+    // --- 加载留言 ---
+    async function loadComments() {
+        const list = document.getElementById('comment-list');
+        
+        const { data, error } = await supabase
+            .from('comments')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        list.innerHTML = ''; 
+
+        if (error) {
+            // 这里也不用 alert，直接在页面显示错误
+            list.innerHTML = `<div style="text-align:center;color:#e74c3c;grid-column:1/-1;padding:20px;">加载失败: ${error.message}</div>`;
+            return;
+        }
+
+        if (!data || data.length === 0) {
+            list.innerHTML = `<div style="text-align:center;color:#666;grid-column:1/-1;padding:40px;">还没有人留言，做第一个画家吧！</div>`;
+            return;
+        }
+
+        data.forEach((msg, index) => {
+            const date = new Date(msg.created_at).toLocaleDateString();
+            const seed = msg.avatar_seed || msg.nickname || 'default';
+            const avatarUrl = `https://api.dicebear.com/7.x/notionists/svg?seed=${seed}`;
+            
+            const card = document.createElement('div');
+            card.className = `bento-card item-${index % 10}`;
+            
+            card.innerHTML = `
+                <div class="card-header">
+                    <img src="${avatarUrl}" class="user-avatar" alt="avatar">
+                    <span class="user-nick">${escapeHtml(msg.nickname || '匿名画家')}</span>
+                </div>
+                <div class="card-content">${escapeHtml(msg.content)}</div>
+                <div class="card-footer">${date}</div>
+            `;
+            list.appendChild(card);
+        });
+    }
+
+    // --- 提交留言 ---
+    async function submitComment() {
+        const nickInput = document.getElementById('comment-nick');
+        const contentInput = document.getElementById('comment-content');
+        const btn = document.getElementById('submit-btn');
+
+        const content = contentInput.value.trim();
+        const nickname = nickInput.value.trim() || '匿名画家';
+
+        if (!content) {
+            // 替换 alert -> showToast
+            showToast('请写点内容再发送哦~', 'info');
+            contentInput.focus(); // 贴心地帮用户聚焦输入框
+            return;
+        }
+
+        btn.innerText = '🚀 发送中...';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+
+        const { error } = await supabase.from('comments').insert([{
+            nickname: nickname,
+            content: content,
+            avatar_seed: Math.random().toString(36).substring(7) 
+        }]);
+
+        if (error) {
+            showToast('发送失败: ' + error.message, 'error');
+        } else {
+            contentInput.value = ''; 
+            loadComments(); 
+            showToast('✨ 留言成功！', 'success');
+        }
+        
+        btn.innerText = '✨ 发送留言';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+    }
+
+    function escapeHtml(text) {
+        if (!text) return text;
+        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    loadComments();
+</script>
 
 
             
@@ -1445,106 +1580,87 @@ console.log('📝 待办清单已就绪!');`
 
     </main>
     
-    <!-- 页脚 -->
-<footer class="footer">
+    <footer class="footer" style="position: relative;">
     <div class="footer-container">
-        <!-- 上部内容 -->
         <div class="footer-content">
-            <!-- 品牌区 -->
             <div class="footer-brand">
                 <a href="/" class="footer-logo">
-                    
-                    HUAZAI
-                    
+                    奶龙大王的博客
                 </a>
-                <p class="footer-desc">
-                    
-                    都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！
-                    
-                </p>
+                <p class="footer-desc">都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！</p>
                 
-                <!-- 社交链接 -->
-                
-                <div class="footer-social">
-                    
-                    <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
-                        <i data-lucide="github"></i>
-                    </a>
-                    
-                    
-                    <a href="mailto:your@email.com" class="social-link" aria-label="Email">
-                        <i data-lucide="mail"></i>
-                    </a>
-                    
-                    
-                    <a href="https://twitter.com/yourusername" class="social-link" target="_blank" rel="noopener" aria-label="Twitter">
-                        <i data-lucide="twitter"></i>
-                    </a>
-                    
-                    
-                    <a href="/atom.xml" class="social-link" aria-label="RSS">
-                        <i data-lucide="rss"></i>
-                    </a>
-                    
+                <div class="live-info" style="margin-top: 15px; font-size: 0.85em; color: #888; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
+                    <div id="live-clock"><i class="fa fa-clock-o"></i> 加载时间...</div>
+                    <div id="live-weather" style="margin-top: 5px;"><i class="fa fa-cloud"></i> 加载天气...</div>
                 </div>
-                
             </div>
             
-            <!-- 快速链接 -->
             <div class="footer-links-group">
                 <h4 class="footer-title">导航</h4>
                 <ul class="footer-links">
-                    
                     <li><a href="/">首页</a></li>
-                    
-                    <li><a href="/archives">文章</a></li>
-                    
-                    <li><a href="/categories">分类</a></li>
-                    
-                    <li><a href="/tags">标签</a></li>
-                    
-                    <li><a href="/about">关于</a></li>
-                    
+                    <li><a href="/archives/">归档</a></li>
+                    <li><a href="/tags/">标签</a></li>
+                    <li><a href="/categories/">分类</a></li>
                 </ul>
             </div>
             
-            <!-- 分类 -->
             <div class="footer-links-group">
-                <h4 class="footer-title">分类</h4>
+                <h4 class="footer-title">管理</h4>
                 <ul class="footer-links">
-                    
-                </ul>
-            </div>
-            
-            <!-- 标签 -->
-            <div class="footer-links-group">
-                <h4 class="footer-title">热门标签</h4>
-                <ul class="footer-links">
-                    
+                    <li>
+                        <a href="/admin/" target="_blank" style="color: #d63031; font-weight: bold;">
+                            <i class="fa fa-lock"></i> 博主登录
+                        </a>
+                    </li>
+                    <li><a href="/admin/" target="_blank">发布文章</a></li>
                 </ul>
             </div>
         </div>
         
-        <!-- 底部版权 -->
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="flex-direction: column; align-items: center; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px;">
             <div class="footer-copyright">
-                <span>© 2024 - 2025 奶龙大王.</span>
-                <span>All rights reserved.</span>
-            </div>
-            <div class="footer-info">
-                <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
-                <span class="footer-divider">|</span>
-                <span>Theme <a href="#" target="_blank" rel="noopener">Flavor</a></span>
-                
-                <span class="footer-divider">|</span>
-                <span>运行 <span id="running-days">0</span> 天</span>
-                
+                <span>&copy; 2025 奶龙大王. All rights reserved.</span>
             </div>
             
+            <div class="footer-info" style="margin-top: 5px; font-size: 0.85em;">
+                <span>Powered by Hexo</span>
+                <span class="footer-divider">|</span>
+                <span>本站已安全运行 <span id="running-days" style="font-weight:bold; color: #0984e3;">0</span> 天</span>
+            </div>
         </div>
     </div>
-</footer>
 
+    <script>
+        // 1. 【核心修改】设置你的建站时间
+        // 请修改这里的日期，格式：YYYY-MM-DD
+        const startDate = new Date("2025-12-01"); 
+
+        function updateRunTime() {
+            const now = new Date();
+            const diff = now - startDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            // 防止显示负数（如果是未来日期）
+            document.getElementById('running-days').innerText = days > 0 ? days : 1;
+            
+            // 实时时钟
+            const timeStr = now.toLocaleString('zh-CN', { hour12: false });
+            const clockEl = document.getElementById('live-clock');
+            if(clockEl) clockEl.innerText = "当前时间: " + timeStr;
+        }
+        setInterval(updateRunTime, 1000);
+        updateRunTime();
+
+        // 2. 天气接口 (使用 wttr.in)
+        fetch('https://wttr.in/?format=%C+%t')
+            .then(res => res.text())
+            .then(text => {
+                const weatherEl = document.getElementById('live-weather');
+                if(weatherEl) weatherEl.innerText = '当前天气: ' + text;
+            })
+            .catch(err => console.log('Weather load failed'));
+    </script>
+</footer>
     
 <!-- 搜索模态框 -->
 <div class="search-modal" id="search-modal">

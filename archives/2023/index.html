@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="奶龙大王的博客">
     <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-    <meta property="og:url" content="https://xudaxmu-max.github.io/index.html">
+    <meta property="og:url" content="https://xudaxmu-max.github.io/archives/2023/index.html">
     <meta property="og:site_name" content="奶龙大王的博客">
     
     
@@ -130,13 +130,13 @@
             <ul class="nav-links">
                 
                 <li>
-                    <a href="/" class="active">
+                    <a href="/" class="">
                         首页
                     </a>
                 </li>
                 
                 <li>
-                    <a href="/archives" class="">
+                    <a href="/archives" class="active">
                         文章
                     </a>
                 </li>
@@ -184,129 +184,62 @@
 
     
     <main class="main-content">
-        <!-- 首页 Hero 区域 -->
-
-<section class="hero">
-    <!-- 背景效果 -->
-    <div class="hero-bg">
-        <div class="hero-grid"></div>
-        <div class="hero-shapes">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
-        </div>
-    </div>
-    
-    <!-- 内容 -->
-    <div class="hero-content">
-        
-        <span class="hero-tag fade-in">Ocean &amp; Code</span>
-        
-        
-        <h1 class="hero-title fade-in" data-text="探索深海 编织代码">
-            探索深海<br>编织代码
-        </h1>
-        
-        
-        <p class="hero-subtitle fade-in">在数据的海洋中航行，用代码描绘科学与艺术的交汇</p>
-        
-        
-        <div class="hero-actions fade-in">
-            
-            <a href="/archives" class="btn btn-primary">
-                开始阅读
-            </a>
-            
-            
-            <a href="/about" class="btn btn-secondary">
-                了解更多
-            </a>
-            
-        </div>
-        
-        <!-- 滚动提示 -->
-        <div class="hero-scroll fade-in">
-            <div class="scroll-indicator">
-                <div class="scroll-dot"></div>
-            </div>
-            <span>向下滚动</span>
-        </div>
-    </div>
-</section>
-
-
-<!-- 文章列表区域 -->
-<section class="posts-section">
+        <!-- 归档页 -->
+<div class="archive-page">
     <div class="container">
-        <!-- 区域标题 -->
-        <div class="section-header fade-in">
-            <h2 class="section-title">
+        <!-- 页面标题 -->
+        <header class="page-header fade-in">
+            <h1 class="page-title">
+                <i data-lucide="archive"></i>
+                归档
+            </h1>
+            <p class="page-desc">共 1 篇文章</p>
+        </header>
+        
+        <!-- 统计信息 -->
+        <div class="archive-stats fade-in">
+            <div class="archive-stat">
+                <span class="stat-value">1</span>
+                <span class="stat-name">文章</span>
+            </div>
+            <div class="archive-stat">
+                <span class="stat-value">0</span>
+                <span class="stat-name">分类</span>
+            </div>
+            <div class="archive-stat">
+                <span class="stat-value">0</span>
+                <span class="stat-name">标签</span>
+            </div>
+        </div>
+        
+        <!-- 时间线 -->
+        <div class="archive-timeline">
+            
+            
+            
+            <div class="timeline-year fade-in" style="animation-delay: 0s">
+                <h2 class="year-title">
+                    <span class="year-number">2023</span>
+                    <span class="year-count">1 篇</span>
+                </h2>
                 
-                最新文章
-                
-            </h2>
-            <a href="/archives" class="section-link">
-                查看全部
-                <i data-lucide="arrow-right"></i>
-            </a>
-        </div>
-        
-        <!-- 文章网格 -->
-        <div class="articles-grid">
-            
-            
-<article class="article-card featured fade-in" style="animation-delay: 0s">
-    <!-- 封面图 -->
-    <a href="/2023/12/15/hello-world/" class="article-image">
-        
-        <div class="article-image-placeholder">
-            
-            <span class="placeholder-icon">🌊</span>
-        </div>
-        
-        
-        <!-- 分类标签 -->
-        
-    </a>
-    
-    <!-- 内容 -->
-    <div class="article-content">
-        <!-- 元信息 -->
-        <div class="article-meta">
-            <span class="article-date">
-                <i data-lucide="calendar" class="meta-icon"></i>
-                2023-12-15
-            </span>
-            
-            <span class="article-readtime">
-                <i data-lucide="clock" class="meta-icon"></i>
-                1 分钟
-            </span>
-            
-        </div>
-        
-        <!-- 标题 -->
-        <h2 class="article-title">
-            <a href="/2023/12/15/hello-world/">访客留言</a>
-        </h2>
-        
-        <!-- 摘要 -->
-        <p class="article-excerpt">
-            
-            
-    🌻
-    欢迎来到我的小宇宙
-    这里没有账号的束缚，只有真诚的文字。
-    就像精心准备的便当盒，每一条留言都是一道风味。
-...
-            
-        </p>
-        
-        <!-- 标签 -->
-        
-    </div>
-</article>
-
+                <div class="timeline-posts">
+                    
+                    <article class="timeline-post">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <time class="timeline-date">
+                                12-15
+                            </time>
+                            <h3 class="timeline-title">
+                                <a href="/2023/12/15/hello-world/">访客留言</a>
+                            </h3>
+                            
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
             
         </div>
         
@@ -314,42 +247,7 @@
         
 
     </div>
-</section>
-
-<!-- 首页其他区域 (仅第一页显示) -->
-
-
-<!-- 统计数据 -->
-
-<section class="stats-section">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item fade-in">
-                <div class="stat-number" data-count="1">0</div>
-                <div class="stat-label">文章</div>
-            </div>
-            <div class="stat-item fade-in">
-                <div class="stat-number" data-count="0">0</div>
-                <div class="stat-label">分类</div>
-            </div>
-            <div class="stat-item fade-in">
-                <div class="stat-number" data-count="0">0</div>
-                <div class="stat-label">标签</div>
-            </div>
-            <div class="stat-item fade-in">
-                
-                <div class="stat-number" data-count="0" data-suffix="K">0</div>
-                <div class="stat-label">字数</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- 标签云 -->
-
-
-
+</div>
 
     </main>
     

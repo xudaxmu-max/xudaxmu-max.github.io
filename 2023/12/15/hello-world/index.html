@@ -6,24 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- 标题 -->
-    <title>奶龙大王的博客</title>
+    <title>访客留言 | 奶龙大王的博客</title>
     
     <!-- SEO Meta -->
     <meta name="description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-    <meta name="keywords" content="奶龙大王,博客,编程,学习,技术分享">
+    <meta name="keywords" content="">
     <meta name="author" content="奶龙大王">
     
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="奶龙大王的博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="访客留言">
     <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
-    <meta property="og:url" content="https://xudaxmu-max.github.io/index.html">
+    <meta property="og:url" content="https://xudaxmu-max.github.io/2023/12/15/hello-world/index.html">
     <meta property="og:site_name" content="奶龙大王的博客">
     
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="奶龙大王的博客">
+    <meta name="twitter:title" content="访客留言">
     <meta name="twitter:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
     
     <!-- Favicon -->
@@ -130,7 +130,7 @@
             <ul class="nav-links">
                 
                 <li>
-                    <a href="/" class="active">
+                    <a href="/" class="">
                         首页
                     </a>
                 </li>
@@ -184,172 +184,188 @@
 
     
     <main class="main-content">
-        <!-- 首页 Hero 区域 -->
-
-<section class="hero">
-    <!-- 背景效果 -->
-    <div class="hero-bg">
-        <div class="hero-grid"></div>
-        <div class="hero-shapes">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
-        </div>
-    </div>
-    
-    <!-- 内容 -->
-    <div class="hero-content">
-        
-        <span class="hero-tag fade-in">Ocean &amp; Code</span>
-        
-        
-        <h1 class="hero-title fade-in" data-text="探索深海 编织代码">
-            探索深海<br>编织代码
-        </h1>
-        
-        
-        <p class="hero-subtitle fade-in">在数据的海洋中航行，用代码描绘科学与艺术的交汇</p>
-        
-        
-        <div class="hero-actions fade-in">
-            
-            <a href="/archives" class="btn btn-primary">
-                开始阅读
-            </a>
-            
-            
-            <a href="/about" class="btn btn-secondary">
-                了解更多
-            </a>
-            
-        </div>
-        
-        <!-- 滚动提示 -->
-        <div class="hero-scroll fade-in">
-            <div class="scroll-indicator">
-                <div class="scroll-dot"></div>
-            </div>
-            <span>向下滚动</span>
-        </div>
-    </div>
-</section>
-
-
-<!-- 文章列表区域 -->
-<section class="posts-section">
+        <!-- 独立页面 (关于页等) -->
+<div class="page">
     <div class="container">
-        <!-- 区域标题 -->
-        <div class="section-header fade-in">
-            <h2 class="section-title">
+        <article class="page-content">
+            <!-- 页面头部 -->
+            <header class="page-header fade-in">
                 
-                最新文章
+                <h1 class="page-title">访客留言</h1>
                 
-            </h2>
-            <a href="/archives" class="section-link">
-                查看全部
-                <i data-lucide="arrow-right"></i>
-            </a>
-        </div>
-        
-        <!-- 文章网格 -->
-        <div class="articles-grid">
+            </header>
+            
+            <!-- 如果是关于页面，显示特殊布局 -->
+            
+            <!-- 普通页面内容 -->
+            <div class="page-body fade-in">
+                <div class="guestbook-header">
+    <div class="vangogh-sunflower">🌻</div>
+    <h2>欢迎来到我的小宇宙</h2>
+    <p>这里没有账号的束缚，只有真诚的文字。</p>
+    <p>就像精心准备的便当盒，每一条留言都是一道风味。</p>
+</div>
+            </div>
             
             
-<article class="article-card featured fade-in" style="animation-delay: 0s">
-    <!-- 封面图 -->
-    <a href="/2023/12/15/hello-world/" class="article-image">
-        
-        <div class="article-image-placeholder">
+            <!-- 评论 -->
             
-            <span class="placeholder-icon">🌊</span>
-        </div>
-        
-        
-        <!-- 分类标签 -->
-        
-    </a>
+            
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<div id="toast-box" class="toast-container"></div>
+
+<div id="bento-board" class="bento-container">
     
-    <!-- 内容 -->
-    <div class="article-content">
-        <!-- 元信息 -->
-        <div class="article-meta">
-            <span class="article-date">
-                <i data-lucide="calendar" class="meta-icon"></i>
-                2023-12-15
-            </span>
-            
-            <span class="article-readtime">
-                <i data-lucide="clock" class="meta-icon"></i>
-                1 分钟
-            </span>
-            
+    <div class="comment-input-box">
+        <div class="input-header">
+            <span class="sunflower-icon">🌻</span> 留下你的笔触
         </div>
-        
-        <!-- 标题 -->
-        <h2 class="article-title">
-            <a href="/2023/12/15/hello-world/">访客留言</a>
-        </h2>
-        
-        <!-- 摘要 -->
-        <p class="article-excerpt">
-            
-            
-    🌻
-    欢迎来到我的小宇宙
-    这里没有账号的束缚，只有真诚的文字。
-    就像精心准备的便当盒，每一条留言都是一道风味。
-...
-            
-        </p>
-        
-        <!-- 标签 -->
-        
-    </div>
-</article>
-
-            
+        <div class="input-body">
+            <input type="text" id="comment-nick" placeholder="你的名字 (可选)" maxlength="20">
+            <textarea id="comment-content" placeholder="写点什么吧... (无需登录)" rows="3"></textarea>
         </div>
-        
-        <!-- 分页 -->
-        
-
-    </div>
-</section>
-
-<!-- 首页其他区域 (仅第一页显示) -->
-
-
-<!-- 统计数据 -->
-
-<section class="stats-section">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item fade-in">
-                <div class="stat-number" data-count="1">0</div>
-                <div class="stat-label">文章</div>
-            </div>
-            <div class="stat-item fade-in">
-                <div class="stat-number" data-count="0">0</div>
-                <div class="stat-label">分类</div>
-            </div>
-            <div class="stat-item fade-in">
-                <div class="stat-number" data-count="0">0</div>
-                <div class="stat-label">标签</div>
-            </div>
-            <div class="stat-item fade-in">
-                
-                <div class="stat-number" data-count="0" data-suffix="K">0</div>
-                <div class="stat-label">字数</div>
-            </div>
+        <div class="input-footer">
+            <button onclick="submitComment()" id="submit-btn">✨ 发送留言</button>
         </div>
     </div>
-</section>
+
+    <div id="comment-list" class="bento-grid">
+        <div class="loading-text" style="grid-column:1/-1; text-align:center; color:#999;">🎨 正在调色中...</div>
+    </div>
+
+</div>
+
+<script>
+    // --- 配置区 ---
+    const SB_URL = 'https://jggjfgephkhgsqgdzmtj.supabase.co';
+    const SB_KEY = 'sb_publishable_56Gw-14c14uliBmGkh4byA_hmhDOBXi';
+    
+    const supabase = window.supabase.createClient(SB_URL, SB_KEY);
+
+    // --- ✨ 新增：优雅的提示框函数 ---
+    function showToast(msg, type = 'info') {
+        const container = document.getElementById('toast-box');
+        const toast = document.createElement('div');
+        
+        // 根据类型选择图标
+        let icon = '🌻';
+        if (type === 'success') icon = '✅';
+        if (type === 'error') icon = '❌';
+        
+        toast.className = `toast-message toast-${type}`;
+        toast.innerHTML = `<span>${icon}</span> <span>${msg}</span>`;
+        
+        container.appendChild(toast);
+
+        // 下一帧添加 show 类，触发 CSS 动画
+        requestAnimationFrame(() => {
+            toast.classList.add('show');
+        });
+
+        // 3秒后自动消失
+        setTimeout(() => {
+            toast.classList.remove('show');
+            // 等动画播完再从 DOM 移除
+            setTimeout(() => toast.remove(), 400);
+        }, 3000);
+    }
+
+    // --- 加载留言 ---
+    async function loadComments() {
+        const list = document.getElementById('comment-list');
+        
+        const { data, error } = await supabase
+            .from('comments')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        list.innerHTML = ''; 
+
+        if (error) {
+            // 这里也不用 alert，直接在页面显示错误
+            list.innerHTML = `<div style="text-align:center;color:#e74c3c;grid-column:1/-1;padding:20px;">加载失败: ${error.message}</div>`;
+            return;
+        }
+
+        if (!data || data.length === 0) {
+            list.innerHTML = `<div style="text-align:center;color:#666;grid-column:1/-1;padding:40px;">还没有人留言，做第一个画家吧！</div>`;
+            return;
+        }
+
+        data.forEach((msg, index) => {
+            const date = new Date(msg.created_at).toLocaleDateString();
+            const seed = msg.avatar_seed || msg.nickname || 'default';
+            const avatarUrl = `https://api.dicebear.com/7.x/notionists/svg?seed=${seed}`;
+            
+            const card = document.createElement('div');
+            card.className = `bento-card item-${index % 10}`;
+            
+            card.innerHTML = `
+                <div class="card-header">
+                    <img src="${avatarUrl}" class="user-avatar" alt="avatar">
+                    <span class="user-nick">${escapeHtml(msg.nickname || '匿名画家')}</span>
+                </div>
+                <div class="card-content">${escapeHtml(msg.content)}</div>
+                <div class="card-footer">${date}</div>
+            `;
+            list.appendChild(card);
+        });
+    }
+
+    // --- 提交留言 ---
+    async function submitComment() {
+        const nickInput = document.getElementById('comment-nick');
+        const contentInput = document.getElementById('comment-content');
+        const btn = document.getElementById('submit-btn');
+
+        const content = contentInput.value.trim();
+        const nickname = nickInput.value.trim() || '匿名画家';
+
+        if (!content) {
+            // 替换 alert -> showToast
+            showToast('请写点内容再发送哦~', 'info');
+            contentInput.focus(); // 贴心地帮用户聚焦输入框
+            return;
+        }
+
+        btn.innerText = '🚀 发送中...';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+
+        const { error } = await supabase.from('comments').insert([{
+            nickname: nickname,
+            content: content,
+            avatar_seed: Math.random().toString(36).substring(7) 
+        }]);
+
+        if (error) {
+            showToast('发送失败: ' + error.message, 'error');
+        } else {
+            contentInput.value = ''; 
+            loadComments(); 
+            showToast('✨ 留言成功！', 'success');
+        }
+        
+        btn.innerText = '✨ 发送留言';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+    }
+
+    function escapeHtml(text) {
+        if (!text) return text;
+        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    loadComments();
+</script>
 
 
-<!-- 标签云 -->
-
-
-
+            
+        </article>
+    </div>
+</div>
 
     </main>
     

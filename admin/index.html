@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- 标题 -->
+    <title>奶龙大王的博客</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    <meta name="keywords" content="奶龙大王,博客,编程,学习,技术分享">
+    <meta name="author" content="奶龙大王">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="奶龙大王的博客">
+    <meta property="og:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    <meta property="og:url" content="https://xudaxmu-max.github.io/admin/index.html">
+    <meta property="og:site_name" content="奶龙大王的博客">
+    
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="奶龙大王的博客">
+    <meta name="twitter:description" content="都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&amp;family=DM+Sans:wght@400;500;700&amp;family=Fraunces:ital,wght@0,400;0,600;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fancybox -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    
+    
+    <!-- 主样式 -->
+    
+<link rel="stylesheet" href="/css/variables.css">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+
+    
+<link rel="stylesheet" href="/css/components.css">
+
+    
+<link rel="stylesheet" href="/css/layout.css">
+
+    
+<link rel="stylesheet" href="/css/post.css">
+
+    
+<link rel="stylesheet" href="/css/responsive.css">
+
+    
+<link rel="stylesheet" href="/css/themes.css">
+
+    
+<link rel="stylesheet" href="/css/animations.css">
+
+    
+    <!-- RSS -->
+    
+    <link rel="alternate" type="application/rss+xml" title="奶龙大王的博客" href="/atom.xml">
+    
+    
+    <!-- 自定义 head 代码 -->
+    
+    
+    <!-- 阅读进度条 -->
+    
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="progress-bar"></div>
+    </div>
+    
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body data-theme="minimal">
+    
+<!-- 页面加载动画 -->
+<div class="page-loading" id="page-loading">
+    <div class="loading-content">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+        </div>
+        <p class="loading-text">Loading...</p>
+    </div>
+</div>
+
+
+    <!-- 主题切换器 -->
+<div class="theme-switcher" id="theme-switcher">
+    <button class="theme-btn" data-theme="minimal" title="简约现代" aria-label="切换到简约现代主题">
+        <span class="theme-btn-inner minimal-icon"></span>
+    </button>
+    <button class="theme-btn" data-theme="serene" title="清新文艺" aria-label="切换到清新文艺主题">
+        <span class="theme-btn-inner serene-icon"></span>
+    </button>
+    <button class="theme-btn" data-theme="abyss" title="深渊地狱" aria-label="切换到深渊地狱主题">
+        <span class="theme-btn-inner abyss-icon"></span>
+    </button>
+</div>
+
+    <!-- 导航栏 -->
+<header class="nav" id="navbar">
+    <div class="nav-container">
+        <!-- Logo -->
+        <a href="/" class="nav-logo">
+            
+            HUAZAI
+            
+        </a>
+        
+        <!-- 导航菜单 -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+                
+                <li>
+                    <a href="/" class="">
+                        首页
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/archives" class="">
+                        文章
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/categories" class="">
+                        分类
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/tags" class="">
+                        标签
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/guestbook" class="">
+                        留言板
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+        <!-- 右侧操作 -->
+        <div class="nav-actions">
+            <!-- 搜索按钮 -->
+            
+            <button class="nav-btn search-toggle" id="search-toggle" aria-label="搜索">
+                <i data-lucide="search"></i>
+            </button>
+            
+            
+            <!-- 移动端菜单按钮 -->
+            <button class="nav-btn menu-toggle" id="menu-toggle" aria-label="菜单">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- 移动端菜单遮罩 -->
+<div class="nav-overlay" id="nav-overlay"></div>
+
+    
+    <main class="main-content">
+        <!-- 独立页面 (关于页等) -->
+<div class="page">
+    <div class="container">
+        <article class="page-content">
+            <!-- 页面头部 -->
+            <header class="page-header fade-in">
+                
+            </header>
+            
+            <!-- 如果是关于页面，显示特殊布局 -->
+            
+            <!-- 普通页面内容 -->
+            <div class="page-body fade-in">
+                <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客创作中心 | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <style>
+        /* 界面微调 */
+        .CodeMirror { border-radius: 8px; border-color: #e2e8f0; height: 500px; }
+        .editor-toolbar { border-radius: 8px 8px 0 0; border-color: #e2e8f0; }
+        .editor-statusbar { display: none; }
+        body { background-color: #f8fafc; }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <div id="login-view" class="flex flex-col items-center justify-center min-h-screen">
+        <div class="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md text-center">
+            <h1 class="text-3xl font-bold mb-2 text-slate-800">创作中心</h1>
+            <p class="text-slate-500 mb-8">请登录以管理您的博客内容</p>
+
+            <button onclick="handleLogin()" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-200 flex items-center justify-center gap-3 font-medium text-lg">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub 登录
+            </button>
+        </div>
+    </div>
+
+    <div id="admin-view" class="hidden flex h-screen overflow-hidden">
+        <div class="w-72 bg-white border-r border-slate-200 flex flex-col z-10">
+            <div class="p-5 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <span class="font-bold text-lg text-slate-700">文章列表</span>
+                <button onclick="handleLogout()" class="text-xs text-red-500 hover:underline">退出</button>
+            </div>
+            <div id="post-list" class="flex-1 overflow-y-auto p-3 space-y-2">
+                <div class="text-center text-gray-400 mt-10 text-sm">正在加载文章...</div>
+            </div>
+            <div class="p-4 border-t border-slate-100">
+                <button onclick="initNewPost()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-medium transition shadow-sm">+ 新建文章</button>
+            </div>
+        </div>
+
+        <div class="flex-1 flex flex-col bg-slate-50 relative">
+            <div class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 shadow-sm z-10">
+                <input type="text" id="post-title" placeholder="在此输入文章标题..." class="text-xl font-bold text-slate-800 placeholder-slate-300 w-1/2 outline-none">
+
+                <div class="flex items-center gap-3">
+                    <span id="save-status" class="text-xs text-slate-400 font-medium"></span>
+                    <button onclick="savePost(false)" class="bg-white border border-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 transition">存草稿</button>
+                    <button onclick="savePost(true)" class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition shadow-sm flex items-center gap-2">
+                        <span>发布</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="px-8 py-4 grid grid-cols-3 gap-6 bg-slate-50">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">URL 别名 (Slug)</label>
+                    <input type="text" id="post-slug" placeholder="my-new-post" class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:border-blue-500 focus:outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">分类 (Category)</label>
+                    <select id="post-category" class="w-full border border-slate-300 rounded px-3 py-2 text-sm bg-white focus:border-blue-500 focus:outline-none transition">
+                        <option value="文章">📄 文章 (Article)</option>
+                        <option value="图片">🖼️ 图片 (Image)</option>
+                        <option value="随笔">✍️ 随笔 (Essay)</option>
+                        <option value="技术">💻 技术 (Tech)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">标签 (Tags)</label>
+                    <input type="text" id="post-tags" placeholder="Hexo, 生活, 教程 (用逗号分隔)" class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:border-blue-500 focus:outline-none transition">
+                </div>
+            </div>
+
+            <div class="flex-1 px-8 pb-8 overflow-hidden">
+                <textarea id="markdown-editor"></textarea>
+                <input type="file" id="image-upload-input" class="hidden" accept="image/*" onchange="uploadImage(this)">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 配置区域 ---
+        const SUPABASE_URL = 'https://ezeguxheqxfganacxsbh.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_qOiMhO8V0tm5xZFYZ2XuFQ_89ueWaIO';
+
+        // --- 初始化 Supabase 和 编辑器 ---
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        let simplemde;
+        let currentPostId = null;
+
+        window.onload = async () => {
+            // 初始化 Markdown 编辑器
+            simplemde = new SimpleMDE({ 
+                element: document.getElementById("markdown-editor"),
+                placeholder: "开始撰写精彩内容...",
+                spellChecker: false,
+                status: false,
+                toolbar: ["bold", "italic", "heading", "|", "quote", "unordered-list", "ordered-list", "|", "link", 
+                    {
+                        name: "image",
+                        action: () => document.getElementById('image-upload-input').click(),
+                        className: "fa fa-picture-o",
+                        title: "上传图片",
+                    },
+                    "|", "preview", "side-by-side", "fullscreen"
+                ],
+            });
+
+            // 检查登录状态
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                showAdminView();
+            } else {
+                document.getElementById('login-view').classList.remove('hidden');
+            }
+        };
+
+        // --- 核心功能函数 ---
+
+        async function handleLogin() {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'github',
+                options: { redirectTo: window.location.href } 
+            });
+            if (error) alert('登录出错: ' + error.message);
+        }
+
+        async function handleLogout() {
+            await supabase.auth.signOut();
+            window.location.reload();
+        }
+
+        function showAdminView() {
+            document.getElementById('login-view').classList.add('hidden');
+            document.getElementById('admin-view').classList.remove('hidden');
+            loadPostList();
+        }
+
+        // 加载文章列表
+        async function loadPostList() {
+            const { data, error } = await supabase.from('posts').select('id, title, published, created_at').order('created_at', { ascending: false });
+            if (error) return console.error(error);
+
+            const listEl = document.getElementById('post-list');
+            listEl.innerHTML = '';
+
+            data.forEach(post => {
+                const el = document.createElement('div');
+                el.className = `p-3 rounded-lg cursor-pointer transition hover:bg-blue-50 group border border-transparent hover:border-blue-100 ${currentPostId === post.id ? 'bg-blue-50 border-blue-200' : 'bg-white'}`;
+                el.innerHTML = `
+                    <div class="font-medium text-slate-800 truncate">${post.title || '无标题文章'}</div>
+                    <div class="flex justify-between items-center mt-1">
+                        <span class="text-[10px] px-1.5 py-0.5 rounded ${post.published ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}">${post.published ? '已发布' : '草稿'}</span>
+                        <span class="text-[10px] text-slate-400">${new Date(post.created_at).toLocaleDateString()}</span>
+                    </div>
+                `;
+                el.onclick = () => loadPost(post.id);
+                listEl.appendChild(el);
+            });
+        }
+
+        // 新建文章
+        function initNewPost() {
+            currentPostId = null;
+            document.getElementById('post-title').value = '';
+            document.getElementById('post-slug').value = '';
+            document.getElementById('post-tags').value = '';
+            document.getElementById('post-category').value = '文章';
+            simplemde.value('');
+            document.getElementById('save-status').innerText = '新文章';
+            loadPostList(); // 刷新高亮状态
+        }
+
+        // 加载单篇文章
+        async function loadPost(id) {
+            currentPostId = id;
+            document.getElementById('save-status').innerText = '加载中...';
+
+            const { data, error } = await supabase.from('posts').select('*').eq('id', id).single();
+            if (error) return alert('加载失败');
+
+            document.getElementById('post-title').value = data.title;
+            document.getElementById('post-slug').value = data.slug;
+            document.getElementById('post-category').value = (data.categories && data.categories[0]) || '文章';
+            document.getElementById('post-tags').value = (data.tags || []).join(', ');
+            simplemde.value(data.content || '');
+
+            document.getElementById('save-status').innerText = '已加载';
+            loadPostList();
+        }
+
+        // 保存或发布
+        async function savePost(published) {
+            const title = document.getElementById('post-title').value;
+            if (!title) return alert('标题不能为空！');
+
+            const btnStatus = document.getElementById('save-status');
+            btnStatus.innerText = '保存中...';
+
+            const postData = {
+                title: title,
+                slug: document.getElementById('post-slug').value || title, // 如果没填别名，自动用标题
+                content: simplemde.value(),
+                categories: [document.getElementById('post-category').value],
+                tags: document.getElementById('post-tags').value.split(/[,，]/).map(t => t.trim()).filter(t => t),
+                published: published,
+                updated_at: new Date()
+            };
+
+            let error;
+            if (currentPostId) {
+                const res = await supabase.from('posts').update(postData).eq('id', currentPostId);
+                error = res.error;
+            } else {
+                const res = await supabase.from('posts').insert([postData]);
+                error = res.error;
+                if (!error) initNewPost(); // 插入成功后重置，防止重复创建
+            }
+
+            if (error) {
+                alert('保存失败: ' + error.message);
+                btnStatus.innerText = '失败';
+            } else {
+                btnStatus.innerText = published ? '已发布' : '已保存草稿';
+                loadPostList();
+                if(published) alert('✅ 发布成功！\n请记得在本地终端运行 hexo g -d 更新网站。');
+            }
+        }
+
+        // 图片上传逻辑
+        async function uploadImage(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const fileName = `uploads/${Date.now()}_${file.name.replace(/[^\w.]/g, '')}`;
+            const { error } = await supabase.storage.from('images').upload(fileName, file);
+
+            if (error) {
+                alert('图片上传失败: ' + error.message);
+            } else {
+                const { data } = supabase.storage.from('images').getPublicUrl(fileName);
+                simplemde.codemirror.replaceSelection(`\n![${file.name}](${data.publicUrl})\n`);
+            }
+        }
+    </script>
+</body>
+</html>
+            </div>
+            
+            
+            <!-- 评论 -->
+            
+            
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<div id="toast-box" class="toast-container"></div>
+
+<div id="bento-board" class="bento-container">
+    
+    <div class="comment-input-box">
+        <div class="input-header">
+            <span class="sunflower-icon">🌻</span> 留下你的笔触
+        </div>
+        <div class="input-body">
+            <input type="text" id="comment-nick" placeholder="你的名字 (可选)" maxlength="20">
+            <textarea id="comment-content" placeholder="写点什么吧... (无需登录)" rows="3"></textarea>
+        </div>
+        <div class="input-footer">
+            <button onclick="submitComment()" id="submit-btn">✨ 发送留言</button>
+        </div>
+    </div>
+
+    <div id="comment-list" class="bento-grid">
+        <div class="loading-text" style="grid-column:1/-1; text-align:center; color:#999;">🎨 正在调色中...</div>
+    </div>
+
+</div>
+
+<script>
+    // --- 配置区 ---
+    const SB_URL = 'https://jggjfgephkhgsqgdzmtj.supabase.co';
+    const SB_KEY = 'sb_publishable_56Gw-14c14uliBmGkh4byA_hmhDOBXi';
+    
+    const supabase = window.supabase.createClient(SB_URL, SB_KEY);
+
+    // --- ✨ 新增：优雅的提示框函数 ---
+    function showToast(msg, type = 'info') {
+        const container = document.getElementById('toast-box');
+        const toast = document.createElement('div');
+        
+        // 根据类型选择图标
+        let icon = '🌻';
+        if (type === 'success') icon = '✅';
+        if (type === 'error') icon = '❌';
+        
+        toast.className = `toast-message toast-${type}`;
+        toast.innerHTML = `<span>${icon}</span> <span>${msg}</span>`;
+        
+        container.appendChild(toast);
+
+        // 下一帧添加 show 类，触发 CSS 动画
+        requestAnimationFrame(() => {
+            toast.classList.add('show');
+        });
+
+        // 3秒后自动消失
+        setTimeout(() => {
+            toast.classList.remove('show');
+            // 等动画播完再从 DOM 移除
+            setTimeout(() => toast.remove(), 400);
+        }, 3000);
+    }
+
+    // --- 加载留言 ---
+    async function loadComments() {
+        const list = document.getElementById('comment-list');
+        
+        const { data, error } = await supabase
+            .from('comments')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        list.innerHTML = ''; 
+
+        if (error) {
+            // 这里也不用 alert，直接在页面显示错误
+            list.innerHTML = `<div style="text-align:center;color:#e74c3c;grid-column:1/-1;padding:20px;">加载失败: ${error.message}</div>`;
+            return;
+        }
+
+        if (!data || data.length === 0) {
+            list.innerHTML = `<div style="text-align:center;color:#666;grid-column:1/-1;padding:40px;">还没有人留言，做第一个画家吧！</div>`;
+            return;
+        }
+
+        data.forEach((msg, index) => {
+            const date = new Date(msg.created_at).toLocaleDateString();
+            const seed = msg.avatar_seed || msg.nickname || 'default';
+            const avatarUrl = `https://api.dicebear.com/7.x/notionists/svg?seed=${seed}`;
+            
+            const card = document.createElement('div');
+            card.className = `bento-card item-${index % 10}`;
+            
+            card.innerHTML = `
+                <div class="card-header">
+                    <img src="${avatarUrl}" class="user-avatar" alt="avatar">
+                    <span class="user-nick">${escapeHtml(msg.nickname || '匿名画家')}</span>
+                </div>
+                <div class="card-content">${escapeHtml(msg.content)}</div>
+                <div class="card-footer">${date}</div>
+            `;
+            list.appendChild(card);
+        });
+    }
+
+    // --- 提交留言 ---
+    async function submitComment() {
+        const nickInput = document.getElementById('comment-nick');
+        const contentInput = document.getElementById('comment-content');
+        const btn = document.getElementById('submit-btn');
+
+        const content = contentInput.value.trim();
+        const nickname = nickInput.value.trim() || '匿名画家';
+
+        if (!content) {
+            // 替换 alert -> showToast
+            showToast('请写点内容再发送哦~', 'info');
+            contentInput.focus(); // 贴心地帮用户聚焦输入框
+            return;
+        }
+
+        btn.innerText = '🚀 发送中...';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+
+        const { error } = await supabase.from('comments').insert([{
+            nickname: nickname,
+            content: content,
+            avatar_seed: Math.random().toString(36).substring(7) 
+        }]);
+
+        if (error) {
+            showToast('发送失败: ' + error.message, 'error');
+        } else {
+            contentInput.value = ''; 
+            loadComments(); 
+            showToast('✨ 留言成功！', 'success');
+        }
+        
+        btn.innerText = '✨ 发送留言';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+    }
+
+    function escapeHtml(text) {
+        if (!text) return text;
+        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    loadComments();
+</script>
+
+
+            
+        </article>
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer" style="position: relative;">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">
+                    奶龙大王的博客
+                </a>
+                <p class="footer-desc">都说程序员是搬砖的，奶龙大王可不这么认为，程序员是用代码改变世界的人！</p>
+                
+                <div class="live-info" style="margin-top: 15px; font-size: 0.85em; color: #888; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
+                    <div id="live-clock"><i class="fa fa-clock-o"></i> 加载时间...</div>
+                    <div id="live-weather" style="margin-top: 5px;"><i class="fa fa-cloud"></i> 加载天气...</div>
+                </div>
+            </div>
+            
+            <div class="footer-links-group">
+                <h4 class="footer-title">导航</h4>
+                <ul class="footer-links">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/archives/">归档</a></li>
+                    <li><a href="/tags/">标签</a></li>
+                    <li><a href="/categories/">分类</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links-group">
+                <h4 class="footer-title">管理</h4>
+                <ul class="footer-links">
+                    <li>
+                        <a href="/admin/" target="_blank" style="color: #d63031; font-weight: bold;">
+                            <i class="fa fa-lock"></i> 博主登录
+                        </a>
+                    </li>
+                    <li><a href="/admin/" target="_blank">发布文章</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom" style="flex-direction: column; align-items: center; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px;">
+            <div class="footer-copyright">
+                <span>&copy; 2025 奶龙大王. All rights reserved.</span>
+            </div>
+            
+            <div class="footer-info" style="margin-top: 5px; font-size: 0.85em;">
+                <span>Powered by Hexo</span>
+                <span class="footer-divider">|</span>
+                <span>本站已安全运行 <span id="running-days" style="font-weight:bold; color: #0984e3;">0</span> 天</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 【核心修改】设置你的建站时间
+        // 请修改这里的日期，格式：YYYY-MM-DD
+        const startDate = new Date("2025-12-01"); 
+
+        function updateRunTime() {
+            const now = new Date();
+            const diff = now - startDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            // 防止显示负数（如果是未来日期）
+            document.getElementById('running-days').innerText = days > 0 ? days : 1;
+            
+            // 实时时钟
+            const timeStr = now.toLocaleString('zh-CN', { hour12: false });
+            const clockEl = document.getElementById('live-clock');
+            if(clockEl) clockEl.innerText = "当前时间: " + timeStr;
+        }
+        setInterval(updateRunTime, 1000);
+        updateRunTime();
+
+        // 2. 天气接口 (使用 wttr.in)
+        fetch('https://wttr.in/?format=%C+%t')
+            .then(res => res.text())
+            .then(text => {
+                const weatherEl = document.getElementById('live-weather');
+                if(weatherEl) weatherEl.innerText = '当前天气: ' + text;
+            })
+            .catch(err => console.log('Weather load failed'));
+    </script>
+</footer>
+    
+<!-- 搜索模态框 -->
+<div class="search-modal" id="search-modal">
+    <div class="search-modal-overlay" id="search-modal-overlay"></div>
+    <div class="search-container">
+        <div class="search-header">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" 
+                   class="search-input" 
+                   id="search-input" 
+                   placeholder="搜索文章标题、内容..."
+                   autocomplete="off"
+                   autofocus>
+            <div class="search-shortcut">
+                <kbd>ESC</kbd>
+            </div>
+            <button class="search-close" id="search-close" aria-label="关闭搜索">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="search-results" id="search-results">
+            <div class="search-placeholder">
+                <i data-lucide="file-search" class="search-placeholder-icon"></i>
+                <p>输入关键词开始搜索</p>
+                <p class="search-tips">支持搜索文章标题和内容</p>
+            </div>
+        </div>
+        <div class="search-footer">
+            <div class="search-footer-item">
+                <kbd>↑</kbd><kbd>↓</kbd>
+                <span>切换</span>
+            </div>
+            <div class="search-footer-item">
+                <kbd>Enter</kbd>
+                <span>打开</span>
+            </div>
+            <div class="search-footer-item">
+                <kbd>ESC</kbd>
+                <span>关闭</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+<!-- 返回顶部 -->
+<button class="back-to-top" id="back-to-top" aria-label="返回顶部">
+    <i data-lucide="chevron-up"></i>
+    <svg class="back-to-top-progress" viewBox="0 0 46 46">
+        <circle cx="23" cy="23" r="20" fill="none" stroke-width="2" />
+    </svg>
+</button>
+
+
+    <!-- 主题特效容器 -->
+<div id="theme-effects" class="theme-effects"></div>
+
+<!-- Abyss 主题扫描线 -->
+<div class="abyss-scanline" id="abyss-scanline"></div>
+
+<!-- Abyss 主题噪点层 -->
+<div class="abyss-noise" id="abyss-noise"></div>
+
+    <!-- Fancybox -->
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+
+<!-- 主脚本 -->
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/theme-switcher.js"></script>
+
+
+<script src="/js/navigation.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+<!-- 初始化 Lucide 图标 -->
+<script>
+    lucide.createIcons();
+</script>
+
+<!-- 运行天数计算 -->
+
+<script>
+    (function() {
+        const since = new Date('Mon Jan 01 2024 08:00:00 GMT+0800 (中国标准时间)');
+        const now = new Date();
+        const days = Math.floor((now - since) / (1000 * 60 * 60 * 24));
+        const el = document.getElementById('running-days');
+        if (el) el.textContent = days;
+    })();
+</script>
+
+
+<!-- 自定义 body 代码 -->
+
+
+</body>
+</html>
