@@ -206,156 +206,149 @@
             <!-- 评论 -->
             
             
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<div id="toast-box" class="toast-container"></div>
-
-<div id="bento-board" class="bento-container">
+<style>
+    /* 两种风格的 CSS 变量 */
+    :root { 
+        --c-primary: #2563eb; 
+        --vg-yellow: #ffde38; 
+        --vg-blue: #1a1a2e;
+    }
     
-    <div class="comment-input-box">
-        <div class="input-header">
-            <span class="sunflower-icon">🌻</span> 留下你的笔触
+    /* 通用容器 */
+    .comments-wrapper { margin-top: 50px; padding-top: 30px; border-top: 1px dashed #e2e8f0; }
+    
+    /* 风格A: 梵高便当盒 (仅用于留言板) */
+    .style-bento .input-box { border: 3px solid var(--vg-blue); box-shadow: 6px 6px 0 var(--vg-yellow); background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 30px; }
+    .style-bento .bento-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; grid-auto-flow: dense; }
+    .style-bento .bento-card { background: #fff; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9; transition: transform 0.2s; }
+    .style-bento .bento-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .style-bento .bento-card.highlight { background: var(--vg-blue); color: #fff; grid-row: span 2; }
+    
+    /* 风格B: 文章评论列表 (仅用于普通文章) */
+    .style-list .input-box { background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+    .style-list .input-box textarea { width: 100%; border: 1px solid #cbd5e1; padding: 10px; border-radius: 6px; min-height: 80px; margin-bottom: 10px; }
+    .style-list .comment-item { display: flex; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px; }
+    .style-list .avatar { width: 40px; height: 40px; border-radius: 50%; background: #e2e8f0; flex-shrink: 0; }
+    .style-list .meta { font-size: 0.85em; color: #64748b; margin-bottom: 5px; }
+    .style-list .content { color: #334155; line-height: 1.6; font-size: 0.95em; }
+    
+    /* 通用按钮 */
+    .btn-send { background: var(--c-primary); color: white; border: none; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 0.9em; }
+    .btn-send:hover { opacity: 0.9; }
+</style>
+
+<div class="comments-wrapper style-list">
+    
+    <h3 style="margin-bottom: 20px; font-weight: bold; color: #334155;">
+        💬 评论区
+    </h3>
+
+    <div class="input-box">
+        
+        <div style="display:flex; gap:10px; margin-bottom:10px;">
+            <input id="c-nick" type="text" placeholder="昵称" style="border:1px solid #cbd5e1; padding:8px; border-radius:6px; flex:1;">
         </div>
-        <div class="input-body">
-            <input type="text" id="comment-nick" placeholder="你的名字 (可选)" maxlength="20">
-            <textarea id="comment-content" placeholder="写点什么吧... (无需登录)" rows="3"></textarea>
-        </div>
-        <div class="input-footer">
-            <button onclick="submitComment()" id="submit-btn">✨ 发送留言</button>
+        <textarea id="c-content" placeholder="对这篇文章有何高见？"></textarea>
+        <div style="text-align: right;">
+            <button class="btn-send" onclick="sendComment()">发送</button>
         </div>
     </div>
 
-    <div id="comment-list" class="bento-grid">
-        <div class="loading-text" style="grid-column:1/-1; text-align:center; color:#999;">🎨 正在调色中...</div>
+    <div id="comment-container" class="">
+        <div style="text-align:center; color:#94a3b8; padding: 20px;">加载中...</div>
     </div>
-
 </div>
 
 <script>
-    // --- 配置区 ---
     const SB_URL = 'https://jggjfgephkhgsqgdzmtj.supabase.co';
     const SB_KEY = 'sb_publishable_56Gw-14c14uliBmGkh4byA_hmhDOBXi';
-    
     const supabase = window.supabase.createClient(SB_URL, SB_KEY);
+    
+    // 关键：判断当前是哪篇文章。如果是留言板，slug 定死为 'guestbook'
+    // 如果是普通文章，slug 使用 Hexo 生成的 page.slug，如果为空则用 location.pathname
+    const CURRENT_SLUG = "tags/index.html";
+    const IS_BENTO = "false" === "true";
 
-    // --- ✨ 新增：优雅的提示框函数 ---
-    function showToast(msg, type = 'info') {
-        const container = document.getElementById('toast-box');
-        const toast = document.createElement('div');
-        
-        // 根据类型选择图标
-        let icon = '🌻';
-        if (type === 'success') icon = '✅';
-        if (type === 'error') icon = '❌';
-        
-        toast.className = `toast-message toast-${type}`;
-        toast.innerHTML = `<span>${icon}</span> <span>${msg}</span>`;
-        
-        container.appendChild(toast);
-
-        // 下一帧添加 show 类，触发 CSS 动画
-        requestAnimationFrame(() => {
-            toast.classList.add('show');
-        });
-
-        // 3秒后自动消失
-        setTimeout(() => {
-            toast.classList.remove('show');
-            // 等动画播完再从 DOM 移除
-            setTimeout(() => toast.remove(), 400);
-        }, 3000);
-    }
-
-    // --- 加载留言 ---
     async function loadComments() {
-        const list = document.getElementById('comment-list');
-        
+        // 根据 slug 过滤评论
         const { data, error } = await supabase
             .from('comments')
             .select('*')
+            .eq('post_slug', CURRENT_SLUG) // 核心过滤逻辑
             .order('created_at', { ascending: false });
 
-        list.innerHTML = ''; 
+        const container = document.getElementById('comment-container');
+        container.innerHTML = '';
 
-        if (error) {
-            // 这里也不用 alert，直接在页面显示错误
-            list.innerHTML = `<div style="text-align:center;color:#e74c3c;grid-column:1/-1;padding:20px;">加载失败: ${error.message}</div>`;
+        if(!data || data.length === 0) {
+            container.innerHTML = '<div style="text-align:center; color:#cbd5e1; grid-column:1/-1;">还没有评论，抢沙发！</div>';
             return;
         }
 
-        if (!data || data.length === 0) {
-            list.innerHTML = `<div style="text-align:center;color:#666;grid-column:1/-1;padding:40px;">还没有人留言，做第一个画家吧！</div>`;
-            return;
-        }
-
-        data.forEach((msg, index) => {
-            const date = new Date(msg.created_at).toLocaleDateString();
-            const seed = msg.avatar_seed || msg.nickname || 'default';
-            const avatarUrl = `https://api.dicebear.com/7.x/notionists/svg?seed=${seed}`;
+        data.forEach((item, index) => {
+            const date = new Date(item.created_at).toLocaleDateString();
+            const avatar = `https://api.dicebear.com/7.x/notionists/svg?seed=${item.nickname || 'user'}`;
             
-            const card = document.createElement('div');
-            card.className = `bento-card item-${index % 10}`;
-            
-            card.innerHTML = `
-                <div class="card-header">
-                    <img src="${avatarUrl}" class="user-avatar" alt="avatar">
-                    <span class="user-nick">${escapeHtml(msg.nickname || '匿名画家')}</span>
-                </div>
-                <div class="card-content">${escapeHtml(msg.content)}</div>
-                <div class="card-footer">${date}</div>
-            `;
-            list.appendChild(card);
+            let html = '';
+            if(IS_BENTO) {
+                // 梵高 Bento 风格
+                const isHighlight = index % 7 === 0 ? 'highlight' : '';
+                html = `
+                    <div class="bento-card ${isHighlight}">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                            <img src="${avatar}" style="width:24px; height:24px; border-radius:50%;">
+                            <span style="font-weight:bold; font-size:0.9em;">${escape(item.nickname)}</span>
+                        </div>
+                        <div style="font-size:0.95em; line-height:1.5;">${escape(item.content)}</div>
+                        <div style="font-size:0.7em; opacity:0.6; margin-top:10px; text-align:right;">${date}</div>
+                    </div>
+                `;
+            } else {
+                // 普通文章列表风格
+                html = `
+                    <div class="comment-item">
+                        <img class="avatar" src="${avatar}">
+                        <div style="flex:1;">
+                            <div class="meta">
+                                <span style="font-weight:bold; color:#334155; margin-right:10px;">${escape(item.nickname)}</span>
+                                <span>${date}</span>
+                            </div>
+                            <div class="content">${escape(item.content)}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            container.insertAdjacentHTML('beforeend', html);
         });
     }
 
-    // --- 提交留言 ---
-    async function submitComment() {
-        const nickInput = document.getElementById('comment-nick');
-        const contentInput = document.getElementById('comment-content');
-        const btn = document.getElementById('submit-btn');
-
-        const content = contentInput.value.trim();
-        const nickname = nickInput.value.trim() || '匿名画家';
-
-        if (!content) {
-            // 替换 alert -> showToast
-            showToast('请写点内容再发送哦~', 'info');
-            contentInput.focus(); // 贴心地帮用户聚焦输入框
-            return;
-        }
-
-        btn.innerText = '🚀 发送中...';
-        btn.disabled = true;
-        btn.style.opacity = '0.7';
+    async function sendComment() {
+        const nick = document.getElementById('c-nick').value || '匿名';
+        const content = document.getElementById('c-content').value;
+        if(!content.trim()) return alert('内容不能为空');
 
         const { error } = await supabase.from('comments').insert([{
-            nickname: nickname,
+            nickname: nick,
             content: content,
-            avatar_seed: Math.random().toString(36).substring(7) 
+            post_slug: CURRENT_SLUG, // 存入当前文章的标识
+            avatar_seed: Math.random().toString()
         }]);
 
-        if (error) {
-            showToast('发送失败: ' + error.message, 'error');
-        } else {
-            contentInput.value = ''; 
-            loadComments(); 
-            showToast('✨ 留言成功！', 'success');
+        if(error) alert('发送失败');
+        else {
+            document.getElementById('c-content').value = '';
+            loadComments();
         }
-        
-        btn.innerText = '✨ 发送留言';
-        btn.disabled = false;
-        btn.style.opacity = '1';
     }
 
-    function escapeHtml(text) {
-        if (!text) return text;
-        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    function escape(str) {
+        if(!str) return '';
+        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
 
     loadComments();
 </script>
-
 
             
         </article>
